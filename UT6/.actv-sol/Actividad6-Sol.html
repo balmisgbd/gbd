@@ -1,0 +1,654 @@
+<!DOCTYPE html><html><head>
+      <title>Apuntes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAfIAAsAAAAADDAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kosY21hcAAAAYAAAADTAAACjtP6ytBnbHlmAAACVAAAAxgAAAQ4zRtvlGhlYWQAAAVsAAAALwAAADYRwZsnaGhlYQAABZwAAAAcAAAAJAeKAzxobXR4AAAFuAAAABIAAAA8OGQAAGxvY2EAAAXMAAAAIAAAACAG5AfwbWF4cAAABewAAAAfAAAAIAEfAERuYW1lAAAGDAAAAVcAAAKFkAhoC3Bvc3QAAAdkAAAAYgAAAK2vz7wkeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkPsQ4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVLy4xKzzX4chhrmK4QpQmBEkBwAZygyweJzFkr0NwjAQhZ+TEP6CRUfHBEwRUWaQTICyQbpMwRCskA5RUIONxG0RnnNpKAIV4qzPku/8c353ACYAYrIjCWCuMAh2ptf0/hiL3p/gyPUWa3osqlt0L1zu9r71z8dGrJRykFoauXQd932Lj5vhG+MjxGeYI8MKETObMpslf5EyP8tg+vHun5r539PvlvXzaVhRFVQDTPEWKVQR90KhnnC5Ek67vUKN4VuFasM/ldARj43CCkCsEjpJSoVVgRyU0GVSK6wUpFFCx8lFgX0BiXpRPQB4nE2TTWjcRhTH3xttpDhxN7uxPlp3u/FK7moRPixafRijNosxSw/LUsIwNcaEHPZggo/FmEKMCKWU4kNOOftQSlhE8alnH0Ix9BqWnHooPRrTQ0+mnu2bXTu2pPdGM9LM/6c3fwECTM4gBBMYQNqxzLrZAjqYSlqu2TAHZQA0/DQJH6FtzqGDnvbt4Ggwvzw/nL8EfH8kW0fsuRqhgWXZnY7M1picaUL7Du5BHeDzMIl83dAt016wH1qmvtSMo5R6YRJHTR//FXsff/nj/tc/5K9P5d+nP22+fFK5u7v3K39SW3y+OtDKO3L85vD09PD9z5X17a2N1g4tqk01RlqX7gyoEmnsWQtVr4rtZMmukEaFBZxzefkCn11cyKMLZgshRwgTYNoLNXCBz2ja7HvZG7hDpPSNfoo5vs0knK/9hb+rNpu+8kHPgk/Ao4kK3tWtTpSEtvkA9c+wE6UaUdwieNkaHg55tBEtRiEPw1s0+FtrtTcc9two2lhMknV7PZF/cs6+uUFTmpTGbEx7sQCPSLOttHS3GRltqp7SNzVSKzl6aWnZT/CX5k6/v9N3Hh8fHBwffJVjhrC6OgH5dkIt/tPsq+d/PD5Qz7G7efzq1THFjdZVPe/N6ulQ3JnDWSE5junsFsVIiFwL/htf1S5gJ3BfOcUxfHKLnzqpFpyfZ9cX+/5WB6a+Y0pHpzkNrYNVDwMsikK+y7WuLCRg/oFHkA8VT3rDg5ZnU6ktzzINymV0m74Xd5pfIGXyFeVEQSShkzqG7TBBa2OxVRKitLXv7h3uuftXnXq7lz2tZ/WnWa9dx9dCjDhHzmuVQATlmljr9dZErUydSo2Hbi/b1vXtrOeGCk2/8s3ZlO8+ueJT8BVlw5pGw2oYccdSiHHqx0RlabHqdNR9jAETl6PreJcPBnnfpTLnOQ8C3OV8AmQGzouV1iZdeb5SSIoVc8W8/kcDtksUH5FrU6/aqBqNWcMEzxG4DAQ14qRQhi9mWU0rzepKezbjfgCwQKxVYq5ajRgpRqy45CqwkJydcEkbTkvRz8P5/2ZpDTN4nGNgZGBgAOKb6v+/xvPbfGXgZmEAgeuB2kkI+v8bFgbmKiCXg4EJJAoAPyAKhQB4nGNgZGBg1vmvwxDDwgACQJKRARXwAwAzZQHQeJxjYQCCFAYGFgbSMQAcWACdAAAAAAAAAAwALgBgAIQAmADSAQgBIgE8AVABoAHeAfwCHHicY2BkYGDgZ7BgYGMAASYg5gJCBob/YD4DAA/hAWQAeJxlkbtuwkAURMc88gApQomUJoq0TdIQzEOpUDokKCNR0BuzBiO/tF6QSJcPyHflE9Klyyekz2CuG8cr7547M3d9JQO4xjccnJ57vid2cMHqxDWc40G4Tv1JuEF+Fm6ijRfhM+oz4Ra6eBVu4wZvvMFpXLIa40PYQQefwjVc4Uu4Tv1HuEH+FW7i1mkKn6Hj3Am3sHC6wm08Ou8tpSZGe1av1PKggjSxPd8zJtSGTuinyVGa6/Uu8kxZludCmzxMEzV0B6U004k25W35fj2yNlCBSWM1paujKFWZSbfat+7G2mzc7weiu34aczzFNYGBhgfLfcV6iQP3ACkSaj349AxXSN9IT0j16JepOb01doiKbNWt1ovippz6sVYYwsXgX2rGVFIkq7Pl2PNrI6qW6eOshj0xaSq9mpNEZIWs8LZUfOouNkVXxp/d5woqebeYIf4D2J1ywQB4nG3LOw6AIBAE0B384B+PAkgEa+QwNnYmHt+EpXSal5lkSBBnoP8oCFSo0aCFRIceA0ZMmLFAYSW88rmvtMUjG3RiQ9HvpfusM6zWNmtc5H/iPewha50tOt5PS/QBx2IeSwAA") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .caso_estudio {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .ejercicio {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://programacioniesbalmis.github.io/Imagenes/BannersMoodle/banner.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: center;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+.markdown-preview.markdown-preview .galeria_imagenes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: row;
+  }
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#funciones-de-usuario-bloque-2" class="md-toc-link"><p>Funciones de usuario bloque 2</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-1" class="md-toc-link">
+            <p>✅ Ejercicio 1</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-2" class="md-toc-link">
+            <p>✅ Ejercicio 2</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-3" class="md-toc-link">
+            <p>✅ Ejercicio 3</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-4" class="md-toc-link">
+            <p>✅ Ejercicio 4</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-5" class="md-toc-link">
+            <p>✅ Ejercicio 5</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-6" class="md-toc-link">
+            <p>✅ Ejercicio 6</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-7" class="md-toc-link">
+            <p>✅ Ejercicio 7</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-8" class="md-toc-link">
+            <p>✅ Ejercicio 8</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-9" class="md-toc-link">
+            <p>✅ Ejercicio 9</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-10" class="md-toc-link">
+            <p>✅ Ejercicio 10</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 id="funciones-de-usuario-bloque-2">Funciones de usuario bloque 2 </h2>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-1">✅ Ejercicio 1 </h3>
+<p>Función (<strong>km2m</strong>) que reciba un número decimal (precisión máxima 5 decimales) en Km y devuelva su equivalente en metros (precisión máxima 1 decimal) redondeando su resultado.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> km2m<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> km2m<span class="token punctuation">(</span>num <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> metros <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> metros :<span class="token operator">=</span> <span class="token number">1000</span> <span class="token operator">*</span> num<span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> metros<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 12346.7</span>
+<span class="token keyword keyword-SELECT">SELECT</span> km2m<span class="token punctuation">(</span><span class="token number">12.34671</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Salida: 45720.0</span>
+<span class="token keyword keyword-SELECT">SELECT</span> km2m<span class="token punctuation">(</span><span class="token number">45.71999</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-2">✅ Ejercicio 2 </h3>
+<p>Función que reciba un número decimal (máxima precisión 3 dígitos) en centímetros y devuelva su equivalente en <strong>pulgadas</strong> (máxima precisión 3 dígitos), sabiendo que 1 pulgada = 2,54 centímetros.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> pulgadas<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> pulgadas<span class="token punctuation">(</span>num <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> cm2p <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> cm2p :<span class="token operator">=</span> num <span class="token operator">/</span> <span class="token number">2.54</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> cm2p<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 39.370</span>
+<span class="token keyword keyword-SELECT">SELECT</span> pulgadas<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-3">✅ Ejercicio 3 </h3>
+<p>Función (<strong>cambiocompra</strong>) que devuelva el cambio de una compra recibiendo el importe total, descuento y dinero recibido. Si el dinero recibido es menor que el importe a pagar [importe a pagar = importe total -  (importe total * descuento/100) ] entonces debe devolver el valor -1.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> cambiocompra<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> cambiocompra<span class="token punctuation">(</span>importe <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dto <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dineroRecibido <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> importePagar <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> cambio <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> importePagar :<span class="token operator">=</span> importe <span class="token operator">-</span> importe <span class="token operator">*</span> dto <span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> cambio :<span class="token operator">=</span> dineroRecibido <span class="token operator">-</span> importePagar<span class="token punctuation">;</span>
+    <span class="token keyword keyword-IF">IF</span> cambio <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token keyword keyword-THEN">THEN</span>
+        <span class="token keyword keyword-SET">SET</span> cambio :<span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> cambio<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 1000.00</span>
+<span class="token keyword keyword-SELECT">SELECT</span> cambiocompra<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Salida: -1.00</span>
+<span class="token keyword keyword-SELECT">SELECT</span> cambiocompra<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-4">✅ Ejercicio 4 </h3>
+<p>Función que reciba una cadena y un número entero, y devuelva la <strong>palabra</strong> que ocupe el lugar que indica el número entero.</p>
+</div> <!-- fin ejercicio -->
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> palabra<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> palabra<span class="token punctuation">(</span>frase <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">,</span> numPalabra <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> palabraRetornada <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> palabraRetornada :<span class="token operator">=</span> SUBSTRING_INDEX<span class="token punctuation">(</span>frase<span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> numPalabra<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> palabraRetornada :<span class="token operator">=</span> SUBSTRING_INDEX<span class="token punctuation">(</span>palabraRetornada<span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> palabraRetornada<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: quinta</span>
+<span class="token keyword keyword-SELECT">SELECT</span> palabra<span class="token punctuation">(</span><span class="token string">'La función retorna la quinta palabra de la frase'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-5">✅ Ejercicio 5 </h3>
+<p>Función (<strong>segundos</strong>) que reciba un valor de tipo <strong><code>TIME</code></strong> de un cronómetro y devuelva el número de segundos equivalentes. Ej: 00:02:25 → 2*60 + 25 = 145 segundos.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> segundos<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> segundos<span class="token punctuation">(</span>tiempo <span class="token keyword keyword-TIME">TIME</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> totalSegundos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> totalSegundos :<span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token operator">*</span> <span class="token keyword keyword-HOUR">HOUR</span><span class="token punctuation">(</span>tiempo<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token keyword keyword-MINUTE">MINUTE</span><span class="token punctuation">(</span>tiempo<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token keyword keyword-SECOND">SECOND</span><span class="token punctuation">(</span>tiempo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> totalSegundos<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 145 s</span>
+<span class="token keyword keyword-SELECT">SELECT</span> segundos<span class="token punctuation">(</span><span class="token string">'00:02:25'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-6">✅ Ejercicio 6 </h3>
+<p>Función (<strong>segundos2time</strong>) que reciba un número entero con el valor de segundos y devuelva una valor <strong><code>TIME</code></strong> con la conversión a formato [hora:minutos:segundos] utilizando la función <strong><code>MAKETIME</code></strong>.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> segundos2time<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> segundos2time<span class="token punctuation">(</span>totalSegundos <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-TIME">TIME</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> segundos <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> minutos <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> horas <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> segundos :<span class="token operator">=</span> <span class="token function">MOD</span><span class="token punctuation">(</span>totalSegundos<span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> minutos :<span class="token operator">=</span> FLOOR<span class="token punctuation">(</span>totalSegundos <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> horas :<span class="token operator">=</span> FLOOR<span class="token punctuation">(</span>minutos <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> minutos :<span class="token operator">=</span> <span class="token function">MOD</span><span class="token punctuation">(</span>minutos<span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> MAKETIME<span class="token punctuation">(</span>horas<span class="token punctuation">,</span> minutos<span class="token punctuation">,</span> segundos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 00:02:25</span>
+<span class="token keyword keyword-SELECT">SELECT</span> segundos2time<span class="token punctuation">(</span><span class="token number">145</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-7">✅ Ejercicio 7 </h3>
+<p>Función (<strong>ofertaprecio</strong>) que recibiendo el precio de un producto en oferta, calcule y devuelva el precio final sabiendo que por encima de 1000 el descuento es el 20% y por debajo o igual de 1000 el descuento es el 10%.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> ofertaprecio<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> ofertaprecio<span class="token punctuation">(</span>precio <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> precioFinal <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> dto <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> dto :<span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-IF">IF</span> precio <span class="token operator">&gt;</span> <span class="token number">1000</span> <span class="token keyword keyword-THEN">THEN</span>
+        <span class="token keyword keyword-SET">SET</span> dto :<span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> precioFinal :<span class="token operator">=</span> precio <span class="token operator">-</span> <span class="token punctuation">(</span>precio <span class="token operator">*</span> dto<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> precioFinal<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 820</span>
+<span class="token keyword keyword-SELECT">SELECT</span> ofertaprecio<span class="token punctuation">(</span><span class="token number">1025</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Salida: 562.5</span>
+<span class="token keyword keyword-SELECT">SELECT</span> ofertaprecio<span class="token punctuation">(</span><span class="token number">625</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-8">✅ Ejercicio 8 </h3>
+<p>Función (<strong>sumatorio</strong>) que reciba un numero <em>n</em> y calcule la suma de todos los numeros desde 1 hasta <em>n</em>.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> sumatorio<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> sumatorio<span class="token punctuation">(</span>n <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> suma <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> contador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-SET">SET</span> suma :<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> contador :<span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-WHILE">WHILE</span> <span class="token punctuation">(</span>contador <span class="token operator">&lt;=</span> n <span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span>
+        <span class="token keyword keyword-SET">SET</span> suma :<span class="token operator">=</span> suma <span class="token operator">+</span> contador<span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> contador :<span class="token operator">=</span> contador <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-WHILE">WHILE</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> suma<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 21</span>
+<span class="token keyword keyword-SELECT">SELECT</span> sumatorio<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Salida: 55</span>
+<span class="token keyword keyword-SELECT">SELECT</span> sumatorio<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-9">✅ Ejercicio 9 </h3>
+<p>Función que dado un numero mayor que 1 me devuelva la palabra <em><strong>PRIMO</strong></em> si es primo y <em><strong>NO PRIMO</strong></em> en caso contrario.</p>
+<div class="admonition hint">
+<p class="admonition-title">Pista</p>
+<p>Un número es primo si sólo es divisible por sí mismo y por 1. Para comprobar si un número n es primo se puede iterar desde 2 hasta <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt {n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.2397em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8003em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal">n</span></span></span><span style="top:-2.7603em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2397em;"><span></span></span></span></span></span></span></span></span> y comprobar si en cada iteración el valor es divisible por n.</p>
+</div>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> esPrimo<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> esPrimo<span class="token punctuation">(</span>num <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> primo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> contador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> limite <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-SET">SET</span> primo :<span class="token operator">=</span> <span class="token string">'PRIMO'</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> contador :<span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-SET">SET</span> limite :<span class="token operator">=</span> FLOOR<span class="token punctuation">(</span>SQRT<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-WHILE">WHILE</span> <span class="token punctuation">(</span>contador <span class="token operator">*</span> contador <span class="token operator">&lt;=</span> num <span class="token operator">AND</span> primo <span class="token operator">=</span> <span class="token string">'PRIMO'</span><span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span>
+        <span class="token keyword keyword-IF">IF</span> <span class="token punctuation">(</span><span class="token function">MOD</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> contador<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword keyword-THEN">THEN</span>
+            <span class="token keyword keyword-SET">SET</span> primo :<span class="token operator">=</span> <span class="token string">'NO PRIMO'</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> contador :<span class="token operator">=</span> contador <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-WHILE">WHILE</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> primo<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: NO PRIMO</span>
+<span class="token keyword keyword-SELECT">SELECT</span> esPrimo<span class="token punctuation">(</span><span class="token number">25341</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Salida: PRIMO</span>
+<span class="token keyword keyword-SELECT">SELECT</span> esPrimo<span class="token punctuation">(</span><span class="token number">5317703</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-10">✅ Ejercicio 10 </h3>
+<p>La <strong>velocidad terminal</strong> de un objeto es la velocidad máxima que puede alcanzar un objeto cuando se mueve a través de un fluído como el aire o el agua. La velocidad terminal se puede calcular con la siguiente fórmula: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>t</mi></msub><mo>=</mo><msqrt><mfrac><mrow><mn>2</mn><mi>M</mi><mi>g</mi></mrow><mrow><mi>ρ</mi><mi>A</mi><msub><mi>C</mi><mi>D</mi></msub></mrow></mfrac></msqrt></mrow><annotation encoding="application/x-tex">v_{t} = \sqrt {\frac {2Mg}{\rho A C_{D}} }</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6333em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.2067em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9244em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ρ</span><span class="mord mathnormal mtight">A</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567em;margin-left:-0.0715em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1433em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4811em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.1667em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.88em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.88em" viewBox="0 0 400000 1944" preserveAspectRatio="xMinYMin slice"><path d="M983 90
+l0 -0
+c4,-6.7,10,-10,18,-10 H400000v40
+H1013.1s-83.4,268,-264.1,840c-180.7,572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7
+s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744
+c-10,12,-21,25,-33,39s-32,39,-32,39c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30
+c26.7,-32.7,52,-63,76,-91s52,-60,52,-60s208,722,208,722
+c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,-658.5
+c53.7,-170.3,84.5,-266.8,92.5,-289.5z
+M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6333em;"><span></span></span></span></span></span></span></span></span> donde:</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> es la masa del objeto</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span> es la aceleración de la gravedad y podemos suponerla constante con valor <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9.81</mn><mspace width="0.2845em"></mspace><mi>m</mi><mi mathvariant="normal">/</mi><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">9.81 \hspace{1mm} m/s^{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">9.81</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">m</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\rho</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ρ</span></span></span></span> es la densidad del medio en el que se mueve el objeto.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span> es el área de contacto del objeto con el fluído en la dirección perpendicular al movimiento.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">C_{D}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> es el coeficiente de arrastre y depende de la forma del objeto.</li>
+</ul>
+<p>Se pide:</p>
+<ul>
+<li>Implementar la función <strong>velocidadTerminal</strong> que calcula la <strong>velocidad terminal de una bola maciza</strong> que se deja caer desde cierta altura. La función recibe como parámetros el radio de la bola en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">cm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">m</span></span></span></span>, la densidad de la bola en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi mathvariant="normal">/</mi><mi>c</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">g/cm^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span> y la densidad del medio en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>g</mi><mi mathvariant="normal">/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">kg/m^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span>. El resultado estará expresado en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi mathvariant="normal">/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">km</span><span class="mord">/</span><span class="mord mathnormal">h</span></span></span></span> con 2 decimales de precisión.</li>
+<li>Calcular la <strong>velocidad terminal</strong> para una bola de madera y otra de acero de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><mi>c</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} cm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">m</span></span></span></span> de radio teniendo en cuenta que:
+<ul>
+<li>El medio en que se mueven es el aire y este tiene una densidad <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>1.225</mn><mspace width="0.2845em"></mspace><mrow><mi>k</mi><mi>g</mi><mi mathvariant="normal">/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">\rho = 1.225 \hspace{1mm} {kg/m^{3}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ρ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">1.225</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></span>.</li>
+<li>La densidad de la bola de roble es <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>m</mi></msub><mo>=</mo><mn>0.77</mn><mspace width="0.2845em"></mspace><mrow><mi>g</mi><mi mathvariant="normal">/</mi><mi>c</mi><msup><mi>m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">\rho_{m} = 0.77 \hspace{1mm} {g/cm^{3}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">ρ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">0.77</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></span>.</li>
+<li>La densidad de la bola de acero es <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>a</mi></msub><mo>=</mo><mn>7.8</mn><mspace width="0.2845em"></mspace><mrow><mi>k</mi><mi>g</mi><mi mathvariant="normal">/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">\rho_{a} = 7.8 \hspace{1mm} {kg/m^{3}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">ρ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">7.8</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></span>.</li>
+</ul>
+</li>
+</ul>
+<p>Consideraciones a tener en cuenta:</p>
+<ol>
+<li>
+<p>El coeficiente de arrastre para una esfera es constante con valor <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>D</mi></msub><mo>=</mo><mn>0.47</mn><mspace width="0.2845em"></mspace><mi>k</mi><mi>g</mi><mi mathvariant="normal">/</mi><msup><mi>m</mi><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">C_{D} = 0.47 \hspace{1mm} kg/m^{6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">0.47</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>.</p>
+</li>
+<li>
+<p>De forma genérica, la masa de un cuerpo es <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mi>ρ</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">M = \rho V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ρ</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> donde <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\rho</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ρ</span></span></span></span> es la densidad del cuerpo y <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> su volumen. Para una esfera el volumen es <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mrow><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>π</mi><msup><mi>r</mi><mn>3</mn></msup></mrow></mrow><annotation encoding="application/x-tex">V = {\frac {4}{3} \pi r^{3}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></span>.</p>
+</li>
+<li>
+<p>El área de contacto <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span> de una esfera de radio <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> en un fluído es el área del círculo de mismo radio; es decir <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">A = \pi r^{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>.</p>
+</li>
+<li>
+<p>Los cálculos se tienen que realizar en las unidades del Sistema Internacional. Para este sistema la unidad de masa es el <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">kg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span>, la de medida el <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> (metro) y la de volumen el <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">m^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span>. Conversión de unidades:</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><mi>k</mi><mi>g</mi><mo>=</mo><mn>1000</mn><mspace width="0.2845em"></mspace><mi>g</mi></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} kg = 1000 \hspace{1mm} g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1000</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><mi>m</mi><mo>=</mo><mn>100</mn><mspace width="0.2845em"></mspace><mi>c</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} m = 100 \hspace{1mm} cm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">m</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><msup><mi>m</mi><mn>3</mn></msup><mo>=</mo><mn>1000000</mn><mspace width="0.2845em"></mspace><mi>c</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} m^{3} = 1000000 \hspace{1mm} cm^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1000000</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></li>
+</ol>
+</li>
+<li>
+<p>Los cálculos se tienen que realizar en las unidades del Sistema Internacional. Para este sistema la unidad de masa es el quilo (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">kg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span>), la de medida el metro (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span>) , la de volumen el metro cúbico (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">m^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span>) y la de tiempo el segundo (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span>).</p>
+<p>Tabla de conversión de unidades:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Sistema Internacional (SI)</th>
+<th style="text-align:left">Otro sistema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} kg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000</mn><mspace width="0.2845em"></mspace><mi>g</mi></mrow><annotation encoding="application/x-tex">1000 \hspace{1mm} g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1000</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><mi>m</mi></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">m</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mspace width="0.2845em"></mspace><mi>c</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">100 \hspace{1mm} cm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">m</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} m^{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000000</mn><mspace width="0.2845em"></mspace><mi>c</mi><mi>m</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">1000000 \hspace{1mm} cm{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000000</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">m</span><span class="mord"><span class="mord">3</span></span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1000</mn><mspace width="0.2845em"></mspace><mi>m</mi></mrow><annotation encoding="application/x-tex">1000 \hspace{1mm} m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">m</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><mi>k</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} km</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">km</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3600</mn><mspace width="0.2845em"></mspace><mi>s</mi></mrow><annotation encoding="application/x-tex">3600 \hspace{1mm} s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3600</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">s</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mspace width="0.2845em"></mspace><mi>h</mi></mrow><annotation encoding="application/x-tex">1 \hspace{1mm} h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord mathnormal">h</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>El cálculo de la <strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">v_{t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></strong> se realiza con los datos expresados en unidades del SI y posteriormente pasa a expresarse en <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>m</mi><mi mathvariant="normal">/</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">km/h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">km</span><span class="mord">/</span><span class="mord mathnormal">h</span></span></span></span>.</p>
+</li>
+</ol>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> velocidadTerminal<span class="token punctuation">;</span>
+
+<span class="token comment">-- Creación de la función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> velocidadTerminal<span class="token punctuation">(</span>radio <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> dBola <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">,</span> dAire <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+
+    <span class="token keyword keyword-DECLARE">DECLARE</span> gravedad <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> cd <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> rBola <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> d2Bola <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> volumen <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> masa <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> areaContacto <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vt <span class="token keyword keyword-FLOAT">FLOAT</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Asigno valores a las constantes (solo es por claridad)</span>
+    <span class="token comment">-- Gravedad y coeficiente de arrastre</span>
+    <span class="token keyword keyword-SET">SET</span> gravedad <span class="token operator">=</span> <span class="token number">9.8</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> cd <span class="token operator">=</span> <span class="token number">0.47</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Pasar radio bola a metros</span>
+    <span class="token keyword keyword-SET">SET</span> rBola <span class="token operator">=</span> radio <span class="token operator">/</span> <span class="token number">100.0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Pasar densidad bola al SI</span>
+    <span class="token keyword keyword-SET">SET</span> d2Bola <span class="token operator">=</span> <span class="token punctuation">(</span>dBola <span class="token operator">/</span> <span class="token number">1000.0</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000000.0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Calcular volumen de la bola</span>
+    <span class="token keyword keyword-SET">SET</span> volumen <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">4</span> <span class="token operator">*</span> PI<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> POW<span class="token punctuation">(</span>rBola<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Calcular masa de la bola</span>
+    <span class="token keyword keyword-SET">SET</span> masa <span class="token operator">=</span> d2Bola <span class="token operator">*</span> volumen<span class="token punctuation">;</span>
+
+    <span class="token comment">-- Calcular area de contacto con el fluido</span>
+    <span class="token keyword keyword-SET">SET</span> areaContacto <span class="token operator">=</span> PI<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> rBola <span class="token operator">*</span> rBola<span class="token punctuation">;</span>
+
+    <span class="token comment">-- Calcular velocidad terminal</span>
+    <span class="token keyword keyword-SET">SET</span> vt <span class="token operator">=</span> SQRT<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> masa <span class="token operator">*</span> gravedad<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>dAire <span class="token operator">*</span> areaContacto <span class="token operator">*</span> cd<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Conversión a km/h</span>
+    <span class="token keyword keyword-SET">SET</span> vt <span class="token operator">=</span> <span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token punctuation">(</span>vt <span class="token operator">*</span> <span class="token number">3600</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> vt<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada a la  función</span>
+<span class="token comment">-- Salida: 67.30 km/h (roble eurpeo)</span>
+<span class="token keyword keyword-SELECT">SELECT</span> velocidadTerminal<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.77</span><span class="token punctuation">,</span> <span class="token number">1.225</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Salida: 214.21 km/h (acero)</span>
+<span class="token keyword keyword-SELECT">SELECT</span> velocidadTerminal<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7.8</span><span class="token punctuation">,</span> <span class="token number">1.225</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

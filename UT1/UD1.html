@@ -1,0 +1,1012 @@
+<!DOCTYPE html><html><head>
+      <title>Apuntes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAfIAAsAAAAADDAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kosY21hcAAAAYAAAADTAAACjtP6ytBnbHlmAAACVAAAAxgAAAQ4zRtvlGhlYWQAAAVsAAAALwAAADYRwZsnaGhlYQAABZwAAAAcAAAAJAeKAzxobXR4AAAFuAAAABIAAAA8OGQAAGxvY2EAAAXMAAAAIAAAACAG5AfwbWF4cAAABewAAAAfAAAAIAEfAERuYW1lAAAGDAAAAVcAAAKFkAhoC3Bvc3QAAAdkAAAAYgAAAK2vz7wkeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkPsQ4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVLy4xKzzX4chhrmK4QpQmBEkBwAZygyweJzFkr0NwjAQhZ+TEP6CRUfHBEwRUWaQTICyQbpMwRCskA5RUIONxG0RnnNpKAIV4qzPku/8c353ACYAYrIjCWCuMAh2ptf0/hiL3p/gyPUWa3osqlt0L1zu9r71z8dGrJRykFoauXQd932Lj5vhG+MjxGeYI8MKETObMpslf5EyP8tg+vHun5r539PvlvXzaVhRFVQDTPEWKVQR90KhnnC5Ek67vUKN4VuFasM/ldARj43CCkCsEjpJSoVVgRyU0GVSK6wUpFFCx8lFgX0BiXpRPQB4nE2TTWjcRhTH3xttpDhxN7uxPlp3u/FK7moRPixafRijNosxSw/LUsIwNcaEHPZggo/FmEKMCKWU4kNOOftQSlhE8alnH0Ix9BqWnHooPRrTQ0+mnu2bXTu2pPdGM9LM/6c3fwECTM4gBBMYQNqxzLrZAjqYSlqu2TAHZQA0/DQJH6FtzqGDnvbt4Ggwvzw/nL8EfH8kW0fsuRqhgWXZnY7M1picaUL7Du5BHeDzMIl83dAt016wH1qmvtSMo5R6YRJHTR//FXsff/nj/tc/5K9P5d+nP22+fFK5u7v3K39SW3y+OtDKO3L85vD09PD9z5X17a2N1g4tqk01RlqX7gyoEmnsWQtVr4rtZMmukEaFBZxzefkCn11cyKMLZgshRwgTYNoLNXCBz2ja7HvZG7hDpPSNfoo5vs0knK/9hb+rNpu+8kHPgk/Ao4kK3tWtTpSEtvkA9c+wE6UaUdwieNkaHg55tBEtRiEPw1s0+FtrtTcc9two2lhMknV7PZF/cs6+uUFTmpTGbEx7sQCPSLOttHS3GRltqp7SNzVSKzl6aWnZT/CX5k6/v9N3Hh8fHBwffJVjhrC6OgH5dkIt/tPsq+d/PD5Qz7G7efzq1THFjdZVPe/N6ulQ3JnDWSE5junsFsVIiFwL/htf1S5gJ3BfOcUxfHKLnzqpFpyfZ9cX+/5WB6a+Y0pHpzkNrYNVDwMsikK+y7WuLCRg/oFHkA8VT3rDg5ZnU6ktzzINymV0m74Xd5pfIGXyFeVEQSShkzqG7TBBa2OxVRKitLXv7h3uuftXnXq7lz2tZ/WnWa9dx9dCjDhHzmuVQATlmljr9dZErUydSo2Hbi/b1vXtrOeGCk2/8s3ZlO8+ueJT8BVlw5pGw2oYccdSiHHqx0RlabHqdNR9jAETl6PreJcPBnnfpTLnOQ8C3OV8AmQGzouV1iZdeb5SSIoVc8W8/kcDtksUH5FrU6/aqBqNWcMEzxG4DAQ14qRQhi9mWU0rzepKezbjfgCwQKxVYq5ajRgpRqy45CqwkJydcEkbTkvRz8P5/2ZpDTN4nGNgZGBgAOKb6v+/xvPbfGXgZmEAgeuB2kkI+v8bFgbmKiCXg4EJJAoAPyAKhQB4nGNgZGBg1vmvwxDDwgACQJKRARXwAwAzZQHQeJxjYQCCFAYGFgbSMQAcWACdAAAAAAAAAAwALgBgAIQAmADSAQgBIgE8AVABoAHeAfwCHHicY2BkYGDgZ7BgYGMAASYg5gJCBob/YD4DAA/hAWQAeJxlkbtuwkAURMc88gApQomUJoq0TdIQzEOpUDokKCNR0BuzBiO/tF6QSJcPyHflE9Klyyekz2CuG8cr7547M3d9JQO4xjccnJ57vid2cMHqxDWc40G4Tv1JuEF+Fm6ijRfhM+oz4Ra6eBVu4wZvvMFpXLIa40PYQQefwjVc4Uu4Tv1HuEH+FW7i1mkKn6Hj3Am3sHC6wm08Ou8tpSZGe1av1PKggjSxPd8zJtSGTuinyVGa6/Uu8kxZludCmzxMEzV0B6U004k25W35fj2yNlCBSWM1paujKFWZSbfat+7G2mzc7weiu34aczzFNYGBhgfLfcV6iQP3ACkSaj349AxXSN9IT0j16JepOb01doiKbNWt1ovippz6sVYYwsXgX2rGVFIkq7Pl2PNrI6qW6eOshj0xaSq9mpNEZIWs8LZUfOouNkVXxp/d5woqebeYIf4D2J1ywQB4nG3LOw6AIBAE0B384B+PAkgEa+QwNnYmHt+EpXSal5lkSBBnoP8oCFSo0aCFRIceA0ZMmLFAYSW88rmvtMUjG3RiQ9HvpfusM6zWNmtc5H/iPewha50tOt5PS/QBx2IeSwAA") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .definicion {
+  background-color: #e0c2cd;
+  border: 2px solid #969696;
+  padding: 15px;
+  padding-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .caso_estudio {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .ejercicio {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://programacioniesbalmis.github.io/Imagenes/BannersMoodle/banner.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: center;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+.markdown-preview.markdown-preview .galeria_imagenes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: row;
+  }
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#sistemas-lógicos-de-almacenamiento" class="md-toc-link"><p>Sistemas lógicos de almacenamiento</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#evolución-de-los-sistemas-de-almacenamiento-de-la-información" class="md-toc-link"><p>Evolución de los sistemas de almacenamiento de la información</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#fichero-manual" class="md-toc-link">
+            <p>Fichero manual</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sistemas-de-ficheros" class="md-toc-link">
+            <p>Sistemas de ficheros</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sistemas-de-bases-de-datos" class="md-toc-link">
+            <p>Sistemas de bases de datos</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#ficheros" class="md-toc-link"><p>Ficheros</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-1" class="md-toc-link">
+            <p>✅ Ejercicio 1</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-2" class="md-toc-link">
+            <p>✅ Ejercicio 2</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#bases-de-datos" class="md-toc-link">
+            <p>Bases de Datos</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#arquitectura-de-los-sgbd" class="md-toc-link"><p>Arquitectura de los SGBD</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#nivel-físico-o-interno" class="md-toc-link">
+            <p>Nivel Físico o Interno</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#nivel-lógico-o-conceptual" class="md-toc-link">
+            <p>Nivel Lógico o Conceptual</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#nivel-de-usuario-o-externo" class="md-toc-link">
+            <p>Nivel de Usuario o Externo</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#modelos-de-bases-de-datos" class="md-toc-link"><p>Modelos de Bases de Datos</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#modelo-jerárquico" class="md-toc-link">
+            <p>Modelo jerárquico</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#modelo-en-red" class="md-toc-link">
+            <p>Modelo en red</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#modelo-relacional" class="md-toc-link">
+            <p>Modelo relacional</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#modelo-orientado-a-objetos" class="md-toc-link">
+            <p>Modelo Orientado a Objetos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#modelo-de-bd-e-internet" class="md-toc-link">
+            <p>Modelo de BD e Internet</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#elementos-básicos-de-un-entorno-sgbd" class="md-toc-link">
+            <p>Elementos básicos de un entorno SGBD</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#evolución-de-los-sgbd" class="md-toc-link"><p>Evolución de los SGBD</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sgbd-monocapa" class="md-toc-link">
+            <p>SGBD monocapa</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sgbd-de-dos-capas-o-clienteservidor" class="md-toc-link">
+            <p>SGBD de dos capas o Cliente/Servidor</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sgbd-de-tres-capas-o-sgbd-con-servidor-de-aplicaciones" class="md-toc-link">
+            <p>SGBD de tres capas o SGBD con Servidor de Aplicaciones</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio" class="md-toc-link">
+            <p>✅ Ejercicio</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#sgbd-avanzados" class="md-toc-link">
+            <p>SGBD Avanzados</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#tipos-de-sgbd" class="md-toc-link"><p>Tipos de SGBD</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#características" class="md-toc-link">
+            <p>Características</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#elección-del-sgbd" class="md-toc-link">
+            <p>Elección del SGBD</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#funciones-que-debe-garantizar-un-sgbd" class="md-toc-link">
+            <p>Funciones que debe garantizar un SGBD</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#componentes" class="md-toc-link"><p>Componentes</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#lenguajes-de-los-sgbd" class="md-toc-link">
+            <p>Lenguajes de los SGBD</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#el-diccionario-de-datos" class="md-toc-link">
+            <p>El diccionario de datos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#seguridad-e-integridad-de-los-datos" class="md-toc-link">
+            <p>Seguridad e integridad de los datos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#usuarios-del-sgbd" class="md-toc-link">
+            <p>Usuarios del SGBD</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#herramientas-de-las-bd" class="md-toc-link">
+            <p>Herramientas de las BD</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 id="sistemas-lógicos-de-almacenamiento">Sistemas lógicos de almacenamiento </h2>
+<p>En cualquier actividad económica es necesario tomar decisiones.</p>
+<p>Para tomar decisiones acertadas se requiere manejar una buena información que se obtendrá a partir de los <strong>datos</strong>. Entendemos los datos como hechos aislados. Cuando los datos se organizan y se tratan se obtiene <strong>información</strong>.</p>
+<div class="definicion">
+<p>Los <strong>datos</strong> son caracteres o símbolos almacenados por un computador, de los que se deriva información después de su procesamiento.</p>
+</div> <!-- fin definición -->
+<div class="definicion">
+<p>La <strong>información</strong> es fruto de un análisis inteligente de los datos recabados en un determinado momento.</p>
+</div> <!-- fin definición -->
+<p>Para manejar los datos con eficacia utilizaremos una base de datos, que nos ayudará a almacenar y procesar esos datos, extraer la información necesaria y tomar decisiones.</p>
+<p>Para conseguir información valiosa es necesario que se den al menos dos premisas:</p>
+<ul>
+<li>Establecer una estructura coherente y bien diseñada donde almacenar los datos.</li>
+<li>Realizar las preguntas adecuadas recurriendo al análisis de los mismos para que arrojen los resultados que deseamos estudiar.</li>
+</ul>
+<div class="definicion">
+<p>Los <strong>programas o aplicaciones</strong> son colecciones de instrucciones que manipulan datos para obtener información.</p>
+</div> <!-- fin definición -->
+<p>Las bases de datos han evolucionado a partir de los sistemas de archivos que presentaban una serie de problemas y limitaciones que actualmente han sido superados.</p>
+<div class="definicion">
+<p>Una <strong>base de datos (BD, en inglés Database DB)</strong> es un conjunto estructurado de datos que representa entidades y sus interrelaciones.</p>
+</div> <!-- fin definición -->
+<p>Dentro de las bases de datos existen distintos modelos con sus ventajas e inconvenientes. Actualmente el modelo más extendido sigue siendo el <strong>modelo relacional</strong>.</p>
+<p>A la hora de organizar la información pueden surgir posibles problemas:</p>
+<ul>
+<li><strong>Redundancia</strong>: es la cantidad de datos repetidos en la información guardada. El objetivo es reducir todo lo posible la redundancia: con ello conseguimos dos cosas, que la información ocupe menos espacio y que sea lo más coherente posible.</li>
+<li><strong>Inconsistencia de los datos</strong>: se produce cuando un dato redundante es diferente en dos o más sitios. Es el gran problema de la redundancia.</li>
+<li><strong>Seguridad</strong>: Sólo determinadas personas deben poder acceder a algunas informaciones: datos personales, historial médico, historial policial, etc...</li>
+</ul>
+<h3 id="evolución-de-los-sistemas-de-almacenamiento-de-la-información">Evolución de los sistemas de almacenamiento de la información </h3>
+<h4 id="fichero-manual">Fichero manual </h4>
+<p>Tradicionalmente, las personas que se encargaban de guardar y hacer un seguimiento de la información, lo hacían mediante un sistema de ficheros manual, que se componía de un conjunto de carpetas etiquetadas cuyo contenido estaba relacionado y se guardaban en un armario o archivo.</p>
+<p>Este sistema podía ser útil cuando el volumen de datos manejado no era muy grande y se podía extraer la información que se necesitaba con cierta facilidad, pero  a medida que el archivo manual aumentaba y que la información que se necesitaba era más compleja fue necesario sustituir este sistema por otro informatizado.</p>
+<p>Por ejemplo,</p>
+<ul>
+<li>en una consulta médica se guardaban en carpetas las historias clínicas de los pacientes.</li>
+<li>en una empresa se guardaban en carpetas las facturas y albaranes tanto de clientes como de proveedores.</li>
+</ul>
+<h4 id="sistemas-de-ficheros">Sistemas de ficheros </h4>
+<p>Las primeras aplicaciones que manejaban los datos utilizando el ordenador se concentraban en tareas propias de oficina como gestión de entradas y salidas de pedidos, nóminas, facturación, etc.</p>
+<p>Los datos necesarios se guardaban en ficheros en el ordenador y estas aplicaciones accedían a ellos para obtener los informes que se solicitaban de cara a la toma de decisiones en la empresa.</p>
+<p>Teníamos por una parte los ficheros necesarios para contener los datos con una estructura determinada y por otro los programas de aplicación que accedían a estos datos para producir información.</p>
+<p>Hasta no hace mucho tiempo el lenguaje de programación <em>COBOL</em> era el más extendido para implementar aplicaciones de gestión tanto empresariales, como para los bancos, etc; por su fiabilidad para trabajar con distintos tipos de ficheros.</p>
+<h4 id="sistemas-de-bases-de-datos">Sistemas de bases de datos </h4>
+<p>A finales de los años 60 surgen las bases de datos. En una base de datos se almacenan todos los datos que necesita la empresa y los programas que utilicen esos datos no se tienen que preocupar del almacenamiento físico de los mismos. Cualquier cambio en la estructura de los datos no afectará a los programas de aplicación que los utilicen.</p>
+<div class="definicion">
+<p>Una <strong>base de datos</strong> es un conjunto de datos relacionados entre sí, organizados y estructurados, con información referente a algo.</p>
+</div> <!-- fin definición -->
+<p>Podremos utilizar una base de datos para cosas tan sencillas como mantener un registro de todos los vídeos de nuestras películas, nuestra biblioteca personal o la música que tenemos almacenada o tan complicadas como llevar toda la gestión de nuestra empresa.</p>
+<p>Hoy en día las bases de datos son tratadas usando sistemas gestores de bases de datos que proporcionan una serie de programas y utilidades que acceden y gestionan los datos.</p>
+<div class="definicion">
+<p>Un <strong>SGBD (Sistema Gestor de Bases de Datos, en inglés Database Management System - DBMS)</strong> consiste en una colección de datos estructurados, organizados y relacionados entre sí, junto con un software que facilita el acceso y control de esos datos.</p>
+</div> <!-- fin definición -->
+<p>Entre sus funciones principales destacan:</p>
+<ul>
+<li><strong>Permitir consultas</strong>. Disponen de un lenguaje para poder realizar consultas no predefinidas y complejas.</li>
+<li><strong>Control de redundancia</strong>. Se establecen una serie de condiciones para que los datos no estén repetidos de forma descontrolada, de modo que su mantenimiento sea más fácil y favorecer la consistencia de los mismos.</li>
+<li><strong>Restricción de acceso y control de la seguridad</strong>. Se trata de garantizar que sólo las personas autorizadas puedan acceder a los datos que les correspondan.</li>
+<li><strong>Garantizar la integridad</strong>. Controla que los datos almacenados sean coherentes con otros datos con los que guarde relación.</li>
+<li><strong>Respaldo y recuperación de datos</strong>. Permite realizar copias de seguridad de la base de datos y restablecerlas en caso de necesidad.</li>
+<li><strong>Control de accesos concurrentes</strong>. Gestiona que varios usuarios puedan acceder al tiempo a los mismos datos de forma segura. Para controlar el control de accesos concurrentes, los SGBD utilizan transacciones.</li>
+</ul>
+<div class="definicion">
+<p>Una <strong>transacción</strong> en un SGBD, es un conjunto de órdenes que se ejecutan formando una unidad de trabajo, es decir, en forma indivisible o atómica.</p>
+</div> <!-- fin definición -->
+<p>Los SGBD garantizan que las transacciones nunca se ejecuten de forma parcial, es decir, que o se realizan completamente o no se realizan.</p>
+<h2 id="ficheros">Ficheros </h2>
+<p>Para almacenar la información de modo permanente se utilizan <strong>dispositivos de almacenamiento</strong> masivo denominados memoria secundaria, ya que los datos guardados en la memoria principal desaparecen al desconectar el ordenador. La información contenida en los dispositivos de almacenamiento se estructura en unidades denominadas <strong>ficheros o archivos (en inglés “file”)</strong>.</p>
+<p>Para entender mejor el funcionamiento del sistema de ficheros empezaremos por conocer la terminología básica con el fichero de clientes de una empresa:</p>
+<p><strong><mark>Tabla</mark></strong></p>
+<div class="definicion">
+<p><strong>Datos</strong>: son los hechos, o aspectos que necesitamos almacenar para obtener, a partir de ellos, alguna información. Inicialmente los datos cuando no están organizados de forma lógica no tienen mucho significado.</p>
+</div> <!-- fin definición -->
+<p>Los datos personales de los clientes recogidos sin tratar serían los datos.</p>
+<div class="definicion">
+<p><strong>Campo</strong>: Es un carácter o conjunto de carácteres que tienen significado específico. Se utiliza para definir y guardar datos. Es la mínima unidad de información creada con sentido en sí misma.</p>
+</div> <!-- fin definición -->
+<p>Definiríamos un campo para guardar el nombre, en otro campo para el teléfono, etc.</p>
+<div class="definicion">
+<p><strong>Registro</strong>: Es un conjunto de campos lógicamente relacionados que describen una persona, lugar o cosa. Es también la unidad de tratamiento de los ficheros de datos.</p>
+</div> <!-- fin definición -->
+<p>Un registro lo formarían todos los datos relativos a un cliente: su nombre, sus apellidos, su teléfono y su dirección.</p>
+<div class="definicion">
+<p><strong>Fichero</strong>: Es un conjunto de registros relacionados.</p>
+</div> <!-- fin definición -->
+<p>El fichero estaría formado por los datos de todos los clientes.</p>
+<p>Los <strong>dispositivos de almacenamiento</strong> masivo según la forma de acceder a la información se clasifican en:</p>
+<ul>
+<li><strong>Dispositivos secuenciales</strong>: la información se guarda en posiciones consecutivas, de forma que para acceder a un dato hay que recorrer los datos anteriores. Por ejemplo la cinta magnética.</li>
+<li><strong>Dispositivos direccionables</strong>: permiten el acceso directo a los datos. En estos dispositivos el espacio destinado a almacenamiento está dividido en segmentos direccionables de forma individual. Por ejemplo el disco duro.</li>
+</ul>
+<p>Los ficheros que almacenan datos necesitan disponer de <strong>acceso a un registro</strong>, es decir, disponer de un procedimiento para seleccionarlo. Este acceso está condicionado por el tipo de soporte en el que se encuentre almacenada la información. Los tipos de acceso son:</p>
+<ul>
+<li><strong>Secuencial</strong>: los registros se leen uno detrás de otro desde el principio del fichero hasta localizar el registro buscado o hasta el final del fichero.</li>
+<li><strong>Directo</strong>: permite seleccionar a un registro sin tener que leer los anteriores, accediendo directamente a él mediante su clave.</li>
+<li><strong>Indexado</strong>: para seleccionar un registro consultamos previamente de forma secuencial en una tabla que contiene la clave más alta y la dirección de comienzo de cada bloque de registros. Una vez localizado se utiliza el acceso directo a ese bloque de registros y, dentro del bloque, la lectura secuencial hasta localizarlo.</li>
+<li><strong>Dinámico</strong>: permite tanto el acceso directo como el indexado.</li>
+</ul>
+<p>Los dispositivos direccionables pueden almacenar cualquiera de los 4 sistemas de acceso, pero los dispositivos secuenciales sólo el secuencial.</p>
+<p><em><strong>Tipos de fichero y formatos</strong></em><br>
+Dependiendo de la información almacenada en un fichero, será de un tipo u otro según el contenido que almacena.</p>
+<p>Por ejemplo, tendremos ficheros de imágenes, de vídeos, de sonidos, de textos, de datos, etc.</p>
+<p>A la hora de almacenar un contenido en un fichero se dispone de diferentes formas de almacenar y codificar lo que definimos mediante formatos. Dependiendo del formato, se suele añadir una extensión a los nombres de los ficheros.</p>
+<p>Así tenemos extensiones de archivos como txt, doc, avi o mp3.</p>
+<p>Cada programa o aplicación suele trabajar con uno o varios tipos de formato.</p>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-1">✅ Ejercicio 1 </h3>
+<p><strong>Extensiones de archivos</strong><br>
+Busca en el ordenador 3 aplicaciones que conozcas y averigua un formato de ficheros que utilice.</p>
+</div> <!-- fin ejercicio -->
+en
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-2">✅ Ejercicio 2 </h3>
+<p><strong>LibreOffice Calc</strong><br>
+Abre una hoja de cálculo con una sóla hoja denominada provincias y escribe en dos columnas el número identificador del INE y la denominación de las provincias españolas.<br>
+Guardar el resultado con el nombre <em>gbd-ejer-2-nombrealumno</em> y comprobar la extensión que utiliza por defecto.<br>
+Comprobar que se puede ordenar, buscar contenido y filtrar registros</p>
+</div> <!-- fin ejercicio -->
+<h2 id="bases-de-datos">Bases de Datos </h2>
+<p>Los problemas inherentes a los sistemas de ficheros como almacenamiento de datos pretenden eliminarse con la aparición de las bases de datos en los años 60.</p>
+<p>Las ventajas que aportan las bases de datos sobre los sistemas de ficheros son:</p>
+<ul>
+<li><strong>Control sobre la redundancia de datos</strong>. En los sistemas de bases de datos todos estos ficheros están integrados, por lo que no se almacenan varias copias de los mismos datos.</li>
+<li><strong>Consistencia de datos</strong>. Eliminando o controlando las redundancias de datos se reduce en gran medida el riesgo de que haya inconsistencias. Si un dato está almacenado una sola vez, cualquier actualización se debe realizar sólo una vez, y está disponible para todos los usuarios inmediatamente.</li>
+<li><strong>Más información sobre la misma cantidad de datos</strong>. Al estar todos los datos integrados, se puede extraer información adicional sobre los mismos.</li>
+<li><strong>Compartición de datos</strong>. En los sistemas de bases de datos, la base de datos pertenece a la empresa y puede ser compartida por todos los usuarios que estén autorizados. Además, las nuevas aplicaciones que se vayan creando pueden utilizar los datos de la base de datos existente.</li>
+<li>Se simplifica el esfuerzo de <strong>programación y mantenimiento de los programas</strong>.</li>
+<li><strong>Mantenimiento de estándares</strong>. Gracias a la integración es más fácil respetar los estándares necesarios, tanto los establecidos a nivel de la empresa como los nacionales e internacionales.</li>
+</ul>
+<p>Además, como se ha comentado anteriormente, un Sistema Gestor de Bases de Datos(SGBD) contiene una aplicación que permite a los usuarios definir, crear y mantener la Base de datos.</p>
+<p>Para que este sistema sea efectivo debe cumplir:</p>
+<ul>
+<li><strong>Los datos deben estar compartidos</strong> entre distintas personas, entre distintas localidades geográficas, etc.</li>
+<li><strong>El uso de los datos debe estar controlado</strong>. El control lo facilita el SGBD y lo realizan los administradores.</li>
+<li><strong>Los datos se integran de forma lógica</strong>, eliminando las redundancias y manteniendo la consistencia. La estructura lógica hace que se pueda mantener la consistencia entre muchos ficheros diferentes.</li>
+</ul>
+<h2 id="arquitectura-de-los-sgbd">Arquitectura de los SGBD </h2>
+<p>La <strong>arquitectura ANSI/X3/SPARC establece tres niveles</strong> de abstracción que todo SGBD debe cumplir. Los niveles establecen distintos grados de abstracción sobre el mismo conjunto de datos. Estos 3 niveles de abstracción, desde el más cercano a la máquina hasta el más cercano al usuario final, son :</p>
+<h3 id="nivel-físico-o-interno">Nivel Físico o Interno </h3>
+<p>Describe como se almacenan físicamente las estructuras de datos en el ordenador, es decir la estructura física de la base de datos. Este esquema especifica: los archivos que contienen la información, su organización, los métodos de acceso a los registros, los tipos de registros, la longitud, los campos que los componen, las rutas de acceso, etc.</p>
+<p>La descripción del nivel físico se realiza mediante un <strong>esquema interno</strong>, que es un conjunto de definiciones y reglas que permite definir las tablas y cómo se relacionan entre sí.</p>
+<p>A este nivel se describen los datos desde el punto de vista de la máquina que los soporta. Los usuarios que trabajan a este nivel son los diseñadores de la base de datos o los Administradores. Ningún usuario como tal tiene que ver con esta vista.</p>
+<p><strong><mark>foto</mark></strong></p>
+<h3 id="nivel-lógico-o-conceptual">Nivel Lógico o Conceptual </h3>
+<p>Describe la organización de los datos en la base de datos y las relaciones existentes entre ellos.</p>
+<p>La descripción de este nivel se realiza mediante un esquema conceptual, que permite definir las entidades, los atributos y sus propiedades, las relaciones, operaciones de los usuarios y las restricciones y reglas de validación.</p>
+<p><strong><mark>foto-esquema</mark></strong></p>
+<p>Esto implica hacer un análisis de las necesidades de información de los usuarios y definir las clases de datos para satisfacer esas necesidades.</p>
+<p>Este nivel se ocupa de la estructura organizacional de los datos sin ocuparse de las estructuras físicas de almacenamiento. A este nivel los usuarios que intervienen son los programadores, encargados de crear las estructuras lógicas necesarias para guardar la información.</p>
+<h3 id="nivel-de-usuario-o-externo">Nivel de Usuario o Externo </h3>
+<p>Describe la base de datos como es percibida por los usuarios. Para los usuarios, las tablas y sus registros existen físicamente. Cada usuario verá una base de datos (esquema externo) distinto según sea el nivel de acceso que se le haya concedido, ya que tendrá acceso a aquéllos datos que necesite, a las relaciones que emplee y las restricciones de uso que se le hayan definido.</p>
+<p><strong><mark>foto-esquema</mark></strong></p>
+<p>Los objetos a los que puede acceder un usuario o grupo de usuarios forman su nivel externo: tablas, vistas, formularios, informes, etc. Es decir, el nivel externo es la percepción de la base de datos por el usuario, de modo que hay tantos niveles externos distintos como grupos de usuarios haya en la base de datos.</p>
+<p>A los usuarios cuyos conocimientos de informática no tienen por qué ser grandes hay que ocultarles la complejidad interna de las bases de datos, de modo que les sea transparente.</p>
+<p>Al esquema externo también se le llama vista. A este nivel acceden dos tipos de usuarios:</p>
+<ul>
+<li>Los que acceden a su propio esquema externo y desde él realizan las consultas y acciones que deseen.</li>
+<li>Los usuarios finales que acceden a la base de datos desde sistemas de menús y transacciones predefinidas. Este grupo sólo realiza lecturas o adiciones de datos, poseyendo un esquema externo muy limitado.</li>
+</ul>
+<blockquote>
+<p>📣 <strong>Resumen</strong><br>
+<em><strong>Nivel Físico o Interno</strong></em></p>
+<ul>
+<li>Acceden los Administradores de Sistemas o Diseñadores.</li>
+<li>Es el nivel más bajo de abstracción y en el que existe realmente la base de datos. En él se describen como se almacenan los datos y la estructura de los mismos, para lo que se emplea el Diccionario de Datos o esquema interno.</li>
+<li>Se encuentra en el Servidor de Bases de Datos.</li>
+</ul>
+<p><em><strong>Nivel Lógico o Conceptual</strong></em></p>
+<ul>
+<li>Acceden los Administradores de las Bases de Datos.</li>
+<li>En él se describe cuáles son los datos que se almacenan y qué relaciones se establecen entre ellos, representando de forma completa la base de datos con estructuras simples.</li>
+<li>Se encuentra en el Servidor de Bases de Datos.</li>
+</ul>
+<p><em><strong>Nivel de Usuario o Externo</strong></em></p>
+<ul>
+<li>Acceden los Usuarios de las Bases de Datos.</li>
+<li>Está formado por el conjunto de las vistas de usuario, siendo una vista de usuario la fracción de la base de datos que ve un usuario en concreto. En este nivel donde trabajan los programas de aplicación de usuario.</li>
+<li>Se encuentra en los programas o aplicaciones de los Equipos Cliente (pueden ser remotos).</li>
+</ul>
+</blockquote>
+<p>En una base de datos determinada habrá un único esquema interno, un único esquema conceptual, pero habrá varios esquemas en el nivel externo.</p>
+<p>Es necesario establecer unas reglas para poder pasar del nivel físico al lógico y del lógico al externo. Estas reglas se denominan correspondencias entre niveles.</p>
+<p>Lo que se persigue estableciendo esta estructura es la independencia entre el sistema y los datos, para ocultar al usuario toda la complejidad del sistema y facilitarle la interacción con el mismo. La independencia de los datos puede darse a dos niveles:</p>
+<ul>
+<li><strong>Independencia física</strong>: se da cuando las modificaciones en el nivel interno no afectan al nivel conceptual. Por ejemplo, se pueden reorganizar los archivos físicos o añadir nuevos archivos para mejorar el rendimiento y no se verá afectado el nivel conceptual.</li>
+<li><strong>Independencia lógica</strong>: se da cuando las modificaciones en el nivel lógico no afectan al nivel externo. Por ejemplo, si se elimina un campo de una tabla al que un usuario no tiene acceso, no es necesario modificar el programa o aplicación del nivel externo.</li>
+</ul>
+<h2 id="modelos-de-bases-de-datos">Modelos de Bases de Datos </h2>
+<p>Llamamos modelo a un instrumento que se aplica a una parcela del mundo real para obtener una estructura de datos a la que denominamos esquema.</p>
+<p>Modelar consiste en definir un mundo abstracto de forma que las conclusiones que se puedan sacar de él coincidan con las manifestaciones del mundo real.</p>
+<div class="definicion">
+<p>Un <strong>modelo de datos</strong> es un conjunto de herramientas conceptuales que permiten describir los datos, sus relaciones y las reglas de integridad que deben cumplir.</p>
+</div> <!-- fin definición -->
+<p><strong><mark>foto-esquema</mark></strong></p>
+<p>Representación gráfica del esquema de una base de datos en la ventana relaciones de Microsoft Access</p>
+<p>Este esquema se especifica durante el diseño, y no es de esperar que se modifique a menudo. Sin embargo, los datos que se almacenan en la base de datos pueden cambiar con mucha frecuencia: se insertan datos, se actualizan, etc.</p>
+<p>Es muy importante que el esquema sea correcto y se debe intentar que se ajuste lo máximo posible a las necesidades detectadas del análisis.</p>
+<p>El modelado se puede realizar en varias fases. El primer modelado sería el conceptual o lógico y para ello, uno de los modelos más utilizados es el modelo entidad-relación.</p>
+<p>El <strong>modelo entidad-relación (ER)</strong> fue propuesto por Peter Chen en 1976 para la representación conceptual de los problemas del mundo real. Es un modelo muy extendido y potente para la representación de los datos. Se simboliza haciendo uso de grafos y de tablas.</p>
+<p>Se basa en una percepción del mundo real que consiste en una colección de objetos llamados entidades y las relaciones entre esos objetos. Cada entidad representa un objeto que se distingue de otros por tener un conjunto de atributos propio.</p>
+<div class="admonition example">
+<p class="admonition-title"><strong>Ejemplo de Modelo Entidad-Relación (ER)</strong></p>
+<p><mark>esquema E-R</mark><br>
+En este ejemplo tendríamos las <strong>entidades</strong> <strong>CLIENTES</strong> y <strong>VEHICULOS</strong> y la relación establecida entre esas dos entidades <strong>TIENEN</strong>.<br>
+Como <strong>atributos</strong> de la <strong>entidad</strong> CLIENTES tenemos: <strong><code>CodCliente</code></strong>, <strong><code>Nombre</code></strong>, <strong><code>Dirección</code></strong>, <strong><code>Población</code></strong> y <strong><code>Teléfono</code></strong>.<br>
+Los <strong>atributos</strong> de la <strong>entidad</strong> VEHICULOS son: <strong><code>Matricula</code></strong>, <strong><code>Marca</code></strong>, <strong><code>Modelo</code></strong>, <strong><code>Color</code></strong> y <strong><code>Fechamatriculación</code></strong>.<br>
+La <strong>relación</strong> TIENEN describe la asociación entre los datos de ambas entidades. Cuando la relación es 1:N (uno a muchos) significa que un cliente podrá tener muchos vehículos (más de uno); mientras que cada vehículo es de un solo cliente.<br>
+Profundizaremos más en las siguientes unidades didácticas.</p>
+</div>
+<p><strong>Evolución de los modelos de bases de datos</strong><br>
+Para realizar un esquema más cercano al diseño de la base de datos, se utilizan diferentes modelos de datos según sea el SGBD donde vayamos a implementarlo.</p>
+<p>En su evolución las bases de datos se han basado en 3 modelos de datos:</p>
+<ul>
+<li>Jerárquico</li>
+<li>En red</li>
+<li>Relacional</li>
+</ul>
+<p>Los primeros sistemas, introducidos en los años 60, se basaron en el modelo jerárquico que estructura todas las relaciones entre los datos como jerarquías. A finales de los 60 aparecieron los sistemas basados en el modelo en red. En estos dos modelos los datos se relacionaban con punteros físicos.</p>
+<p>En 1970, Codd publicó un artículo que abrió una nueva perspectiva para los sistemas de gestión de la información argumentando que los datos deberían relacionarse mediante interrelaciones naturales y lógicas. Los datos se representan como tablas denominadas relaciones y se les aplica el cálculo y el álgebra relacional. Se denominó modelo relacional y es el estándar mas empleado en la actualidad.</p>
+<p>En estos momentos las bases de datos evolucionan en dos direcciones fundamentalmente:</p>
+<ul>
+<li>el modelo de BD orientadas a objetos</li>
+<li>los modelos de BD e Internet que utilizan de plataformas cliente-servidor para bases de datos orientadas a Internet</li>
+</ul>
+<h3 id="modelo-jerárquico">Modelo jerárquico </h3>
+<p>Se le llama también modelo en árbol, ya que utiliza para su representación una estructura de tipo árbol invertido.</p>
+<p>Una base de datos jerárquica es un conjunto de registros lógicamente organizados con una estructura de árbol invertido. Dentro de la jerarquía el nivel superior se percibe como el <em>padre</em> de los registros situados debajo de él, de forma que:</p>
+<ul>
+<li>Cada padre puede tener muchos hijos</li>
+<li>Cada hijo sólo tiene un padre</li>
+</ul>
+<p>Las características principales son:</p>
+<ul>
+<li>Una colección de árboles forma una base de datos.</li>
+<li>A los registros se les denomina segmentos o nodos, que contienen atributos o campos</li>
+<li>Los nodos están organizados en niveles. Cada nodo contiene los campos comunes a los nodos hijos, vinculados a él. Al nodo más alto en la jerarquía o estructura de árbol se le denomina <em>raíz</em>.</li>
+<li><em>Padre</em> es un nodo vinculado a otros de nivel inferior. Un nodo no puede ser padre de sí mismo</li>
+<li><em>Hijos</em> son los nodos vinculados con otros de nivel superior. Todos los hijos de un padre están al mismo nivel. Todo nodo no raíz tiene un padre y todo nodo padre puede tener varios hijos.</li>
+<li>Las relaciones entre registros se representan mediante arcos o lazos.</li>
+<li>No es posible representar relaciones N:M entre registros, ni relaciones reflexivas entre ellos.</li>
+</ul>
+<p><mark>esquema modelo jerárquico</mark></p>
+<p>Algunos de sus inconvenientes son:</p>
+<ul>
+<li><strong>La ejecución es compleja</strong>, no en cuanto a las dependencias de los datos, pero sí obliga a tener conocimientos en cuanto a las características del almacenamiento físico.</li>
+<li><strong>Difícil de administrar</strong>, pues si se hace algún cambio en la ubicación de los registros habrá que modificar todas las aplicaciones que accedan a la base de datos</li>
+<li><strong>No tiene independencia estructural</strong>, puesto que la navegación por los registros se hace siguiendo una ruta de acceso (padre-hijo, de izquierda a derecha, etc) y si se hacen cambios en la estructura los programas no funcionarán.</li>
+<li><strong>Complejidad a la hora de programar aplicaciones</strong>, es necesario que tanto los programadores como los usuarios sepan cómo están distribuidos los datos para acceder a ellos.</li>
+</ul>
+<h3 id="modelo-en-red">Modelo en red </h3>
+<p>Es un modelo de datos propio de los sistemas comerciales de los años 70, que aún está vigente si no se piden demasiadas modificaciones al sistema.</p>
+<p>Fue creado para representar relaciones más complejas y eficientes que las del modelo jerárquico y así imponer un estándar de bases de datos que ayudara a los diseñadores y a los programadores.</p>
+<p>Características:</p>
+<ul>
+<li><strong>Agregado de datos</strong>. Es un conjunto de elementos a los que se les asigna un nombre</li>
+<li><strong>Registro</strong>. Es un conjunto de campos</li>
+<li>Cada campo contiene <strong>elementos</strong>.</li>
+<li>Se define <strong>elemento</strong> como la unidad más pequeña de información que es independiente y significativa en sí misma</li>
+<li>A una relación se le denomina <strong>conjunto</strong></li>
+<li>Cada conjunto de compone de al menos dos tipos de registro: propietario (registro padre) y miembro (registro hijo)</li>
+<li>Un conjunto es una relación 1:N entre propietario y miembro</li>
+</ul>
+<p><mark>esquema modelo red</mark></p>
+<p>Algunos de sus inconvenientes son:</p>
+<ul>
+<li><strong>Complejidad del sistema</strong>: el acceso a los datos se hace leyendo un registro cada vez, por tanto los programadores y los usuarios finales deben conocer las estructuras internas, por tanto no es fácil de utilizar.</li>
+<li><strong>Falta de independencia estructural</strong>: si se hacen cambios en la estructura de la base de datos, es necesario cambiar las aplicaciones. Aunque logra la independencia de los datos, no produce independencia estructural.</li>
+</ul>
+<h3 id="modelo-relacional">Modelo relacional </h3>
+<p>Fue desarrollado por Codd para IBM en los años 70, pero inicialmente los ordenadores carecían de prestaciones para poder ejecutarlo. Actualmente es el modelo más utilizado para modelar problemas reales y administrar datos dinámicamente.</p>
+<p>Su principal ventaja es que permite al usuario y al diseñador operar en un entorno que se percibe como un conjunto de tablas, mientras que los detalles físicos más complejos los maneja el sistema.</p>
+<p>Características:</p>
+<ul>
+<li>Este modelo representa los datos y las relaciones entre ellos como una colección de <strong>tablas</strong>.</li>
+<li>De manera simple, una relación representa una tabla que no es más que un conjunto de <strong>filas</strong>, cada fila es un conjunto de <strong>campos</strong> y cada campo representaun valor que describe el mundo real.</li>
+<li>Las tablas son independientes pero se relacionan mediante un vínculo común.</li>
+<li>Proporciona una redundancia y una inconsistencia mínima.</li>
+<li>Proporciona independencia de datos con las aplicaciones y con el dispositivo de almacenamiento.</li>
+</ul>
+<p><mark>esquemas modelo relacional</mark></p>
+<p>A continuación mostraremos algunas ventajas e inconvenientes del modelo de datos relacional.</p>
+<p>Ventajas:</p>
+<ul>
+<li><strong>Independencia estructural</strong>: los programadores, usuarios, diseñadores no necesitan conocer la ruta de acceso a los datos. Los cambios en la estructura de la base de datos no afectan a la capacidad de acceso a los datos.</li>
+<li><strong>Simplicidad conceptual</strong>: debido a que el sistema se encarga del almacenamiento físico de los datos, los diseñadores se centran en la representación lógica de la base de datos.</li>
+<li><strong>Facilidad para diseñar, administrar y utilizar</strong> la base de datos, debido a la independencia de los datos y la estructura.</li>
+<li>Capacidad para hacer <strong>consultas de forma rápida y sencilla</strong> (mediante el lenguaje <strong>SQL</strong>)</li>
+<li>Un SGBD relacional <strong>incluye</strong> elementos de <strong>software</strong> que realizan <strong>mas tareas y más complejas</strong> para los usuarios y los diseñadores.</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+<li>Requiere una <strong>elevada inversión en hardware y software</strong> para evitar que sea lento, aunque esto está cambiando gracias a la evolución de la capacidad del hardware y a las mejoras de los sistemas operativos.</li>
+<li>El <strong>diseño deficiente es bastante común</strong> debido a la facilidad de uso de esta herramienta para personas inexpertas. A medida que la base de datos crece, si el diseño es inapropiado, el sistema es más lento y se producen anomalías.</li>
+<li>Debido a la facilidad de uso, los <strong>usuarios</strong> finales <strong>a menudo crean subconjuntos de bases de datos</strong> que pueden producir datos con <strong>inconsistencia</strong>. Hay que recordar que sólo se produce inconsistencia cuando existe redundancia de datos, pues la inconsistencia se manifiesta cuando no todas las copias redundantes contienen la misma información.</li>
+</ul>
+<h3 id="modelo-orientado-a-objetos">Modelo Orientado a Objetos </h3>
+<p>Los modelos de bases de datos intentan representar cada vez con más fidelidad los problemas del mundo real que cada vez son más complejos. Uno de los modelos que se han desarrollado recientemente (años 90) es el modelo de bases de datos orientada a objetos.</p>
+<p>Se denomina así porque su estructura básica es un objeto, que recoge tanto datos como sus relaciones. Supone una forma diferente de definir y utilizar las entidades.</p>
+<div class="definicion">
+<p>Un <strong>objeto</strong> se describe como un conjunto de hechos, pero incluye también información sobre la relación que tienen los hechos dentro del objeto y con otros objetos; así como todas las operaciones que puedan ser realizadas en él.</p>
+</div> <!-- fin definición -->
+<div class="admonition example">
+<p class="admonition-title"><strong>Ejemplo de Modelo Orientado a Objetos (OO)</strong></p>
+<p>Consideremos un objeto que representan las deudas pendientes de nuestros clientes. Este objeto contiene dos atributos: el NIF del cliente y el saldo adeudado. Contiene además un método ya que si el saldo adeudado es menor de 300 Euros y no han transcurrido más de 3 meses no se le cobran intereses, pero si una de las dos condiciones no se cumple se le recargará un 5% de interés.<br>
+Supongamos que queremos modificar este recargo elevándolo a un 6%. En este modelo de datos no implicaría modificar los programas de aplicación, bastaría con modificar el método recargo.</p>
+</div>
+<p>El modelo de datos orientado a objetos está basado en los siguientes componentes:</p>
+<ul>
+<li>Los <strong>objetos</strong> del modelo: equivale a una entidad individual del modelo E-R.</li>
+<li>Los <strong>atributos</strong> que describen las propiedades de ese objeto.</li>
+<li>Los objetos que comparten características similares se agrupan en clases. Una <strong>clase</strong> es un conjunto de objetos similares con estructura (atributos) y comportamiento (métodos) compartidos. Se podría comparar a una entidad del modelo E-R pero se diferencian en que una clase contiene una serie de procedimientos llamados métodos.</li>
+<li>Un <strong>método</strong> representa una acción del mundo real. Por ejemplo: localizar el nombre de un cliente, cambiar el teléfono de un cliente o imprimir su dirección. Son equivalentes a los procedimientos en un lenguaje de programación. Definen el comportamiento de un objeto.</li>
+<li>Las clases de organizan en una <strong>jerarquía de clase</strong> que se parece a un árbol invertido donde cada clase tiene solo un padre. Por ejemplo la clase cliente y la clase proveedor comparten una clase: persona</li>
+<li>La <strong>herencia</strong> es la capacidad de un objeto de heredar los atributos y los métodos de los objetos que están sobre él en una jerarquía de clase. Por ejemplo las clases cliente y proveedor, como subclases de la clase persona heredarán los atributos de la clase persona.</li>
+</ul>
+<p><mark>esquema clase</mark></p>
+<p>Algunos de los inconvenientes son:</p>
+<ul>
+<li>No existen estándares de modelo de datos orientados a objetos. Sobretodo de método de acceso a datos estándar.</li>
+<li>El método de acceso se parece al jerárquico y en red.</li>
+<li>El modelado y ejecución es difícil debido a que tienen mucho contenido semántico y no hay estándares.</li>
+<li>La complejidad y elevados requerimientos del sistema hace que las transacciones sean lentas.</li>
+</ul>
+<h3 id="modelo-de-bd-e-internet">Modelo de BD e Internet </h3>
+<p>La evolución de los sistemas de bases de datos ha ido siempre marcada por la búsqueda de nuevas herramientas para reflejar el mundo real lo mejor posible.</p>
+<p>Cada modelo ha ido sustituyendo al anterior intentando eliminar sus defectos: el modelo de red sustituyó al modelo jerárquico porque podía representar relaciones M:N (muchos a muchos). El modelo relacional reemplazó al modelo de red porque permite representar la realidad de una forma más simple, ofrece mayor independencia de los datos y admite consultas utilizando un lenguaje relativamente fácil.</p>
+<p>A medida que las aplicaciones se van volviendo más complejas aparece el modelo de datos orientado a objetos y el modelo relacional ampliado que incluye muchas características del modelo orientado a objetos. Ambos intentan recoger la mayor información semántica posible, pero desde orientaciones distintas: el modelo orientado a objetos se enfoca más a aplicaciones de ingeniería y científicas muy especializadas y el modelo relacional ampliado se dirige más a aplicaciones de negocios. Sin embargo el mercado de las bases de datos ha cambiado sustancialmente con el creciente desarrollo del uso de internet en las transacciones comerciales. Ahora los esfuerzos se dirigen a la creación y desarrollo de bases de datos que se comuniquen fácilmente por internet. Algunas de ellas son denominadas noSQL (Not Only SQL).</p>
+<p>Con estos modelos de datos se busca:</p>
+<ul>
+<li>Acceso flexible a internet.</li>
+<li>Que se conecten fácilmente con distintas estructuras de datos</li>
+<li>Que el diseño del modelo conceptual sea sencillo.</li>
+<li>Que disponga de herramientas de diseño, consulta, desarrollo de aplicaciones e interfaz gráfica potentes y que faciliten el trabajo.</li>
+</ul>
+<h2 id="elementos-básicos-de-un-entorno-sgbd">Elementos básicos de un entorno SGBD </h2>
+<p>Los elementos principales de los SGBD son las tablas que contienen campos organizados en registros.</p>
+<div class="definicion">
+<p><strong>Tabla</strong> es un conjunto de registros de la misma estructura referentes a una misma entidad.</p>
+</div> <!-- fin definición -->
+<p>Por ejemplo, tenemos una tabla denominada CLIENTES en una base de datos donde se almacenan los siguientes datos de cada cliente: NIF, NOMBRE, FECHA DE NACIMIENTO, ALTURA, DIRECCIÓN, TELÉFONO, EMAIL.</p>
+<p>Cada campo almacena un dato y para ello debemos indicarle al SGBD de qué tipo es.</p>
+<div class="definicion">
+<p>El <strong>tipo de dato</strong> indica la naturaleza del campo. Números, Textos o Fechas son algunos tipos de datos disponibles en los SGBD.</p>
+</div> <!-- fin definición -->
+<p>Por lo tanto, se puede tener datos <strong>numéricos</strong>, con los que se pueden realizar cálculos aritméticos (sumas, restas, multiplicaciones…), <strong>cadenas de caracteres</strong> que contienen caracteres alfabéticos y dígitos numéricos, o <strong>fechas</strong> que contienen tres datos numéricos, representando el día, el mes y el año de esa fecha.</p>
+<p>Para poder identificar un registro en una tabla necesitamos un campo que no se repita.</p>
+<div class="definicion">
+<p>El <strong>campo clave</strong> es un campo especial que identifica de forma única a cada registro.</p>
+</div> <!-- fin definición -->
+<p>En nuestro ejemplo anterior, el NIF es único para cada persona, y por tanto será el campo clave de la tabla CLIENTES.</p>
+<p>Cuando ordenamos, buscamos o filtramos registros de una tabla necesitamos procesar una gran cantidad de datos.</p>
+<div class="definicion">
+<p>El <strong>índice</strong> es una estructura que almacena uno o varios campos de una tabla organizándolos para hacer más fácil encontrar y ordenar los registros de esa tabla.</p>
+</div> <!-- fin definición -->
+<p>El índice tiene un funcionamiento similar al índice de un libro. Cuando deseamos encontrar un registro con la información de un campo indexado, el índice conoce su posición en la base de datos. Por lo tanto, para buscar un elemento que esté indexado, solo hay que buscar primero en el índice dicho elemento y una vez encontrado, devolver el registro que se encuentre en la posición marcada por el índice.</p>
+<p>Para facilitar el procesamiento de la información, los SGBD disponen también de la posibilidad de almacenar:</p>
+<ul>
+<li><strong>Consultas</strong>: instrucciones que nos permiten realizar peticiones a una base de datos sobre registros almacenados en una o varias tablas.</li>
+<li><strong>Informes</strong>: listados ordenados y clasificados de campos y registros seleccionados para que sean fáciles de entender.</li>
+<li><strong>Vistas</strong>: transformaciones, completas o parciales, de una o varias tablas para obtener una nueva tabla como combinación de sus registros.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title"><strong>Ejemplo Consultas y Vistas</strong></p>
+<p>En un SGBD donde almacenamos provincias y municipios:</p>
+<ul>
+<li>una consulta podría ser conocer cuál es la provincia con más municipios</li>
+<li>una vista podría ser los municipios de la provincia de Alicante</li>
+</ul>
+</div>
+<p>Cuando se procesan datos de un SGBD, generalmente necesitamos realizar operaciones sobre registros. Para ello los SGBD disponen de:</p>
+<ul>
+<li><strong>Guiones o scripts</strong>: Son un conjunto de instrucciones, que ejecutadas de forma ordenada, realizan operaciones avanzadas de mantenimiento de los datos almacenados en la base de datos.</li>
+<li><strong>Procedimientos y Funciones</strong>: Son tipos especiales de scripts que están almacenados en la base de datos y que forman parte de su esquema.</li>
+<li><strong>Disparadores o Triggers</strong>: Son tipos especiales de scripts que están almacenados en la base de datos y que se ejecutan cuando se produce una acción concreta con un registro.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title"><strong>Ejemplo Guiones o Scripts</strong></p>
+<p>En un SGBD de tiendas necesitamos realizar un cierre de caja con las ventas de cada día. Para ello se ha generado un <strong>script</strong> que ejecutaremos al cerrar la tienda cada día y que calculará el importe vendido para almacenar un registro en una tabla denominada <em>arqueo_de_caja</em> con la fecha y el importe en euros.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title"><strong>Disparadores o Triggers</strong></p>
+<p>En un SGBD de tiendas necesitamos que cada vez que se grabe una venta de un artículo se disminuya las existencias (stock) de ese artículo. Para ello se ha generado un <strong>trigger</strong> que actualizará el stock de un artículo restando la cantidad vendida al grabar el albarán.</p>
+</div>
+<h2 id="evolución-de-los-sgbd">Evolución de los SGBD </h2>
+<h3 id="sgbd-monocapa">SGBD monocapa </h3>
+<p>Los primeros <strong>SGBD eran monocapa</strong>, pensados para dar servicio a bases de datos pequeñas y con un número de usuarios muy reducido, como puede ser un usuario particular en su domicilio o pequeños negocios, en los que el mantenimiento de un servidor resulta poco práctico, además de caro.</p>
+<p>Es en estos casos cuando más se suelen emplear los sistemas gestores que incorporan las suites ofimáticas, como <strong>MS Office Access</strong>, <strong><a href="http://OpenOffice.org">OpenOffice.org</a> Base</strong> o <strong>LibreOffice Base</strong>; pero mientras que Base viene por defecto dentro del paquete de <a href="http://OpenOffice.org">OpenOffice.org</a> o LibreOffice, no sucede lo mismo con Access que no viene en todas las distribuciones de Microsoft Office.</p>
+<p>Estos sistemas pueden ejecutarse desde otra máquina en la que no están instalados accediendo a un recurso compartido en red, aunque lo más habitual es hacerlo en la propia máquina en la que están instalados.</p>
+<p>La gran ventaja de estos sistemas es que pueden interactuar con los demás programas del paquete ofimático, lo que permite acceder a los datos almacenados tanto desde el procesador de texto como la hoja de cálculo, pudiéndose además crear macros que permiten automatizar tareas repetitivas. Además incorporan asistentes que facilitan la creación de distintos tipos de formularios con facilidad.</p>
+<p>Hoy en día emplean motores bastante potentes que, en muchas ocasiones, no tienen mucho que envidiar a los de SGBD más grandes.</p>
+<h3 id="sgbd-de-dos-capas-o-clienteservidor">SGBD de dos capas o Cliente/Servidor </h3>
+<p>La situación más habitual cuando accedes a una base de datos es que no estés físicamente sentando ante la máquina que aloja el SGBD, si no que te conectas a él através de una red informática.</p>
+<p>En esta arquitectura denominada <strong>Cliente/Servidor</strong> podemos distinguir entre máquina cliente, donde trabaja el usuario que se conecta a la base de datos, y máquina servidor, aquella en la que se aloja y ejecuta el sistema de bases de datos. En una <strong>arquitectura de dos capas</strong> la aplicación que ejecuta el usuario reside en la máquina cliente y llama a la base de datos alojada en el servidor.</p>
+<p>Con esta arquitectura se proporciona cierta independencia entre los programas y las bases de datos.</p>
+<p>Para la interconexión entre la máquina cliente y la máquina servidor, los clientes pueden conectar con los interfaces de conexión facilitados por el propio SGBD o bien usar estándares de conexión como <strong>ODBC</strong> y <strong>JDBC</strong>.</p>
+<p>La ventaja de usar los estándares es la facilidad para adaptar la aplicación de un SGBD a otro. El inconveniente es que disminuye la velocidad de ejecución.</p>
+<p>Algunos ejemplos de SGBD que pueden trabajar con arquitectura cliente/servidor son <strong>Oracle</strong>, <strong>SQL Server</strong>, <strong>MySQL</strong>, <strong>Postgres</strong> y <strong>Firebird</strong>. Cada uno de ellos dispone de un puerto por defecto donde escucha el SGBD:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">SGBD</th>
+<th style="text-align:left">Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Oracle</td>
+<td style="text-align:left">1521</td>
+</tr>
+<tr>
+<td style="text-align:left">SQL Server</td>
+<td style="text-align:left">1433</td>
+</tr>
+<tr>
+<td style="text-align:left">MySQL</td>
+<td style="text-align:left">3306</td>
+</tr>
+<tr>
+<td style="text-align:left">Postgres</td>
+<td style="text-align:left">5432</td>
+</tr>
+<tr>
+<td style="text-align:left">Firebird</td>
+<td style="text-align:left">3050</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sgbd-de-tres-capas-o-sgbd-con-servidor-de-aplicaciones">SGBD de tres capas o SGBD con Servidor de Aplicaciones </h3>
+<p>Sin embargo en la arquitectura de tres capas la máquina cliente no necesita hacer ninguna llamada a la base de datos.</p>
+<p>Se encapsulan las aplicaciones en el servidor, creando un servidor de aplicaciones, y se incorpora una interfaz en el cliente que se comunica con dicho servidor siendo este el que accede a la base de datos en el servidor. Esta interfaz en el cliente suele ser una interfaz de formularios a la que se accede generalmente mediante un navegador.</p>
+<p>Los programas o aplicaciones se incorporan al servidor de aplicaciones en la arquitectura de tres capas, en lugar de estar distribuyéndose con la aplicación a todos los clientes en los que se instale esta, tal y como sucede con la arquitectura de doscapas.</p>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio">✅ Ejercicio </h3>
+<p><strong>Instalar XAMPP portable</strong><br>
+Instalaremos XAMPP para disponer de un SGBD MySQL portable.<br>
+Para poder trabajar con el debemos:</p>
+<ul>
+<li>Ejecutar <strong><code>setup_xampp.bat</code></strong> para que configure la unidad donde lo ejecutamos.</li>
+<li>Ejecutar xampp-control.exe donde podremos pulsar en Start o Stop para inciar o detener el SGBDC.</li>
+</ul>
+<p>Comprobar con el comando <strong><code>netstat -a</code></strong> que el servicio está en marcha o parado.<br>
+El profesor explicará brevemente el funcionamiento básico con un ejemplo.<br>
+Se puede descargar de: <a href="https://www.apachefriends.org/es/download.html">https://www.apachefriends.org/es/download.html</a></p>
+</div> <!-- fin ejercicio -->
+<h3 id="sgbd-avanzados">SGBD Avanzados </h3>
+<p>Para poder atender las necesidades crecientes que se crean en grandes empresas, los SGBD incorporan otras características como:</p>
+<ul>
+<li><strong>SGBD Cliente/Multiservidor</strong>: cuando tenemos una gran cantidad de accesos y usuarios simultáneos es posible que un sólo ordenador servidor no pueda procesar en un tiempo razonable todas las solicitudes. En estos casos el SGBD elegido debe tener la capacidad de funcionar con varios servidores que accedan a la misma BD de forma transparente para el usuario.</li>
+<li><strong>SGBD con Replicación</strong>: donde dos sistemas completos actualizan sus datos de forma sincronizada permitiendo disponer de dos sistemas exactamente iguales cuando estánc ompletamente sincronizados.</li>
+<li><strong>SGBD con Clúster</strong>: donde las tablas de la BD se almacenan utilizando un motor con diferentes nodos de almacenamiento. La manera de acceder a los datos almacenados en el clúster es a través de cualquiera de los nodos MySQL. Los nodos de datos funcionan utilizando un esquema de almacenamiento en espejo total o parcial, permitiendo soportar la caída de nodos individuales de datos dentro de clúster sin que se pare el sistema. La única consecuencia que tendría un suceso como la caída de un nodo de datos, es que un pequeño conjunto de actualizaciones relacionadas con el nodo caído serán abortadas.</li>
+<li><strong>SGBD Distribuidos</strong>: donde la base de datos real y el propio software del SGBD pueden estar distribuidos en varios sitios conectados por una red por necesidades geográficas. El proceso distribuido exige la presencia de algún software que se encargue de gestionar las comunicaciones entre las distintas máquinas que participan en el proceso. Muchos SGBD distribuidos emplean una arquitectura cliente-servidor.</li>
+</ul>
+<p><mark>esquemas SGBD</mark></p>
+<h2 id="tipos-de-sgbd">Tipos de SGBD </h2>
+<p>Los tipos de SGBD vienen dados en función de características muy diversas y que no guardan una relación directa las unas con las otras.</p>
+<h3 id="características">Características </h3>
+<p>Entre las distintas categorías posibles destacan las que citamos a continuación:</p>
+<ul>
+<li><strong>Modelo lógico empleado</strong>: Define la estructura de datos que se va a implementar. Según este criterio tenemos las siguientes clases:
+<ul>
+<li>Modelo Jerárquico.</li>
+<li>Modelo en Red.</li>
+<li>Modelo Relacional.</li>
+<li>Modelo Orientado a Objetos.</li>
+<li>Modelo de BD e Internet.</li>
+</ul>
+</li>
+<li><strong>Número de usuarios concurrentes</strong>: Según la cantidad de usuarios que pueden estar conectados al tiempo, los clasificamos en:
+<ul>
+<li>Monousuario.</li>
+<li>Multiusuario.</li>
+</ul>
+</li>
+<li><strong>Precio de la licencia</strong>:
+<ul>
+<li>Gratuitos.</li>
+<li>De pago o comerciales.</li>
+</ul>
+</li>
+<li><strong>Número de plataformas soportadas</strong>: Hace referencia a la cantidad de sistemas operativos en los que se puede instalar.
+<ul>
+<li>Monoplataforma.</li>
+<li>Multiplataforma.</li>
+</ul>
+</li>
+<li><strong>Acceso al código fuente</strong>:
+<ul>
+<li>Libres: Permiten el acceso al código fuente.</li>
+<li>Privativos: No permiten el acceso al código fuente.</li>
+</ul>
+</li>
+<li><strong>Estrutura geográfica de la empresa</strong>:
+<ul>
+<li>Centralizados.</li>
+<li>Distribuidos.</li>
+</ul>
+</li>
+<li><strong>Ámbito de la aplicación</strong>:
+<ul>
+<li>Propósito general.</li>
+<li>Propósito específico.</li>
+</ul>
+</li>
+</ul>
+<p>En base a esto, tendremos que, por ejemplo, Postgres es un SGBD de código libre,multiplataforma, multiusuario, gratuito y que se basa en un modelo relacional, aunque también admite un modelo orientado a objetos.</p>
+<h3 id="elección-del-sgbd">Elección del SGBD </h3>
+<p>A la hora de escoger un SGBD, el primer aspecto a tener en cuenta es centrar las <strong>necesidades reales</strong> y determinar que es lo que mejor se ciñe a las particularidades del entorno de funcionamiento. Por ejemplo: si deseo gestionar una aplicación de biblioteca personal, puede ser suficiente usar OpenOffice Base o MS Access como SGBD, e incluso una simple hoja de cálculo puede cubrir suficientemente la necesidad descubierta. Por tanto, no hay que escoger un SGBD porque sea el más novedoso o el que más nos guste, sino porque es el que mejor se adapta a nuestras necesidades.</p>
+<p>Uno de los factores a considerar es el coste, pero a pesar de ser un factor importante no debería ser tan prioritario, ya que el día a día nos demuestra que el rendimiento, las horas de trabajo para su mantenimiento o simplemente que no se estropee, es mucho más determinante para la empresa.</p>
+<p>Los sistemas gestores de bases de datos pueden ser libres y no libres, e independientemente de eso, ser gratuitos o no. Por ejemplo, Microsoft SQL Server es un SGBD privativo pero cuenta con alguna versión gratuita como la Compact EditionBasic.</p>
+<p>Por regla general, se suele usar el término libre como referencia a gratuito (porque en inglés las dos palabras son <em>free</em>), y comercial para dar a entender un producto de pago. Por lo que hemos visto hasta ahora, esta forma de diferenciarlas no es correcta,ya que muchos de los programas de código libre cuentan con versiones de pago, o proporcionan un servicio de soporte por el que hay que pagar. No por esto deja de ser código libre, y con los SGBD libres sucede exactamente igual.</p>
+<p>Como se ha dicho al principio, la decisión final debe estar basada en las características del sistema de información de la organización y sus propios requisitos.</p>
+<h2 id="funciones-que-debe-garantizar-un-sgbd">Funciones que debe garantizar un SGBD </h2>
+<p>Un SGBD realiza funciones que garantizan la integridad y la consistencia de los datos en una base de datos. La mayoría de estas funciones son transparentes para los usuarios finales ya que las realiza el propio SGBD.</p>
+<ol>
+<li>
+<p><strong>Administración del diccionario de datos</strong><br>
+Las definiciones de los datos y sus relaciones guardan en el diccionario de datos. El SGBD utiliza este diccionario para buscar las estructuras y las relaciones de los datos que cada programa solicita. Cualquier cambio que se realice en la estructura de una base de datos queda automáticamente registrado aquí, sin que el usuario tenga que modificar los programas que accedan a la estructura modificada.</p>
+</li>
+<li>
+<p><strong>Administración del almacenamiento de datos</strong><br>
+Esta función permite al SGBD crear las estructuras necesarias para el almacenamiento de datos, liberando al usuario de tener que definir y programar las características físicas de los datos. Permite almacenar no sólo los datos, sino formularios de entrada, definiciones de filtros relacionados, de informes, reglas de validación, procedimientos, estructuras para datos con formatos de vídeo, imagen, hoja de cálculo, gráficos, etc.</p>
+</li>
+<li>
+<p><strong>Transformación y presentación de datos</strong><br>
+El SGBD transforma los datos que se introducen en las estructuras necesarias para guardarlos. Transforma las solicitudes lógicas en comandos que localizan y recuperan físicamente los datos, liberando así al usuario de esa tarea.</p>
+</li>
+<li>
+<p><strong>Administración de la seguridad</strong><br>
+Crea un sistema de seguridad que establece unas reglas que determinan que usuarios pueden acceder a la base de datos, a que datos pueden tener acceso y qué operaciones pueden realizar.</p>
+</li>
+<li>
+<p><strong>Control de acceso de usuarios múltiples</strong><br>
+Es el control de concurrencia. Permite acceder a la base de datos a múltiples usuarios creando unos algoritmos complejos para no comprometer la integridad de la base dedatos.</p>
+</li>
+<li>
+<p><strong>Administración de tareas de respaldo y recuperación</strong><br>
+Proporciona utilidades que permiten realizar procedimientos de respaldo y recuperación rutinarios y especiales, como un fallo en el suministro eléctrico, un sector defectuoso en el disco, etc.</p>
+</li>
+<li>
+<p><strong>Administración de la integridad de los datos</strong><br>
+Controla que se cumplan las reglas de integridad de los datos y de las relaciones, con lo que se reduce al mínimo la redundancia y se aumenta la consistencia.</p>
+</li>
+<li>
+<p><strong>Lenguajes de acceso a la base de datos e interfaces de programación de aplicaciones</strong><br>
+Permite acceder a los datos utilizando un lenguaje de consulta.</p>
+<div class="definicion">
+<p>Un <strong>lenguaje de consulta</strong> es un lenguaje informático usado para hacer consultas en bases de datos y sistemas de información.</p>
+</div> <!-- fin definición -->
+<p>También permite a los programadores acceder a los datos mediante lenguajes de procedimientos y proporciona utilidades administrativas para crear, ejecutar y mantener la base de datos.</p>
+</li>
+<li>
+<p><strong>Interfaces de comunicación de bases de datos</strong><br>
+Permiten que la base de datos acepte solicitudes de usuarios conectados en una red de ordenadores y a través de internet. Esta comunicación con el SGBD puede establecerse de varias formas:</p>
+<ul>
+<li>Realizar peticiones mediante formularios desde el explorador de internet.</li>
+<li>Publicar informes en internet que pueda explorar cualquier usuario.</li>
+<li>Conectarse a otros sistemas mediante aplicaciones como correo electrónico.</li>
+</ul>
+</li>
+</ol>
+<h2 id="componentes">Componentes </h2>
+<p>Los SGBD son paquetes de software complejos que deben proporcionar una serie de servicios que permiten almacenar y explotar los datos de forma eficiente.</p>
+<p>A continuación se describen los componentes principales.</p>
+<h3 id="lenguajes-de-los-sgbd">Lenguajes de los SGBD </h3>
+<p>Todos los SGBD ofrecen lenguajes apropiados a cada tipo de usuarios: administradores, diseñadores, programadores de aplicaciones y usuarios finales. Los lenguajes que intervienen en un SGBD se clasifican en:</p>
+<ul>
+<li><strong>LCD (Lenguaje de Control de Datos)</strong>: es un lenguaje proporcionado por el SGBD que incluye una serie de comandos que permiten al administrador controlar el acceso a los datos contenidos en la Base de Datos.</li>
+<li><strong>LDD (Lenguaje de definición de datos)</strong>: se utiliza par a definir el esquema conceptual y el esquema interno de la base de datos: los objetos de la base de datos, las estructuras de almacenamiento y las vistas de los distintos usuarios. Lo emplean los diseñadores de la base de datos y los administradores.</li>
+<li><strong>LMD (Lenguaje de manipulación de datos)</strong>: se utiliza para consultar y actualizar los datos de la base de datos. Lo emplean los usuarios para consultar, insertar, modificar o borrar datos en una base de datos. A menudo estas sentencias están embebidas en un lenguaje de alto nivel llamado lenguaje anfitrión.</li>
+</ul>
+<p>En resumen, los lenguajes de un SGBD deben permitir:</p>
+<ul>
+<li>Crear la estructura de la base de datos, incluyendo todos los objetos que puede incluir la misma (tablas, vistas, usuarios, procedimientos, funciones, triggers,etc.). Ej: DDL</li>
+<li>Consultar y manipular la información almacenada en la base de datos. Ej.:DML</li>
+<li>Asignar privilegios a usuarios, confirmar o abortar transacciones, etc. Ej.:DCL.</li>
+</ul>
+<h3 id="el-diccionario-de-datos">El diccionario de datos </h3>
+<p>El <strong>diccionario de datos</strong> es una guía donde se describe la base de datos con todos los objetos que la forman. Se dice también que contiene <em>metadatos</em> porque es información sobre los datos. También se le suele denominar <strong>esquema de datos</strong>.</p>
+<p>Contiene las características lógicas como: nombre, descripción, alias, contenido; y organización, donde se almacenan los datos del del sistema. Identifica los procesos donde se emplean los datos y los sitios donde se necesita acceder a la información.</p>
+<p>El diccionario proporciona información acerca de:</p>
+<ul>
+<li>La estructura lógica y física de la base de datos.</li>
+<li>La definición de cada uno de los objetos: tablas, vistas, índices, funciones,procedimientos, etc.</li>
+<li>Los valores que toman las columnas de las tablas por defecto.</li>
+<li>Reglas que permiten garantizar la integridad de los datos almacenados.</li>
+<li>Los privilegios y control de acceso de los usuarios.</li>
+<li>Normas que garanticen la seguridad de los datos.</li>
+<li>Estadísticas y auditorías de los accesos a los objetos, etc.</li>
+<li>El consumo de recursos actual.</li>
+<li>...</li>
+</ul>
+<h3 id="seguridad-e-integridad-de-los-datos">Seguridad e integridad de los datos </h3>
+<p>El componente de <strong>Seguridad e integridad de los datos</strong> consiste en una serie de mecanismos que proporciona el SGBD para garantizar un acceso correcto, seguro y eficiente a los datos. Se hace mediante un componente software que se encarga de:</p>
+<ul>
+<li>Garantizar que el acceso a los datos se permita solo a los usuarios autorizados.</li>
+<li>Disponer de herramientas para planificar y realizar copias de seguridad y restauración.</li>
+<li>Realizar los procedimientos necesarios para recuperar los datos tras un fallo o pérdida temporal.</li>
+<li>Ofrecer mecanismos para implantar restricciones de integridad que los datos deberán cumplir.</li>
+<li>Controlar el acceso concurrente de varios usuarios a los datos sin que se pierda la consistencia.</li>
+</ul>
+<h3 id="usuarios-del-sgbd">Usuarios del SGBD </h3>
+<p>Existen distintos tipos de usuarios que acceden al sistema. En general, los podemos agrupar en:</p>
+<ul>
+<li><strong>Administradores de Sistema o Diseñadores</strong>: Los diseñadores planifican y desarrollan las bases de datos. Definen el esquema lógico y físico de la base de datos, optimizando el almacenamiento y generando la documentación de análisis necesaria para los programadores.</li>
+<li><strong>Administradores de BD (DBA – DataBase Administrator)</strong>: Una vez creada la BD, los administradores gestionan la seguridad (usuarios y permisos), y la integridad de los datos asegurando que las transacciones sean correctas y no se pierdan datos. También se ocupan de crear las copias de seguridad. Tienen el máximo nivel de acceso y utilizan fundamentalmente DDL. Su objetivo es que la base de datos esté siempre disponible y con un rendimiento óptimo.</li>
+<li><strong>Usuarios programadores</strong>: Realizan aplicaciones sobre los objetos de la base de datos para facilitar su trabajo a los usuarios finales. Emplean DDL, DML y cualquier lenguaje anfitrión.</li>
+<li><strong>Usuarios finales</strong>: Podrán acceder a la información sobre la que le hayan sido concedidos privilegios. Los hay de dos tipos:
+<ul>
+<li><strong>Usuarios expertos</strong>: Emplean las utilidades de la base de datos y el DML para acceder a los datos y realizar sus propios procesos sobre los objetos para los que se les ha concedido permiso.</li>
+<li><strong>Usuarios ocasionales</strong>: que utilizan programas de aplicación para acceder a las bases de datos, pero que solo pueden utilizar aquellos objetos para los que se les ha dado permiso de acceso.</li>
+</ul>
+</li>
+</ul>
+<h3 id="herramientas-de-las-bd">Herramientas de las BD </h3>
+<p>Todos los SGBD incluyen una serie de herramientas de administración que permiten a los administradores realizar la gestión de la base de datos como:</p>
+<ul>
+<li>Definir el esquema lógico y físico de la base de datos: crear, modificar y manipular.</li>
+<li>Controlar la privacidad de los datos: gestión de usuarios y permisos.</li>
+</ul>
+<p>Por lo tanto, un SGBD debe proporcionar utilidades que permitan:</p>
+<ul>
+<li>La realización de copias de seguridad de los datos y la restauración de las mismas.</li>
+<li>Garantizar la protección de los datos ante accesos no autorizados.</li>
+<li>Implantar restricciones de integridad de los datos para evitar daños accidentales de los datos.</li>
+<li>Recuperar la base de datos hasta un estado consistente en caso de error del sistema o cualquier otro imprevisto.</li>
+<li>Controlar el acceso concurrente de los usuarios para evitar errores de integridad.</li>
+</ul>
+<p>Estas herramientas cada vez incluyen mayores prestaciones y a lo largo del curso veremos algunas de ellas.</p>
+<p>Además, la mayoría de los SGBD incorporan lenguajes de cuarta generación (4GL) que permiten al usuario desarrollar aplicaciones de forma fácil y rápida a través de asistentes. Se denominan también <strong>herramientas de desarrollo o herramientas dedesarrollo rápido (RAD - Rapid Application Development)</strong>. Ej: Oracle Developer Suite o Asistentes de Access.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html><html><head>
+      <title>Apuntes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/jose/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.18/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAfIAAsAAAAADDAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kosY21hcAAAAYAAAADTAAACjtP6ytBnbHlmAAACVAAAAxgAAAQ4zRtvlGhlYWQAAAVsAAAALwAAADYRwZsnaGhlYQAABZwAAAAcAAAAJAeKAzxobXR4AAAFuAAAABIAAAA8OGQAAGxvY2EAAAXMAAAAIAAAACAG5AfwbWF4cAAABewAAAAfAAAAIAEfAERuYW1lAAAGDAAAAVcAAAKFkAhoC3Bvc3QAAAdkAAAAYgAAAK2vz7wkeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkPsQ4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVLy4xKzzX4chhrmK4QpQmBEkBwAZygyweJzFkr0NwjAQhZ+TEP6CRUfHBEwRUWaQTICyQbpMwRCskA5RUIONxG0RnnNpKAIV4qzPku/8c353ACYAYrIjCWCuMAh2ptf0/hiL3p/gyPUWa3osqlt0L1zu9r71z8dGrJRykFoauXQd932Lj5vhG+MjxGeYI8MKETObMpslf5EyP8tg+vHun5r539PvlvXzaVhRFVQDTPEWKVQR90KhnnC5Ek67vUKN4VuFasM/ldARj43CCkCsEjpJSoVVgRyU0GVSK6wUpFFCx8lFgX0BiXpRPQB4nE2TTWjcRhTH3xttpDhxN7uxPlp3u/FK7moRPixafRijNosxSw/LUsIwNcaEHPZggo/FmEKMCKWU4kNOOftQSlhE8alnH0Ix9BqWnHooPRrTQ0+mnu2bXTu2pPdGM9LM/6c3fwECTM4gBBMYQNqxzLrZAjqYSlqu2TAHZQA0/DQJH6FtzqGDnvbt4Ggwvzw/nL8EfH8kW0fsuRqhgWXZnY7M1picaUL7Du5BHeDzMIl83dAt016wH1qmvtSMo5R6YRJHTR//FXsff/nj/tc/5K9P5d+nP22+fFK5u7v3K39SW3y+OtDKO3L85vD09PD9z5X17a2N1g4tqk01RlqX7gyoEmnsWQtVr4rtZMmukEaFBZxzefkCn11cyKMLZgshRwgTYNoLNXCBz2ja7HvZG7hDpPSNfoo5vs0knK/9hb+rNpu+8kHPgk/Ao4kK3tWtTpSEtvkA9c+wE6UaUdwieNkaHg55tBEtRiEPw1s0+FtrtTcc9two2lhMknV7PZF/cs6+uUFTmpTGbEx7sQCPSLOttHS3GRltqp7SNzVSKzl6aWnZT/CX5k6/v9N3Hh8fHBwffJVjhrC6OgH5dkIt/tPsq+d/PD5Qz7G7efzq1THFjdZVPe/N6ulQ3JnDWSE5junsFsVIiFwL/htf1S5gJ3BfOcUxfHKLnzqpFpyfZ9cX+/5WB6a+Y0pHpzkNrYNVDwMsikK+y7WuLCRg/oFHkA8VT3rDg5ZnU6ktzzINymV0m74Xd5pfIGXyFeVEQSShkzqG7TBBa2OxVRKitLXv7h3uuftXnXq7lz2tZ/WnWa9dx9dCjDhHzmuVQATlmljr9dZErUydSo2Hbi/b1vXtrOeGCk2/8s3ZlO8+ueJT8BVlw5pGw2oYccdSiHHqx0RlabHqdNR9jAETl6PreJcPBnnfpTLnOQ8C3OV8AmQGzouV1iZdeb5SSIoVc8W8/kcDtksUH5FrU6/aqBqNWcMEzxG4DAQ14qRQhi9mWU0rzepKezbjfgCwQKxVYq5ajRgpRqy45CqwkJydcEkbTkvRz8P5/2ZpDTN4nGNgZGBgAOKb6v+/xvPbfGXgZmEAgeuB2kkI+v8bFgbmKiCXg4EJJAoAPyAKhQB4nGNgZGBg1vmvwxDDwgACQJKRARXwAwAzZQHQeJxjYQCCFAYGFgbSMQAcWACdAAAAAAAAAAwALgBgAIQAmADSAQgBIgE8AVABoAHeAfwCHHicY2BkYGDgZ7BgYGMAASYg5gJCBob/YD4DAA/hAWQAeJxlkbtuwkAURMc88gApQomUJoq0TdIQzEOpUDokKCNR0BuzBiO/tF6QSJcPyHflE9Klyyekz2CuG8cr7547M3d9JQO4xjccnJ57vid2cMHqxDWc40G4Tv1JuEF+Fm6ijRfhM+oz4Ra6eBVu4wZvvMFpXLIa40PYQQefwjVc4Uu4Tv1HuEH+FW7i1mkKn6Hj3Am3sHC6wm08Ou8tpSZGe1av1PKggjSxPd8zJtSGTuinyVGa6/Uu8kxZludCmzxMEzV0B6U004k25W35fj2yNlCBSWM1paujKFWZSbfat+7G2mzc7weiu34aczzFNYGBhgfLfcV6iQP3ACkSaj349AxXSN9IT0j16JepOb01doiKbNWt1ovippz6sVYYwsXgX2rGVFIkq7Pl2PNrI6qW6eOshj0xaSq9mpNEZIWs8LZUfOouNkVXxp/d5woqebeYIf4D2J1ywQB4nG3LOw6AIBAE0B384B+PAkgEa+QwNnYmHt+EpXSal5lkSBBnoP8oCFSo0aCFRIceA0ZMmLFAYSW88rmvtMUjG3RiQ9HvpfusM6zWNmtc5H/iPewha50tOt5PS/QBx2IeSwAA") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .caso_estudio {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .ejercicio {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://programacioniesbalmis.github.io/Imagenes/BannersMoodle/banner.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: center;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+.markdown-preview.markdown-preview .galeria_imagenes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: row;
+  }
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#cursores-y-tablas-temporales" class="md-toc-link"><p>Cursores y tablas temporales</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#preliminares" class="md-toc-link"><p>Preliminares</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#creación-de-tablas" class="md-toc-link">
+            <p>Creación de tablas</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#inserción-de-datos" class="md-toc-link">
+            <p>Inserción de datos</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-1" class="md-toc-link">
+            <p>✅ Ejercicio 1</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-2" class="md-toc-link">
+            <p>✅ Ejercicio 2</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-3" class="md-toc-link">
+            <p>✅ Ejercicio 3</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-4" class="md-toc-link">
+            <p>✅ Ejercicio 4</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 id="cursores-y-tablas-temporales">Cursores y tablas temporales </h2>
+<p>Para la realización de los dos primeros ejercicios crearemos previamente una base de datos llamada <em><strong>testCursores</strong></em> sobre la que trabajaremos. Previamente a la realización de los ejercicios crearemos las tablas con las que vamos a trabajar y las poblaremos con datos.</p>
+<h3 id="preliminares">Preliminares </h3>
+<p>Nuestra base de datos gestiona productos y FACTURAS con tres tablas: <strong>ARTICULOS</strong>, <strong>FACTURAS</strong> y <strong>LINEASFACTURA</strong>.</p>
+<h4 id="creación-de-tablas">Creación de tablas </h4>
+<p>Lo primero que haremos es crear las 3 tablas con las que vamos a trabajar.</p>
+<div class="caso_estudio">
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar tablas si existen</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> LINEASFACTURA<span class="token punctuation">;</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> FACTURAS<span class="token punctuation">;</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> ARTICULOS<span class="token punctuation">;</span>
+
+<span class="token comment">-- Crear tablas</span>
+<span class="token comment">-- Tabla ARTICULOS</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> ARTICULOS <span class="token punctuation">(</span>
+    codigo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword keyword-PRIMARY">PRIMARY</span> <span class="token keyword keyword-KEY">KEY</span><span class="token punctuation">,</span>
+    descripcion <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    precio <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Tabla FACTURAS</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> FACTURAS <span class="token punctuation">(</span>
+    codigo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword keyword-PRIMARY">PRIMARY</span> <span class="token keyword keyword-KEY">KEY</span><span class="token punctuation">,</span>
+    descripcion <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    iva <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Tabla LINEASFACTURA</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> LINEASFACTURA <span class="token punctuation">(</span>
+    codigo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    numero <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span>
+    articulo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    unidades <span class="token keyword keyword-INT">INT</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-PRIMARY">PRIMARY</span> <span class="token keyword keyword-KEY">KEY</span> <span class="token punctuation">(</span>codigo<span class="token punctuation">,</span>numero<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-FOREIGN">FOREIGN</span> <span class="token keyword keyword-KEY">KEY</span> <span class="token punctuation">(</span>codigo<span class="token punctuation">)</span> <span class="token keyword keyword-REFERENCES">REFERENCES</span> FACTURAS<span class="token punctuation">(</span>codigo<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-FOREIGN">FOREIGN</span> <span class="token keyword keyword-KEY">KEY</span> <span class="token punctuation">(</span>articulo<span class="token punctuation">)</span> <span class="token keyword keyword-REFERENCES">REFERENCES</span> ARTICULOS<span class="token punctuation">(</span>codigo<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+<h4 id="inserción-de-datos">Inserción de datos </h4>
+<p>El siguiente paso es insertar los datos necesarios para hacer las pruebas.</p>
+<div class="caso_estudio">
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Introducir artículos</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> ARTICULOS<span class="token punctuation">(</span>codigo<span class="token punctuation">,</span> descripcion<span class="token punctuation">,</span> precio<span class="token punctuation">)</span>
+<span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'CAM01'</span><span class="token punctuation">,</span><span class="token string">'Cámara de fotos PANASONIC FZ82'</span><span class="token punctuation">,</span> <span class="token number">265.88</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> ARTICULOS<span class="token punctuation">(</span>codigo<span class="token punctuation">,</span> descripcion<span class="token punctuation">,</span> precio<span class="token punctuation">)</span>
+<span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'CAM02'</span><span class="token punctuation">,</span><span class="token string">'Cámara de fotos CANON Powershot Sx50'</span><span class="token punctuation">,</span> <span class="token number">322.00</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> ARTICULOS<span class="token punctuation">(</span>codigo<span class="token punctuation">,</span> descripcion<span class="token punctuation">,</span> precio<span class="token punctuation">)</span>
+<span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'PRT01'</span><span class="token punctuation">,</span><span class="token string">'Impresora Brother HL-L2310D'</span><span class="token punctuation">,</span> <span class="token number">99.29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">-- Introducir facturas</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> FACTURAS <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'A001'</span><span class="token punctuation">,</span> <span class="token string">'Factura A001: Balmis Shop Center'</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> FACTURAS <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'A002'</span><span class="token punctuation">,</span> <span class="token string">'Factura A002: Balmis Shop Center'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Introducir líneas de factura asociadas</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> LINEASFACTURA <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'A001'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'CAM01'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> LINEASFACTURA <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'A001'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'CAM02'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> LINEASFACTURA <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'A001'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'PRT01'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> LINEASFACTURA <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'A002'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'CAM01'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> LINEASFACTURA <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'A002'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'PRT01'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-1">✅ Ejercicio 1 </h3>
+<p><strong>Cursores</strong><br>
+Crear un procedimiento que reciba como parámetro un código de factura y muestre los detalles de la factura. Probar el funcionamiento del procedimiento.</p>
+<p><em>Creación del procedimiento</em><br>
+El procedimiento, de nombre <strong>cursoresFacturas</strong>, utilizará cursores para llevar a cabo su cometido. Concretamente, por cada producto de la factura tiene que mostrar la descripción del artículo, el precio unitario, las unidades vendidas y el precio total para ese artículo sin iva y con iva. Ademas al final tiene que mostrar el precio total de la factura (con iva).</p>
+<div class="admonition hint">
+<p class="admonition-title">Pista</p>
+<p>En los procedimeientos y funciones sólo puede haber una única instrucción <strong><code>SELECT</code></strong> que muestre datos por pantalla. Por lo tanto, utilizad una <strong>tabla temporal</strong> para almacenar todos los valores que se tienen que mostrar (también el precio total de la factura) y al final mostrar todo el contenido de dicha tabla.</p>
+</div>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar procedimiento si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> cursoresFacturas<span class="token punctuation">;</span>
+
+<span class="token comment">-- Crear procedimiento</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> cursoresFacturas<span class="token punctuation">(</span>codigoFactura <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token comment">-- Variables asociadas a los campos de las tablas</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vCodigo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vArticulo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vUnidades <span class="token keyword keyword-INT">INT</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vDescripcion <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPrecioUnitario <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vIva <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPrecio <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPrecioIVA <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPrecioIVATotal <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-DECLARE">DECLARE</span> terminado <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token boolean">FALSE</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">-- Cursor sobre las líneas de factura que pertenecen a la factura dada</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> c1 <span class="token keyword keyword-CURSOR">CURSOR</span> <span class="token keyword keyword-FOR">FOR</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> codigo<span class="token punctuation">,</span> articulo<span class="token punctuation">,</span> unidades <span class="token keyword keyword-FROM">FROM</span> LINEASFACTURA <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> codigoFactura<span class="token punctuation">;</span>
+    
+    <span class="token comment">-- Manejador para controlar cuando hemos obtenido todos los datos mediante el cursor</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> <span class="token keyword keyword-CONTINUE">CONTINUE</span> <span class="token keyword keyword-HANDLER">HANDLER</span> <span class="token keyword keyword-FOR">FOR</span> <span class="token operator">NOT</span> FOUND <span class="token keyword keyword-SET">SET</span> terminado <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">-- Tabla temporal para guardar el informe de la factura (lo que nos piden)</span>
+    <span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TEMPORARY">TEMPORARY</span> <span class="token keyword keyword-TABLE">TABLE</span> INFORMEFACTURA <span class="token punctuation">(</span>
+        articulo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        precioUnitario <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        unidades <span class="token keyword keyword-INT">INT</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        precio <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        precioIVA <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Obtener IVA factura</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> iva <span class="token keyword keyword-INTO">INTO</span> vIva <span class="token keyword keyword-FROM">FROM</span> FACTURAS <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> codigoFactura<span class="token punctuation">;</span>
+    
+    <span class="token comment">/* Tratamiento de los datos a través del cursor */</span>
+    <span class="token keyword keyword-OPEN">OPEN</span> c1<span class="token punctuation">;</span>
+        <span class="token keyword keyword-FETCH">FETCH</span> c1 <span class="token keyword keyword-INTO">INTO</span> vCodigo<span class="token punctuation">,</span> vArticulo<span class="token punctuation">,</span> vUnidades<span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> vPrecioIVATotal :<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-WHILE">WHILE</span> <span class="token punctuation">(</span><span class="token operator">NOT</span> terminado<span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span>
+        <span class="token comment">-- Obtener información del artículo</span>
+        <span class="token keyword keyword-SELECT">SELECT</span> descripcion<span class="token punctuation">,</span> precio <span class="token keyword keyword-INTO">INTO</span> vDescripcion<span class="token punctuation">,</span> vPrecioUnitario <span class="token keyword keyword-FROM">FROM</span> ARTICULOS <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> vArticulo<span class="token punctuation">;</span>
+        
+        <span class="token comment">-- Obtener campos calculados</span>
+        <span class="token keyword keyword-SET">SET</span> vPrecio :<span class="token operator">=</span> vUnidades <span class="token operator">*</span> vPrecioUnitario<span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> vPrecioIVA :<span class="token operator">=</span> vPrecio <span class="token operator">+</span> vPrecio <span class="token operator">*</span> vIva <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> vPrecioIVATotal :<span class="token operator">=</span> vPrecioIVATotal <span class="token operator">+</span> vPrecioIVA<span class="token punctuation">;</span>
+
+        <span class="token comment">-- Mostra los datos ampliados de las líneas de factura en la tabla temporal</span>
+        <span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> INFORMEFACTURA <span class="token keyword keyword-VALUES">VALUES</span><span class="token punctuation">(</span>vDescripcion<span class="token punctuation">,</span> vPrecioUnitario<span class="token punctuation">,</span> vUnidades<span class="token punctuation">,</span> vPrecio<span class="token punctuation">,</span> vPrecioIVA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword keyword-FETCH">FETCH</span> c1 <span class="token keyword keyword-INTO">INTO</span> vCodigo<span class="token punctuation">,</span> vArticulo<span class="token punctuation">,</span> vUnidades<span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-WHILE">WHILE</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-CLOSE">CLOSE</span> c1<span class="token punctuation">;</span>
+
+    <span class="token comment">-- Insertar el total en la misma tabla</span>
+    <span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> INFORMEFACTURA<span class="token punctuation">(</span>articulo<span class="token punctuation">,</span> precioIVA<span class="token punctuation">)</span> <span class="token keyword keyword-VALUES">VALUES</span><span class="token punctuation">(</span><span class="token string">'Total factura con IVA: '</span><span class="token punctuation">,</span> vPrecioIVATotal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Mostrar datos</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> INFORMEFACTURA<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+<p><em>Comprobación del funcionamiento</em><br>
+La llamada al procedimiento pasándole como parámetro '<em>A001</em>' produce el siguiente resultado:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [testCursores]&gt; CALL cursoresFacturas('A001');
++---------------------------------------+----------------+----------+---------+-----------+
+| articulo                              | precioUnitario | unidades | precio  | precioIVA |
++---------------------------------------+----------------+----------+---------+-----------+
+| Cámara de fotos PANASONIC FZ82        |         265.88 |        2 |  531.76 |    643.43 |
+| Cámara de fotos CANON Powershot Sx50  |         322.00 |        4 | 1288.00 |   1558.48 |
+| Impresora Brother HL-L2310D           |          99.29 |        1 |   99.29 |    120.14 |
+| Total factura con IVA:                |           NULL |     NULL |    NULL |   2322.05 |
++---------------------------------------+----------------+----------+---------+-----------+
+4 rows in set (0,024 sec)
+
+Query OK, 8 rows affected (0,024 sec)
+</code></pre><p>a) Desde <strong>phpMyAdmin</strong> ejecutamos el siguiente bloque de código:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CALL">CALL</span> cursoresFacturas<span class="token punctuation">(</span><span class="token string">'A001'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-CALL">CALL</span> cursoresFacturas<span class="token punctuation">(</span><span class="token string">'A002'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>Justificar el resultado de la ejecución de las instrucciones.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<p>La salida es similar a esta:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [testCursores]&gt; CALL cursoresFacturas('A002');
+ERROR 1050 (42S01): Table 'informefactura' already exists
+</code></pre><p>El problema es que las dos instrucciones se ejecutan en la misma sesión con la base de datos. Cuando se llama por segunda vez al procedimientola la tabla temporal todavía exixte y por lo tanto falla la instrucción de creación de la tabla temporal.</p>
+</div> <!-- fin caso de estudio -->
+<p>b) Desde <strong>phpMyAdmin</strong> ejecutamos primero el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CALL">CALL</span> cursoresFacturas<span class="token punctuation">(</span><span class="token string">'A001'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>A continuación ejecutamos este otro:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CALL">CALL</span> cursoresFacturas<span class="token punctuation">(</span><span class="token string">'A002'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>Justificar el resultado de la ejecución de las instrucciones.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<p><em>Ejecución primer comando</em><br>
+La salida sería similar a esta:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [testCursores]&gt; CALL cursoresFacturas('A001');
++---------------------------------------+----------------+----------+---------+-----------+
+| articulo                              | precioUnitario | unidades | precio  | precioIVA |
++---------------------------------------+----------------+----------+---------+-----------+
+| Cámara de fotos PANASONIC FZ82        |         265.88 |        2 |  531.76 |    643.43 |
+| Cámara de fotos CANON Powershot Sx50  |         322.00 |        4 | 1288.00 |   1558.48 |
+| Impresora Brother HL-L2310D           |          99.29 |        1 |   99.29 |    120.14 |
+| Total factura con IVA:                |           NULL |     NULL |    NULL |   2322.05 |
++---------------------------------------+----------------+----------+---------+-----------+
+4 rows in set (0,023 sec)
+
+Query OK, 8 rows affected (0,024 sec)
+</code></pre><p><em>Ejecución segundo comando</em><br>
+La salida sería similar a esta:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [testCursores]&gt; CALL cursoresFacturas('A002');
++---------------------------------+----------------+----------+--------+-----------+
+| articulo                        | precioUnitario | unidades | precio | precioIVA |
++---------------------------------+----------------+----------+--------+-----------+
+| Cámara de fotos PANASONIC FZ82  |         265.88 |        1 | 265.88 |    297.79 |
+| Impresora Brother HL-L2310D     |          99.29 |        5 | 496.45 |    556.02 |
+| Total factura con IVA:          |           NULL |     NULL |   NULL |    853.81 |
++---------------------------------+----------------+----------+--------+-----------+
+3 rows in set (0,029 sec)
+
+Query OK, 6 rows affected (0,030 sec)
+</code></pre><p>Ahora las 2 instrucciones se ejecutan correctamente por que cada una se ejecuta en sesiones diferentes. Cuando se ejecuta la primera instrucción desde la consola de <em>phpMyAdmin</em> se estable una conexión con la base de datos (abrir sesión), se ejecuta la instrucción y por último se cierra la conexión (cerrar sesión). Cuando se cierra una sesión las tablas temporales se destruyen. Así cuando ejecutamos la segunda instrucción se crea una nueva sesión, se ejecuta correctamente el procedimiento (la tabla temporal no exixte) y se cierra la sesión.</p>
+</div> <!-- fin caso de estudio -->
+<p>c) ¿ Qué modificarías en el código del procedimiento para poder ejecutar correctamente el siguiente bloque de instrucciones ?</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CALL">CALL</span> cursoresFacturas<span class="token punctuation">(</span><span class="token string">'A001'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-CALL">CALL</span> cursoresFacturas<span class="token punctuation">(</span><span class="token string">'A002'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em><br>
+Simplemente añadiría una instrucción que, previamente a la instrucción de creación de la tabla temporal, borraría la tabla temporal si ya exixte.</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> INFORMEFACTURA<span class="token punctuation">;</span>
+</code></pre><p>Ahora el resultado de la ejecución sería el siguiente:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [testCursores]&gt; CALL cursoresFacturas('A001');
++---------------------------------------+----------------+----------+---------+-----------+
+| articulo                              | precioUnitario | unidades | precio  | precioIVA |
++---------------------------------------+----------------+----------+---------+-----------+
+| Cámara de fotos PANASONIC FZ82        |         265.88 |        2 |  531.76 |    643.43 |
+| Cámara de fotos CANON Powershot Sx50  |         322.00 |        4 | 1288.00 |   1558.48 |
+| Impresora Brother HL-L2310D           |          99.29 |        1 |   99.29 |    120.14 |
+| Total factura con IVA:                |           NULL |     NULL |    NULL |   2322.05 |
++---------------------------------------+----------------+----------+---------+-----------+
+4 rows in set (0,024 sec)
+
+Query OK, 8 rows affected (0,024 sec)
+
+MariaDB [testCursores]&gt; CALL cursoresFacturas('A002');
++---------------------------------+----------------+----------+--------+-----------+
+| articulo                        | precioUnitario | unidades | precio | precioIVA |
++---------------------------------+----------------+----------+--------+-----------+
+| Cámara de fotos PANASONIC FZ82  |         265.88 |        1 | 265.88 |    297.79 |
+| Impresora Brother HL-L2310D     |          99.29 |        5 | 496.45 |    556.02 |
+| Total factura con IVA:          |           NULL |     NULL |   NULL |    853.81 |
++---------------------------------+----------------+----------+--------+-----------+
+3 rows in set (0,022 sec)
+
+Query OK, 6 rows affected (0,023 sec)
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-2">✅ Ejercicio 2 </h3>
+<p><strong>Cursores</strong><br>
+Crear una función que devuelva el dinero total recaudado con las ventas de un artículo dado. A continuación probar el funcionamiento de la función.</p>
+<p><em>Creación del procedimiento</em><br>
+La función se llamará <strong>cursoresArticulos</strong>, recibe como parámetro un código de artículo y, utlizando cursores,  devuelve el dinero total recaudado con las ventas de ese artículo.</p>
+<div class="admonition hint">
+<p class="admonition-title">Pista</p>
+<p>Crear un cursor sobre la tabla <strong>LINEASFACTURA</strong> filtrada por el código de artículo dado.</p>
+</div>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> cursoresArticulos<span class="token punctuation">;</span>
+
+<span class="token comment">-- Crear función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> cursoresArticulos<span class="token punctuation">(</span>codigoArticulo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> 
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token comment">-- Variables asociadas a los campos de las tablas</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vCodigo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vUnidades <span class="token keyword keyword-INT">INT</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPrecioUnitario <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vIva <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPrecio <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPrecioIVA <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vTotalRecaudado <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-DECLARE">DECLARE</span> terminado <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token boolean">FALSE</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">-- Cursor sobre las líneas de factura que pertenecen del artículo dado</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> c1 <span class="token keyword keyword-CURSOR">CURSOR</span> <span class="token keyword keyword-FOR">FOR</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> codigo<span class="token punctuation">,</span> unidades <span class="token keyword keyword-FROM">FROM</span> LINEASFACTURA <span class="token keyword keyword-WHERE">WHERE</span> articulo <span class="token operator">=</span> codigoArticulo<span class="token punctuation">;</span>
+    
+    <span class="token comment">-- Manejador para controlar cuando hemos obtenido todos los datos mediante el cursor</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> <span class="token keyword keyword-CONTINUE">CONTINUE</span> <span class="token keyword keyword-HANDLER">HANDLER</span> <span class="token keyword keyword-FOR">FOR</span> <span class="token operator">NOT</span> FOUND <span class="token keyword keyword-SET">SET</span> terminado <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">-- Obtener el precio unitario del artículo</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> precio <span class="token keyword keyword-INTO">INTO</span> vPrecioUnitario <span class="token keyword keyword-FROM">FROM</span> ARTICULOS <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> codigoArticulo<span class="token punctuation">;</span>
+
+    <span class="token comment">/* Tratamiento de los datos a través del cursor */</span>
+    <span class="token keyword keyword-OPEN">OPEN</span> c1<span class="token punctuation">;</span>
+    <span class="token keyword keyword-FETCH">FETCH</span> c1 <span class="token keyword keyword-INTO">INTO</span> vCodigo<span class="token punctuation">,</span> vUnidades<span class="token punctuation">;</span>
+    <span class="token keyword keyword-SET">SET</span> vTotalRecaudado :<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-WHILE">WHILE</span> <span class="token punctuation">(</span><span class="token operator">NOT</span> terminado<span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span>
+        <span class="token comment">-- Obtener IVA de la factura correspondiente a la linea de factura</span>
+        <span class="token keyword keyword-SELECT">SELECT</span> iva <span class="token keyword keyword-INTO">INTO</span> vIva <span class="token keyword keyword-FROM">FROM</span> FACTURAS <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> vCodigo<span class="token punctuation">;</span>
+
+        <span class="token comment">-- Obtener campos calculados y actualizar la recaudación</span>
+        <span class="token keyword keyword-SET">SET</span> vPrecio :<span class="token operator">=</span> vUnidades <span class="token operator">*</span> vPrecioUnitario<span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> vPrecioIVA :<span class="token operator">=</span> vPrecio <span class="token operator">+</span> vPrecio <span class="token operator">*</span> vIva <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> vTotalRecaudado :<span class="token operator">=</span> vTotalRecaudado <span class="token operator">+</span> vPrecioIVA<span class="token punctuation">;</span>
+
+        <span class="token keyword keyword-FETCH">FETCH</span> c1 <span class="token keyword keyword-INTO">INTO</span> vCodigo<span class="token punctuation">,</span> vUnidades<span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-WHILE">WHILE</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-CLOSE">CLOSE</span> c1<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-RETURN">RETURN</span> vTotalRecaudado<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+<p><em>Comprobación del funcionamiento</em><br>
+Utilizad la función para mostrar la facturación de cada artículo (<strong><code>codigo</code></strong>, <strong><code>descripcion</code></strong> y el campo calculado <strong><code>facturacion</code></strong>).<br>
+El resultado tiene que ser el que se muestra en la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>codigo</th>
+<th style="text-align:left">descripcion</th>
+<th style="text-align:right">facturacion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAM01</td>
+<td style="text-align:left">Cámara de fotos PANASONIC FZ82</td>
+<td style="text-align:right">941.22</td>
+</tr>
+<tr>
+<td>CAM02</td>
+<td style="text-align:left">Cámara de fotos CANON Powershot Sx50</td>
+<td style="text-align:right">1558.48</td>
+</tr>
+<tr>
+<td>PRT01</td>
+<td style="text-align:left">Impresora Brother HL-L2310D</td>
+<td style="text-align:right">676.16</td>
+</tr>
+</tbody>
+</table>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<p>La siguiente consulta utiliza la función que hemos implementado para producir el resultado de la tabla.</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-SELECT">SELECT</span> codigo<span class="token punctuation">,</span> descripcion<span class="token punctuation">,</span> cursoresArticulos<span class="token punctuation">(</span>codigo<span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> facturacion <span class="token keyword keyword-FROM">FROM</span> ARTICULOS<span class="token punctuation">;</span>
+</code></pre><pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [testCursores]&gt; SELECT codigo, descripcion, cursoresArticulos(codigo) AS facturacion FROM ARTICULOS; 
++--------+---------------------------------------+-------------+
+| codigo | descripcion                           | facturacion |
++--------+---------------------------------------+-------------+
+| CAM01  | Cámara de fotos PANASONIC FZ82        |      941.22 |
+| CAM02  | Cámara de fotos CANON Powershot Sx50  |     1558.48 |
+| PRT01  | Impresora Brother HL-L2310D           |      676.16 |
++--------+---------------------------------------+-------------+
+3 rows in set (0,003 sec)
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-3">✅ Ejercicio 3 </h3>
+<p><strong>Cursores</strong><br>
+En la base de datos <em><strong>World</strong></em> crear una función que retorne la población total de un continente.</p>
+<p><em>Creación del procedimiento</em><br>
+La función se llamará <strong>poblacionContinente</strong>, recibe como parámetro un continente y, utilizando cursores, retorna la población total del continente.</p>
+<blockquote>
+<p>📌 La función retorna el tipo de datos <strong><code>BIGINT</code></strong> de MySQL.</p>
+</blockquote>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> poblacionContinente<span class="token punctuation">;</span>
+
+<span class="token comment">-- Crear función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> poblacionContinente<span class="token punctuation">(</span>continente <span class="token keyword keyword-varchar">varchar</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-BIGINT">BIGINT</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> pbCte <span class="token keyword keyword-BIGINT">BIGINT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> poblacionPais <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> terminado <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token boolean">FALSE</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-DECLARE">DECLARE</span> C1 <span class="token keyword keyword-CURSOR">CURSOR</span> <span class="token keyword keyword-FOR">FOR</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> Population FROMCaso de estudio: country <span class="token keyword keyword-WHERE">WHERE</span> Continent <span class="token operator">=</span> continente<span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-DECLARE">DECLARE</span> <span class="token keyword keyword-CONTINUE">CONTINUE</span> <span class="token keyword keyword-HANDLER">HANDLER</span> <span class="token keyword keyword-FOR">FOR</span> <span class="token operator">NOT</span> FOUND <span class="token keyword keyword-SET">SET</span> terminado <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-SET">SET</span> pbCte <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-OPEN">OPEN</span> C1<span class="token punctuation">;</span>
+    <span class="token keyword keyword-FETCH">FETCH</span> C1 <span class="token keyword keyword-INTO">INTO</span> poblacionPais<span class="token punctuation">;</span>
+    <span class="token keyword keyword-WHILE">WHILE</span> <span class="token punctuation">(</span><span class="token operator">NOT</span> terminado<span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span>
+        <span class="token keyword keyword-SET">SET</span> pbCte <span class="token operator">=</span> pbCte <span class="token operator">+</span> poblacionPais<span class="token punctuation">;</span>
+        <span class="token keyword keyword-FETCH">FETCH</span> C1 <span class="token keyword keyword-INTO">INTO</span> poblacionPais<span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-WHILE">WHILE</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-CLOSE">CLOSE</span> C1<span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-RETURN">RETURN</span> pbCte<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+<p><em>Comprobación del funcionamiento</em><br>
+Probar la función mediante una consulta que muestre todos los continentes ordenados por población descendentemente (<strong><code>continente</code></strong>, <strong><code>poblacion</code></strong>).</p>
+<p>El resultado tiene que ser el que se muestra en la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">continente</th>
+<th style="text-align:right">poblacion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Asia</td>
+<td style="text-align:right">3705025700</td>
+</tr>
+<tr>
+<td style="text-align:left">Africa</td>
+<td style="text-align:right">784475000</td>
+</tr>
+<tr>
+<td style="text-align:left">Europe</td>
+<td style="text-align:right">730074600</td>
+</tr>
+<tr>
+<td style="text-align:left">North America</td>
+<td style="text-align:right">482993000</td>
+</tr>
+<tr>
+<td style="text-align:left">South America</td>
+<td style="text-align:right">345780000</td>
+</tr>
+<tr>
+<td style="text-align:left">Oceania</td>
+<td style="text-align:right">30401150</td>
+</tr>
+<tr>
+<td style="text-align:left">Antarctica</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<p>La siguiente consulta utiliza la función que hemos implementado para producir el resultado de la tabla.</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-SELECT">SELECT</span> <span class="token keyword keyword-DISTINCT">DISTINCT</span> continent <span class="token keyword keyword-AS">AS</span> continente<span class="token punctuation">,</span> poblacionContinente<span class="token punctuation">(</span>continent<span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> poblacion
+<span class="token keyword keyword-FROM">FROM</span> country
+<span class="token keyword keyword-ORDER">ORDER</span> <span class="token keyword keyword-BY">BY</span> poblacion <span class="token keyword keyword-DESC">DESC</span><span class="token punctuation">;</span>Caso de estudio:
+</code></pre><pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [bdworld]&gt; SELECT DISTINCT continent AS continente, poblacionContinente(continent) AS poblacion
+    -&gt; FROM country
+    -&gt; ORDER BY poblacion DESC;
++---------------+------------+
+| continente    | poblacion  |
++---------------+------------+
+| Asia          | 3705025700 |
+| Africa        |  784475000 |
+| Europe        |  730074600 |
+| North America |  482993000 |
+| South America |  345780000 |
+| Oceania       |   30401150 |
+| Antarctica    |          0 |
++---------------+------------+
+7 rows in set (0,085 sec)
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-4">✅ Ejercicio 4 </h3>
+<p><strong>Cursores</strong><br>
+En la base de datos <em><strong>nba</strong></em> crear una función que retorne la desviación estándar del peso de los jugadores de una división dada.</p>
+<div class="caso_estudio">
+<p><strong>Desviación estándar</strong><br>
+Dada un lista de valores <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mspace width="0.2845em"></mspace><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mspace width="0.2845em"></mspace><msub><mi>x</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">x_1, \hspace{1mm} x_2 , ...\hspace{1mm} x_N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mspace" style="margin-right:0.2845em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> se define la desviación estándar con la fórmula: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msqrt><mrow><mfrac><mn>1</mn><mi>N</mi></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mover accent="true"><mi>x</mi><mo stretchy="true">‾</mo></mover><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \overline{x})^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.5369em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3031em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9812em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6306em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">x</span></span></span><span style="top:-3.5506em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.2631em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.88em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.88em" viewBox="0 0 400000 1944" preserveAspectRatio="xMinYMin slice"><path d="M983 90
+l0 -0
+c4,-6.7,10,-10,18,-10 H400000v40
+H1013.1s-83.4,268,-264.1,840c-180.7,572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7
+s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744
+c-10,12,-21,25,-33,39s-32,39,-32,39c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30
+c26.7,-32.7,52,-63,76,-91s52,-60,52,-60s208,722,208,722
+c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,-658.5
+c53.7,-170.3,84.5,-266.8,92.5,-289.5z
+M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5369em;"><span></span></span></span></span></span></span></span></span> donde <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6306em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6306em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">x</span></span></span><span style="top:-3.5506em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span> es la media de los valores de la lista.</p>
+</div> <!-- fin caso de estudio -->
+<p><em>Creación del procedimiento</em><br>
+La función se llamará <strong>desviacionPesos</strong>,  recibe como parámetro una division y, utilizando cursores, retorna la desviación estándar de los pesos de los jugadores que juegan en esa división aplicando la fórmula expuesta.</p>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Eliminar la función si existe</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> desviacionPesos<span class="token punctuation">;</span>
+
+<span class="token comment">-- Crear función</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> desviacionPesos<span class="token punctuation">(</span>pDivision <span class="token keyword keyword-varchar">varchar</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> vPeso <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> desviacionStandard <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> numeroJugadores <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> sumaPesosExp2 <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> mediaPesos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-DECLARE">DECLARE</span> terminado <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token boolean">FALSE</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Cursor que recorre todos los pesos de los jugadores de la división dada</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> C1 <span class="token keyword keyword-CURSOR">CURSOR</span> <span class="token keyword keyword-FOR">FOR</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> Peso <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> equipos e
+    <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>Nombre_equipo <span class="token operator">=</span> e<span class="token punctuation">.</span>Nombre <span class="token operator">AND</span> e<span class="token punctuation">.</span>Division <span class="token operator">=</span> pDivision<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-DECLARE">DECLARE</span> <span class="token keyword keyword-CONTINUE">CONTINUE</span> <span class="token keyword keyword-HANDLER">HANDLER</span> <span class="token keyword keyword-FOR">FOR</span> <span class="token operator">NOT</span> FOUND <span class="token keyword keyword-SET">SET</span> terminado <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Calcular la media de peso de los jugadores de la división dada</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span>Peso<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> mediaPesos<span class="token punctuation">,</span> numeroJugadores 
+    <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> equipos e 
+    <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>Nombre_equipo <span class="token operator">=</span> e<span class="token punctuation">.</span>Nombre <span class="token operator">AND</span> e<span class="token punctuation">.</span>Division <span class="token operator">=</span> pDivision<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-SET">SET</span> sumaPesosExp2 :<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-OPEN">OPEN</span> C1<span class="token punctuation">;</span>
+    <span class="token keyword keyword-FETCH">FETCH</span> C1 <span class="token keyword keyword-INTO">INTO</span> vPeso<span class="token punctuation">;</span>
+    <span class="token keyword keyword-WHILE">WHILE</span> <span class="token punctuation">(</span><span class="token operator">NOT</span> terminado<span class="token punctuation">)</span> <span class="token keyword keyword-DO">DO</span>
+        <span class="token keyword keyword-SET">SET</span> sumaPesosExp2 :<span class="token operator">=</span> sumaPesosExp2 <span class="token operator">+</span> <span class="token punctuation">(</span>vPeso <span class="token operator">-</span> mediaPesos<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>vPeso <span class="token operator">-</span> mediaPesos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-FETCH">FETCH</span> C1 <span class="token keyword keyword-INTO">INTO</span> vPeso<span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-WHILE">WHILE</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-CLOSE">CLOSE</span> C1<span class="token punctuation">;</span>
+
+    <span class="token comment">-- Cálculo de la desviación estándar</span>
+    <span class="token keyword keyword-SET">SET</span> desviacionStandard :<span class="token operator">=</span> SQRT<span class="token punctuation">(</span>sumaPesosExp2 <span class="token operator">/</span> numeroJugadores<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-RETURN">RETURN</span> desviacionStandard<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+</code></pre></div> <!-- fin caso de estudio -->
+<p><em>Comprobación del funcionamiento</em><br>
+Realizad una consulta que muestre la desviación del peso por cada división(<strong><code>Division</code></strong>, <strong><code>DesviacionPeso</code></strong>).</p>
+<p>El resultado tiene que ser el que se muestra en la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Division</th>
+<th>DesviacionPeso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atlantic</td>
+<td>28.35</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>25.16</td>
+</tr>
+<tr>
+<td>NorthWest</td>
+<td>35.71</td>
+</tr>
+<tr>
+<td>Pacific</td>
+<td>29.02</td>
+</tr>
+<tr>
+<td>SouthEast</td>
+<td>26.77</td>
+</tr>
+<tr>
+<td>SouthWest</td>
+<td>30.33</td>
+</tr>
+</tbody>
+</table>
+<div class="caso_estudio">
+<p>💡 <strong>Solución</strong></p>
+<p>La siguiente consulta utiliza la función que hemos implementado para producir el resultado de la tabla.</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-SELECT">SELECT</span> Division<span class="token punctuation">,</span> desviacionPesos<span class="token punctuation">(</span>Division<span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> DesviacionPeso <span class="token keyword keyword-FROM">FROM</span> equipos
+<span class="token keyword keyword-GROUP">GROUP</span> <span class="token keyword keyword-BY">BY</span> Division<span class="token punctuation">;</span>
+</code></pre><pre data-role="codeBlock" data-info="text" class="language-text text"><code>MariaDB [bdnba]&gt; SELECT Division, desviacionPesos(Division) AS DesviacionPeso FROM equipos
+    -&gt; GROUP BY Division;
++-----------+----------------+
+| Division  | DesviacionPeso |
++-----------+----------------+
+| Atlantic  |          28.35 |
+| Central   |          25.16 |
+| NorthWest |          35.71 |
+| Pacific   |          29.02 |
+| SouthEast |          26.77 |
+| SouthWest |          30.33 |
++-----------+----------------+
+6 rows in set (0,035 sec)
+</code></pre></div> <!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
