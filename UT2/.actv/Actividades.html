@@ -1,0 +1,959 @@
+<!DOCTYPE html><html><head>
+      <title>Bases de datos - Ejercicios ER y modelo lógico</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css);
+code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v27/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .definicion {
+  background-color: #e0c2cd;
+  border: 2px solid #969696;
+  padding: 15px;
+  padding-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .caso_estudio {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .ejercicio {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .box_bg_lightgrey {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .box_bg_lightgreen {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://balmisdigigs.github.io/digitalizacion.github.io/imagenes/fondos/quote.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: center;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+.markdown-preview.markdown-preview .galeria_imagenes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: row;
+  }
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="bases-de-datos---ejercicios-er-y-modelo-lógico">Bases de datos - Ejercicios E/R y modelo lógico </h1>
+<p><a href="./Actividades.pdf">Descargar estos ejercicios</a></p>
+<h2 id="índice">Índice </h2>
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#esquemas-entidad-relación-básicos" class="md-toc-link"><p>Esquemas Entidad-Relación básicos</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-1" class="md-toc-link">
+            <p>✅ Ejercicio 1</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-2" class="md-toc-link">
+            <p>✅ Ejercicio 2</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-3" class="md-toc-link">
+            <p>✅ Ejercicio 3</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-4" class="md-toc-link">
+            <p>✅ Ejercicio 4</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#atributos-multivaluados" class="md-toc-link">
+            <p>Atributos multivaluados</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-5" class="md-toc-link">
+            <p>✅ Ejercicio 5</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-6" class="md-toc-link">
+            <p>✅ Ejercicio 6</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-7" class="md-toc-link">
+            <p>✅ Ejercicio 7</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-8" class="md-toc-link">
+            <p>✅ Ejercicio 8</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#paso-al-modelo-lógico-relacional" class="md-toc-link"><p>Paso al modelo lógico-relacional</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-9" class="md-toc-link">
+            <p>✅ Ejercicio 9</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-10" class="md-toc-link">
+            <p>✅ Ejercicio 10</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-11" class="md-toc-link">
+            <p>✅ Ejercicio 11</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-12" class="md-toc-link">
+            <p>✅ Ejercicio 12</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#repaso" class="md-toc-link"><p>Repaso</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-13" class="md-toc-link">
+            <p>✅ Ejercicio 13</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#entidad-relación-generalización--especialización" class="md-toc-link"><p>Entidad-Relación: Generalización / especialización</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-14" class="md-toc-link">
+            <p>✅ Ejercicio 14</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#ejercicios-er-resumen" class="md-toc-link"><p>Ejercicios E/R resumen</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-15" class="md-toc-link">
+            <p>✅ Ejercicio 15</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-16" class="md-toc-link">
+            <p>✅ Ejercicio 16</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-17" class="md-toc-link">
+            <p>✅ Ejercicio 17</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-18" class="md-toc-link">
+            <p>✅ Ejercicio 18</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-19" class="md-toc-link">
+            <p>✅ Ejercicio 19</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-20" class="md-toc-link">
+            <p>✅ Ejercicio 20</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#paso-al-modelo-lógico-relacional-resumen" class="md-toc-link"><p>Paso al modelo lógico-relacional resumen</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-21" class="md-toc-link">
+            <p>✅ Ejercicio 21</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 id="esquemas-entidad-relación-básicos">Esquemas Entidad-Relación básicos </h2>
+<p>Los pasos a seguir para obtener un esquema conceptual del modelo Entidad-Relación son:</p>
+<ol>
+<li>Identificar el conjunto de entidades.</li>
+<li>Identificar el conjunto de relaciones.</li>
+<li>Trazar el primer esquema.</li>
+<li>Identificar atributos. Identificaremos el atributo de cada entidad que es único, es decir, que no se repite. En el caso que no exista, tenemos la opción de crear una clave “artificial”.</li>
+</ol>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-1">✅ Ejercicio 1 </h3>
+<h4 id="empresa">Empresa </h4>
+<p>Una empresa quiere guardar información sobre la localidad en la que ha nacido cada uno de los empleados, teniendo en cuenta que:</p>
+<ul>
+<li>Un empleado ha nacido en una sola localidad.</li>
+<li>Cada localidad pertenece a una única provincia.</li>
+<li>Una provincia pertenece a una única región.</li>
+</ul>
+<p>Cada región, provincia y localidad tiene un código que la identifica y un nombre.<br>
+De los empleados debemos tener constancia de su DNI, nombre, teléfono y salario.</p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-2">✅ Ejercicio 2 </h3>
+<h4 id="universidad">Universidad </h4>
+<p>Se desea simular el comportamiento de una universidad cualquiera de acuerdo con la siguiente especificación:</p>
+<ul>
+<li>Los alumnos tendrán una nota final de cada asignatura en un determinado período.</li>
+<li>Los períodos están identificados con un código, cuya descripción puede ser: primer cuatrimestre, segundo cuatrimestre, ordinaria y extraordinaria.</li>
+<li>Cada asignatura es impartida por un único profesor y un profesor puede dar clase de muchas asignaturas. Cada profesor pertenece a un departamento.</li>
+<li>De los alumnos almacenaremos el DNI, nombre, primer apellido, segundo apellido, calle, ciudad, provincia, teléfono, fecha de nacimiento y estado civil.</li>
+<li>De las asignaturas se guarda el código, nombre completo, número de créditos y un campo de observaciones.</li>
+<li>De cada profesor tenemos información del DNI, titulación que posee, nombre y primer apellido.</li>
+<li>De los departamentos se tiene como datos su código y su nombre.</li>
+</ul>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-3">✅ Ejercicio 3 </h3>
+<h4 id="calzado">Calzado </h4>
+<p>Una empresa de calzado quiere guardar información de sus empleados teniendo en cuenta que:</p>
+<ul>
+<li>Cada departamento está identificado por un código y tiene un nombre y una localidad.</li>
+<li>Los empleados tienen un número que los diferencia, nombre, teléfono y salario.</li>
+<li>Un empleado pertenece a un único departamento, y en un departamento puede haber varios empleados. Pero solo uno será el jefe del departamento.</li>
+<li>Un empleado podrá ser jefe o no. Si no es jefe, su jefe será el del departamento al que pertenece.</li>
+</ul>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-4">✅ Ejercicio 4 </h3>
+<h4 id="instalaciones">Instalaciones </h4>
+<p>Una empresa dedicada a la instalación de dormitorios juveniles a medida quiere tener una base de datos donde se reflejen las ventas y montajes. Para ello, se tiene en cuenta:</p>
+<ul>
+<li>Cada modelo de dormitorio debe ser montado, al menos, por dos montadores.</li>
+<li>El mismo montador puede montar varios modelos de dormitorios.</li>
+<li>De cada modelo de dormitorio nos interesa conocer su código de modelo.</li>
+<li>El mismo montador puede montar el mismo modelo en diferentes fechas. Nos interesa conocer la fecha en la que realiza cada montaje.</li>
+<li>De un montador nos interesa su NIF, nombre, dirección, teléfono de contacto y el número de dormitorios que ha montado de cada modelo.</li>
+<li>Cada modelo de dormitorio puede ser comprado por uno o varios clientes, y el mismo cliente podrá comprar uno o varios dormitorios.</li>
+<li>De un cliente nos interesa su NIF, nombre, dirección, teléfono y fecha de compra de cada modelo.</li>
+</ul>
+</div> <!-- fin ejercicio -->
+<h3 id="atributos-multivaluados">Atributos multivaluados </h3>
+<p>Dados los modelos E-R, realiza un modelo E-R totalmente equivalente en el que no haya atributos compuestos.</p>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-5">✅ Ejercicio 5 </h3>
+<h4 id="maratón">Maratón </h4>
+<p>Dado el modelo E-R, realiza un modelo E-R totalmente equivalente en el que no haya <strong>atributos compuestos</strong>.<br>
+¿Qué atributos pueden ser identificadores o claves primarias?</p>
+<p align="center" style="zoom:1" class="puml"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="347pt" height="157pt" viewBox="0.00 0.00 346.53 156.57" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 152.57)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-152.57 342.53,-152.57 342.53,4 -4,4"></polygon>
+<!-- E -->
+<g id="node1" class="node">
+<title>E</title>
+<polygon fill="#abddee" stroke="DarkSlateGray" points="186.94,-20 42.19,-20 42.19,0 186.94,0 186.94,-20"></polygon>
+<text text-anchor="middle" x="114.56" y="-7" font-family="Arial" font-size="10.00">CLASIFICACIÓN_MARATÓN</text>
+</g>
+<!-- A1 -->
+<g id="node2" class="node">
+<title>A1</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="30.56" cy="-70.14" rx="30.63" ry="14.29"></ellipse>
+<text text-anchor="start" x="16.95" y="-67.14" font-family="Arial" font-size="10.00">dorsal</text>
+</g>
+<!-- A1&#45;&gt;E -->
+<g id="edge1" class="edge">
+<title>A1-&gt;E</title>
+<path fill="none" stroke="black" d="M46.76,-57.93C62.68,-46.91 86.69,-30.3 101.45,-20.08"></path>
+</g>
+<!-- A2 -->
+<g id="node3" class="node">
+<title>A2</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="114.56" cy="-70.14" rx="35.06" ry="14.29"></ellipse>
+<text text-anchor="middle" x="114.56" y="-67.14" font-family="Arial" font-size="10.00">nombre</text>
+</g>
+<!-- A2&#45;&gt;E -->
+<g id="edge2" class="edge">
+<title>A2-&gt;E</title>
+<path fill="none" stroke="black" d="M114.56,-55.95C114.56,-45.09 114.56,-29.98 114.56,-20.34"></path>
+</g>
+<!-- A3 -->
+<g id="node4" class="node">
+<title>A3</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="200.56" cy="-70.14" rx="32.56" ry="14.29"></ellipse>
+<text text-anchor="start" x="185.56" y="-67.14" font-family="Arial" font-size="10.00">tiempo</text>
+</g>
+<!-- A3&#45;&gt;E -->
+<g id="edge3" class="edge">
+<title>A3-&gt;E</title>
+<path fill="none" stroke="black" d="M183.98,-57.93C167.68,-46.91 143.11,-30.3 127.99,-20.08"></path>
+</g>
+<!-- A4 -->
+<g id="node5" class="node">
+<title>A4</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="119.56" cy="-134.43" rx="27" ry="14.29"></ellipse>
+<text text-anchor="start" x="109.56" y="-131.43" font-family="Arial" font-size="10.00">hora</text>
+</g>
+<!-- A4&#45;&gt;A3 -->
+<g id="edge4" class="edge">
+<title>A4-&gt;A3</title>
+<path fill="none" stroke="black" d="M134.05,-122.29C148.52,-111.16 170.67,-94.13 185.38,-82.82"></path>
+</g>
+<!-- A5 -->
+<g id="node6" class="node">
+<title>A5</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="200.56" cy="-134.43" rx="36.13" ry="14.29"></ellipse>
+<text text-anchor="start" x="183.06" y="-131.43" font-family="Arial" font-size="10.00">minutos</text>
+</g>
+<!-- A5&#45;&gt;A3 -->
+<g id="edge5" class="edge">
+<title>A5-&gt;A3</title>
+<path fill="none" stroke="black" d="M200.56,-120.22C200.56,-109.65 200.56,-94.9 200.56,-84.33"></path>
+</g>
+<!-- A6 -->
+<g id="node7" class="node">
+<title>A6</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="296.56" cy="-134.43" rx="41.94" ry="14.29"></ellipse>
+<text text-anchor="start" x="274.89" y="-131.43" font-family="Arial" font-size="10.00">segundos</text>
+</g>
+<!-- A6&#45;&gt;A3 -->
+<g id="edge6" class="edge">
+<title>A6-&gt;A3</title>
+<path fill="none" stroke="black" d="M278.05,-121.42C260.62,-110.11 234.71,-93.29 217.73,-82.28"></path>
+</g>
+</g>
+</svg>
+</p></div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-6">✅ Ejercicio 6 </h3>
+<h4 id="temperaturas-semanales">Temperaturas semanales </h4>
+<p>Dado el modelo E-R, realiza un modelo E-R totalmente equivalente en el que no haya <strong>atributos multivaluados</strong>.</p>
+<p align="center" style="zoom:1" class="puml"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="204pt" height="100pt" viewBox="0.00 0.00 204.10 100.28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 96.28)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-96.28 200.1,-96.28 200.1,4 -4,4"></polygon>
+<!-- E -->
+<g id="node1" class="node">
+<title>E</title>
+<polygon fill="#abddee" stroke="DarkSlateGray" points="167.54,-20 2.74,-20 2.74,0 167.54,0 167.54,-20"></polygon>
+<text text-anchor="middle" x="85.14" y="-7" font-family="Arial" font-size="10.00">TEMPERATURAS_SEMANALES</text>
+</g>
+<!-- A1 -->
+<g id="node2" class="node">
+<title>A1</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="32.14" cy="-74.14" rx="32.28" ry="14.29"></ellipse>
+<text text-anchor="start" x="17.41" y="-72.14" font-family="Arial" text-decoration="underline" font-size="10.00">ciudad</text>
+</g>
+<!-- A1&#45;&gt;E -->
+<g id="edge1" class="edge">
+<title>A1-&gt;E</title>
+<path fill="none" stroke="black" d="M42.87,-60.57C53.03,-48.65 68.06,-31.03 77.19,-20.32"></path>
+</g>
+<!-- A2 -->
+<g id="node3" class="node">
+<title>A2</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="139.14" cy="-74.14" rx="52.93" ry="14.25"></ellipse>
+<ellipse fill="none" stroke="DarkSlateGray" cx="139.14" cy="-74.14" rx="56.92" ry="18.29"></ellipse>
+<text text-anchor="middle" x="139.14" y="-71.14" font-family="Arial" font-size="10.00">temperaturas</text>
+</g>
+<!-- A2&#45;&gt;E -->
+<g id="edge2" class="edge">
+<title>A2-&gt;E</title>
+<path fill="none" stroke="black" d="M124.67,-56.49C114.55,-44.84 101.41,-29.72 93.12,-20.18"></path>
+</g>
+</g>
+</svg>
+</p></div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-7">✅ Ejercicio 7 </h3>
+<h4 id="descuento">Descuento </h4>
+<p>Dado el modelo E-R, realiza un modelo E-R totalmente equivalente en el que no haya <strong>atributos calculados</strong>. El precio total se calcula aplicando el IVA al resultado de aplicar el descuento al precio unitario</p>
+<p align="center" style="zoom:1" class="puml"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="310pt" height="157pt" viewBox="0.00 0.00 309.61 156.57" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 152.57)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-152.57 305.61,-152.57 305.61,4 -4,4"></polygon>
+<!-- E -->
+<g id="node1" class="node">
+<title>E</title>
+<polygon fill="#abddee" stroke="DarkSlateGray" points="172.82,-84.28 93.05,-84.28 93.05,-64.28 172.82,-64.28 172.82,-84.28"></polygon>
+<text text-anchor="middle" x="132.93" y="-71.28" font-family="Arial" font-size="10.00">PRODUCTOS</text>
+</g>
+<!-- A4 -->
+<g id="node5" class="node">
+<title>A4</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="43.93" cy="-14.14" rx="43.87" ry="14.29"></ellipse>
+<text text-anchor="middle" x="43.93" y="-11.14" font-family="Arial" font-size="10.00">descuento</text>
+</g>
+<!-- E&#45;&gt;A4 -->
+<g id="edge4" class="edge">
+<title>E-&gt;A4</title>
+<path fill="none" stroke="black" d="M119.03,-64.2C103.77,-54.23 79.23,-38.2 62.38,-27.19"></path>
+</g>
+<!-- A5 -->
+<g id="node6" class="node">
+<title>A5</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="132.93" cy="-14.14" rx="27" ry="14.29"></ellipse>
+<text text-anchor="middle" x="132.93" y="-11.14" font-family="Arial" font-size="10.00">iva</text>
+</g>
+<!-- E&#45;&gt;A5 -->
+<g id="edge5" class="edge">
+<title>E-&gt;A5</title>
+<path fill="none" stroke="black" d="M132.93,-64.2C132.93,-54.62 132.93,-39.42 132.93,-28.48"></path>
+</g>
+<!-- A6 -->
+<g id="node7" class="node">
+<title>A6</title>
+<ellipse fill="orange" stroke="DarkSlateGray" stroke-dasharray="5,2" cx="224.93" cy="-14.14" rx="47.42" ry="14.29"></ellipse>
+<text text-anchor="middle" x="224.93" y="-11.14" font-family="Arial" font-size="10.00">precio_final</text>
+</g>
+<!-- E&#45;&gt;A6 -->
+<g id="edge6" class="edge">
+<title>E-&gt;A6</title>
+<path fill="none" stroke="black" d="M147.31,-64.2C163.08,-54.23 188.45,-38.2 205.87,-27.19"></path>
+</g>
+<!-- A1 -->
+<g id="node2" class="node">
+<title>A1</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="44.93" cy="-134.43" rx="34.49" ry="14.29"></ellipse>
+<text text-anchor="start" x="28.54" y="-132.43" font-family="Arial" text-decoration="underline" font-size="10.00">código</text>
+</g>
+<!-- A1&#45;&gt;E -->
+<g id="edge1" class="edge">
+<title>A1-&gt;E</title>
+<path fill="none" stroke="black" d="M62.32,-121.94C78.95,-110.95 103.7,-94.6 119.05,-84.45"></path>
+</g>
+<!-- A2 -->
+<g id="node3" class="node">
+<title>A2</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="132.93" cy="-134.43" rx="35.06" ry="14.29"></ellipse>
+<text text-anchor="middle" x="132.93" y="-131.43" font-family="Arial" font-size="10.00">nombre</text>
+</g>
+<!-- A2&#45;&gt;E -->
+<g id="edge2" class="edge">
+<title>A2-&gt;E</title>
+<path fill="none" stroke="black" d="M132.93,-120.23C132.93,-109.38 132.93,-94.26 132.93,-84.62"></path>
+</g>
+<!-- A3 -->
+<g id="node4" class="node">
+<title>A3</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="243.93" cy="-134.43" rx="57.85" ry="14.29"></ellipse>
+<text text-anchor="middle" x="243.93" y="-131.43" font-family="Arial" font-size="10.00">precio_unitario</text>
+</g>
+<!-- A3&#45;&gt;E -->
+<g id="edge3" class="edge">
+<title>A3-&gt;E</title>
+<path fill="none" stroke="black" d="M220.94,-121.38C199.98,-110.4 169.48,-94.43 150.44,-84.46"></path>
+</g>
+</g>
+</svg>
+</p></div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-8">✅ Ejercicio 8 </h3>
+<h4 id="temperaturas-en-la-ciudad">Temperaturas en la ciudad </h4>
+<p>Dado el modelo E-R, realiza un modelo E-R totalmente equivalente en el que no haya <strong>atributos multivaluados</strong>. Ten en cuenta que no hay ninguna limitación respecto a la cantidad de temperaturas registradas por ciuidad.</p>
+<p align="center" style="zoom:1" class="puml"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="204pt" height="100pt" viewBox="0.00 0.00 204.10 100.28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 96.28)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-96.28 200.1,-96.28 200.1,4 -4,4"></polygon>
+<!-- E -->
+<g id="node1" class="node">
+<title>E</title>
+<polygon fill="#abddee" stroke="DarkSlateGray" points="163.08,-20 7.2,-20 7.2,0 163.08,0 163.08,-20"></polygon>
+<text text-anchor="middle" x="85.14" y="-7" font-family="Arial" font-size="10.00">TEMPERATURAS_CIUDADES</text>
+</g>
+<!-- A1 -->
+<g id="node2" class="node">
+<title>A1</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="32.14" cy="-74.14" rx="32.28" ry="14.29"></ellipse>
+<text text-anchor="start" x="17.41" y="-72.14" font-family="Arial" text-decoration="underline" font-size="10.00">ciudad</text>
+</g>
+<!-- A1&#45;&gt;E -->
+<g id="edge1" class="edge">
+<title>A1-&gt;E</title>
+<path fill="none" stroke="black" d="M42.87,-60.57C53.03,-48.65 68.06,-31.03 77.19,-20.32"></path>
+</g>
+<!-- A2 -->
+<g id="node3" class="node">
+<title>A2</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="139.14" cy="-74.14" rx="52.93" ry="14.25"></ellipse>
+<ellipse fill="none" stroke="DarkSlateGray" cx="139.14" cy="-74.14" rx="56.92" ry="18.29"></ellipse>
+<text text-anchor="middle" x="139.14" y="-71.14" font-family="Arial" font-size="10.00">temperaturas</text>
+</g>
+<!-- A2&#45;&gt;E -->
+<g id="edge2" class="edge">
+<title>A2-&gt;E</title>
+<path fill="none" stroke="black" d="M124.67,-56.49C114.55,-44.84 101.41,-29.72 93.12,-20.18"></path>
+</g>
+</g>
+</svg>
+</p></div> <!-- fin ejercicio -->
+<h2 id="paso-al-modelo-lógico-relacional">Paso al modelo lógico-relacional </h2>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-9">✅ Ejercicio 9 </h3>
+<p>Pasa al modelo lógico relacional el esquema entidad relación creado en el  <a href="#empresa">ejercicio 1</a>.</p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-10">✅ Ejercicio 10 </h3>
+<p>Pasa al modelo lógico relacional el esquema entidad relación creado en el  <a href="#universidad">ejercicio 2</a>.</p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-11">✅ Ejercicio 11 </h3>
+<p>Pasa al modelo lógico relacional el esquema entidad relación creado en el  <a href="#calzado">ejercicio 3</a>.</p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-12">✅ Ejercicio 12 </h3>
+<p>Pasa al modelo lógico relacional el esquema entidad relación creado en el  <a href="#instalaciones">ejercicio 4</a>.</p>
+</div> <!-- fin ejercicio -->
+<h2 id="repaso">Repaso </h2>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-13">✅ Ejercicio 13 </h3>
+<h4 id="startrek">StarTrek </h4>
+<p>Un club de fans de la famosa película StarTrek, ha decidido crear una página web donde se pueda consultar información referente a todas las películas y capítulos de la saga. El dominio <em><a href="http://startrekfans.com">startrekfans.com</a></em> se redirigirá a un servidor web que consulte una base de datos con la siguiente información:</p>
+<ul>
+<li><strong>Actores</strong>: Es necesario conocer el nombre completo del actor, el personaje que interpreta, la fecha de nacimiento y su nacionalidad.</li>
+<li><strong>Personajes</strong>: De los personajes es necesario saber el nombre, su raza y graduación militar que desempeña (capitán, teniente, almirante, etc.). Es importante conocer el actor que interpreta el personaje, teniendo en cuenta que, un personaje solo puede ser interpretado por un actor, y un actor solo puede interpretar un personaje. Además, será necesario conocer el personaje del que depende directamente en graduación militar.</li>
+<li><strong>Capítulos</strong>: Hay que almacenar todos los capítulos, indicando a qué temporada pertenece cada capítulo, el título, el orden en el que fue rodado, fecha de su primera emisión en televisión y los personajes que participaron en cada capítulo.</li>
+<li><strong>Películas</strong>: Se debe almacenar también, todas las películas que se proyectaron en cines, cada una con su año de lanzamiento, título y director. También hay que guardar los personajes que aparecen en cada película y cuál de ellos fue el protagonista.</li>
+<li><strong>Planetas</strong>: En cada capítulo, se visita uno o varios planetas, hay que almacenar el código del planeta, su nombre, galaxia a la que pertenece, y el problema que se resolvió en esa visita y la nave con la que se viajó al planeta. Para la descripción del problema será suficiente con un campo de texto de 255 caracteres.</li>
+<li><strong>Naves</strong>: De la nave se almacenará el nombre, código y número de tripulantes.</li>
+</ul>
+<p><strong>Se pide:</strong><br>
+Realizar un diagrama entidad relación que modele el diseño de la base de datos. Puedes hacerlo en papel, con dia, con visio, o con cualquier otro software de  diagramas. Una vez creado el diagrama, obtén el modelo lógico-relacional.</p>
+</div> <!-- fin ejercicio -->
+<h2 id="entidad-relación-generalización--especialización">Entidad-Relación: Generalización / especialización </h2>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-14">✅ Ejercicio 14 </h3>
+<p>Modifica el modelo E/R de <a href="#universidad">ejercicio 2</a> de manera que haya una generalización/especialización..</p>
+</div> <!-- fin ejercicio -->
+<h2 id="ejercicios-er-resumen">Ejercicios E/R resumen </h2>
+<p>Diseña el modelo Entidad-Relación de los siguientes sistemas de información.</p>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-15">✅ Ejercicio 15 </h3>
+<h4 id="empresa-naviera">Empresa naviera </h4>
+<p>Una empresa naviera gestiona los viajes de los pasajeros que efectúan sus barcos.<br>
+Su base de datos debe ser capaz de gestionar los datos de los diversos viajes que se efectúan, identificándolos con un número de viaje se desea saber el destino, la fecha de salida y la fecha de vuelta. Los barcos que efectúan los viajes se conocen por su<br>
+matrícula, su nombre, el tonelaje, el número máximo de pasajeros, fecha de entrada en servicio y fecha prevista de retirada.<br>
+La tripulación de un barco es siempre fija (no depende de cada viaje). De cada marino se almacena su cargo (capitán, contramaestre, ...), fecha de alta y salario.<br>
+De un pasajero se conoce su dni, nombre y teléfono. Los pasajeros que viajan con niños menores (que no tienen DNI) deben registrarlos a su cargo.</p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-16">✅ Ejercicio 16 </h3>
+<h4 id="red-de-almacenes">Red de almacenes </h4>
+<p>Una empresa, propietaria de una red de almacenes de compra-venta de piezas de repuesto para automóviles, necesita organizar la siguiente información: código de la pieza, descripción de la misma, precio de venta, vehículo donde puede instalarse, código de proveedor, dirección, tlf y precio al que suministra la pieza, código de cada uno de los almacenes de la empresa, dirección, tlf y stock (cantidad de unidades de una pieza).<br>
+Se tendrá en cuenta que:</p>
+<ul>
+<li>Un proveedor puede suministrar más de una pieza, y evidentemente una pieza puede ser suministrada por más de un proveedor.</li>
+<li>El precio de venta de una pieza es el mismo en todos los almacenes</li>
+<li>Una pieza puede aplicarse a más de un modelo de vehículo.</li>
+</ul>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-17">✅ Ejercicio 17 </h3>
+<h4 id="películas-de-cine">Películas de cine </h4>
+<p>Un aficionado al cine quiere mantener una BD de las películas que tiene grabadas en DVD (nada pirata).<br>
+La información que se quiere registrar es la siguiente: Título en castellano, título original, género, año de estreno, duración de la película, nacionalidad, director, actores principales de la película, y para el director y actores, almacenaremos también el nombre, la fecha de nacimiento y muerte. Además, como las películas se graban en DVD guardaremos la marca y el modelo del DVD donde se hacen las grabaciones junto con la fecha de la grabación.<br>
+Este aficionado puede grabar más de una película en un DVD.</p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-18">✅ Ejercicio 18 </h3>
+<h4 id="federación-de-atletismo">Federación de atletismo </h4>
+<p>La federación valenciana de atletismo ha pensado establecer una base de datos que le permita un mejor seguimiento de las competiciones entre los diferentes clubes asociados y de los atletas que desarrollan su actividad deportiva como miembros de un club determinado.</p>
+<p>Los atletas pertenecen a un club determinado, pero pueden cambiar de club a lo largo de su vida. Se quiere tener constancia de este hecho y se desea guardar los diferentes clubes por los que han pasado.</p>
+<p>Los clubes tienen un código identificativo y un nombre, y se encuentran en una determinada ciudad.</p>
+<p>De los atletas se tendrán los datos típicos: NIF, nombre y apellidos.</p>
+<p>Además, es propósito de la federación mantener información actualizada respecto a las mejores marcas de los atletas en cada una de las actividades deportivas a las que se dedican (ejemplos de actividades deportivas son: carrera 100 m, carrera 200 m, maratón, salto de altura, salto con pértiga, decatlón, etc.).</p>
+<p>También es de interés registrar las reuniones o competiciones atléticas que tienen lugar durante el año entre los clubes.</p>
+<p>Un encuentro de este tipo involucra a dos o más clubes (hay encuentros triangulares, cuadrangulares, etc.). Se desea registrar qué clubes han participado en cada encuentro, así como dónde y cuándo se celebraron.</p>
+<p>Cada reunión tendrá un código identificativo y una pequeña descripción (por ejemplo, para saber si la pista es al aire libre, cubierta, o si es una combinada, etc.).</p>
+<p>La marca de cada atleta participante en un encuentro determinado también debería estar presente en la base de datos.</p>
+<p>Se debe tener en cuenta que un atleta puede participar en un mismo encuentro compitiendo en más de una especialidad, en cuyo caso se desea tener datos sobre las marcas de cada una.</p>
+<ol>
+<li>Diseñar un modelo conceptual de datos que se ajuste a los requerimientos anteriores, utilizando el modelo Entidad-Relación como notación.</li>
+<li>Transformar el modelo conceptual anterior en un modelo lógico relacional.</li>
+</ol>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-19">✅ Ejercicio 19 </h3>
+<h4 id="los-animales-hacen-dieta">Los animales hacen dieta </h4>
+<p>En una determinada granja se desea mantener la información correspondiente a la alimentación que se suministra a los animales que en ella se crían.</p>
+<p>El control y seguimiento de la alimentación que se proporciona a cada animal tiene como objetivo el estudio y análisis de los resultados de la producción y el beneficio que se obtiene de los animales.</p>
+<p>Cada uno de los animales tiene un código asociado que puede estar impreso en la oreja o en el lomo.</p>
+<p>De un animal interesa almacenar la especie a la que pertenece, su utilidad, y la cantidad de productos que produce (litros de leche, número de huevos por día, etc.).</p>
+<p>Cada animal sigue una dieta alimentaria basada en una serie de criterios determinados por los veterinarios.</p>
+<p>Una dieta es el conjunto de alimentos que recibe un animal a lo largo del día.</p>
+<p>Cada animal sigue una y solo una dieta a la vez.</p>
+<p>La dieta seguida por cada uno de los animales de la granja puede ser modificada a lo largo de su vida, siendo de interés para los veterinarios el conocimiento de esta información.</p>
+<p>Una dieta se establece para un animal y no para todos los animales de la misma especie.</p>
+<p>Una misma dieta puede ser seguida al mismo tiempo por varios animales de la granja.</p>
+<p>Cada dieta está compuesta por una serie de alimentos que son ingeridos por los animales en diferentes comidas a lo largo del día.</p>
+<p>De una comida interesa saber el nombre que se le ha dado (desayuno, comida, cena, ...) y la hora en la que empieza y la hora a la que termina.</p>
+<p>En cada comida, cada uno de los animales ingiere unas cantidades determinadas de uno o varios alimentos.</p>
+<p>De los alimentos interesa guardar su nombre, su tipo (fruta, carne, ...), la unidad en la que se mide (litros, kg, ...), el precio de coste por unidad de medida y la cantidad de nutrientes que contiene cada uno de ellos.</p>
+<p>Un alimento puede contener más de un nutriente.</p>
+<p>De los nutrientes se almacenará su nombre, su unidad de medida y su estado.</p>
+<ol>
+<li>Diseñar un modelo conceptual de datos que se ajuste a los requerimientos anteriores, utilizando el modelo Entidad-Relación como notación.</li>
+<li>Transformar el modelo conceptual anterior en un modelo lógico relacional.</li>
+</ol>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-20">✅ Ejercicio 20 </h3>
+<h4 id="empresa-de-mercancías">Empresa de mercancías </h4>
+<p>Se quiere diseñar una base de datos para facilitar la gestión de una empresa dedicada al transporte internacional de mercancías y que opera en el ámbito europeo.</p>
+<p>La empresa dispone de varias delegaciones repartidas por toda la geografía europea. Las delegaciones se identifican por un nombre, y se quiere almacenar también su teléfono y la ciudad donde está situada.</p>
+<p>El personal de la empresa se puede separar en 2 grandes grupos:</p>
+<ul>
+<li>Administrativos, de los que queremos conocer su nivel de estudios.</li>
+<li>Conductores, de los que nos interesa saber el año de obtención del carné de conducir y el tipo de carné que tienen.</li>
+</ul>
+<p>De todo el personal de la empresa queremos saber su código de empleado, el nombre, el teléfono y el año de nacimiento.</p>
+<p>Todos los empleados están asignados a una delegación determinada. Se quiere tener constancia histórica de este hecho, teniendo en cuenta que pueden cambiar de delegación (y volver a una delegación en la que habían trabajado anteriormente).</p>
+<p>La actividad de la empresa consiste en efectuar los viajes pertinentes para transportar las mercancías según las peticiones de sus clientes. Todo los clientes se identifican por un código de cliente. También querremos saber su nombre y el teléfono de contacto.</p>
+<p>La empresa dispone de muchos camiones identificados por un código. Se quiere saber la matrícula, marca y tara de los camiones.</p>
+<p>Los viajes los organiza siempre una delegación y se identifican por un código de viaje, que es interno para cada delegación (se puede repetir en delegaciones diferentes). Para cada uno de los viajes interesa saber:</p>
+<ul>
+<li>Qué camión se ha utilizado (en cada viaje se utiliza un camión único)</li>
+<li>Qué conductor o conductores han participado en el viaje (en un viaje largo pueden ir varios conductores). También se quiere saber el importe de las dietas pagadas a cada conductor (las dietas pueden ser diferentes para los conductores de un mismo viaje).</li>
+<li>El recorrido del viaje; es decir; la hora en que el camión llega a cada una de las ciudades donde ha ido a cargar o descargar Supondremos que en un viaje no se pasa nunca dos veces por la misma ciudad.</li>
+<li>El número de paquetes cargados y descargados en cada ciudad para cada uno de los clientes. En un mismo viaje se puede dejar y/o recoger paquetes en diferentes ciudades por encargo de un mismo cliente. También en un mismo viaje, se pueden dejar o recoger paquetes por encargo de diferentes clientes.</li>
+</ul>
+<ol>
+<li>Diseñar un modelo conceptual de datos que se ajuste a los requerimientos anteriores, utilizando el modelo Entidad-Relación como notación.</li>
+<li>Transformar el modelo conceptual anterior en un modelo lógico relacional.</li>
+</ol>
+</div> <!-- fin ejercicio -->
+<h2 id="paso-al-modelo-lógico-relacional-resumen">Paso al modelo lógico-relacional resumen </h2>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-21">✅ Ejercicio 21 </h3>
+<p>Pasa al modelo lógico-relacional el siguiente modelo entidad-relación</p>
+<p><img src="./.img/infraestructuraempresa.png" alt="Infraestructura de una empresa" style="display:block;margin:0 auto;width:75%;max-width:400px;"></p>
+<p align="center" style="zoom:1" class="puml"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="405pt" height="245pt" viewBox="0.00 0.00 404.72 244.57" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 240.57)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-240.57 400.72,-240.57 400.72,4 -4,4"></polygon>
+<!-- E1 -->
+<g id="node1" class="node">
+<title>E1</title>
+<polygon fill="#abddee" stroke="DarkSlateGray" points="209.23,-160.43 141.91,-160.43 141.91,-140.43 209.23,-140.43 209.23,-160.43"></polygon>
+<text text-anchor="middle" x="175.57" y="-147.43" font-family="Arial" font-size="10.00">CIUDADES</text>
+</g>
+<!-- R1 -->
+<g id="node9" class="node">
+<title>R1</title>
+<polygon fill="#faddaa" stroke="DarkSlateGray" points="65.57,-100.28 -0.07,-82.28 65.57,-64.28 131.2,-82.28 65.57,-100.28"></polygon>
+<text text-anchor="middle" x="65.57" y="-79.28" font-family="Arial" font-size="10.00">RECORRIDO</text>
+</g>
+<!-- E1&#45;&gt;R1 -->
+<g id="edge6" class="edge">
+<title>E1-&gt;R1</title>
+<path fill="none" stroke="black" d="M160.27,-140.23C140.67,-128.44 106.67,-108 85.19,-95.08"></path>
+</g>
+<!-- R2 -->
+<g id="node10" class="node">
+<title>R2</title>
+<polygon fill="#faddaa" stroke="DarkSlateGray" points="279.57,-100.28 229.15,-82.28 279.57,-64.28 329.98,-82.28 279.57,-100.28"></polygon>
+<text text-anchor="middle" x="279.57" y="-79.28" font-family="Arial" font-size="10.00">SITUADA</text>
+</g>
+<!-- E1&#45;&gt;R2 -->
+<g id="edge7" class="edge">
+<title>E1-&gt;R2</title>
+<path fill="none" stroke="black" d="M190.03,-140.23C208.89,-128.23 241.87,-107.26 262.11,-94.39"></path>
+</g>
+<!-- E2 -->
+<g id="node2" class="node">
+<title>E2</title>
+<polygon fill="#abddee" stroke="DarkSlateGray" points="207.57,-92.28 153.57,-92.28 153.57,-72.28 207.57,-72.28 207.57,-92.28"></polygon>
+<polygon fill="none" stroke="DarkSlateGray" points="211.57,-96.28 149.57,-96.28 149.57,-68.28 211.57,-68.28 211.57,-96.28"></polygon>
+<text text-anchor="middle" x="180.57" y="-79.28" font-family="Arial" font-size="10.00">VIAJES</text>
+</g>
+<!-- A3 -->
+<g id="node6" class="node">
+<title>A3</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="130.57" cy="-14.14" rx="34.49" ry="14.29"></ellipse>
+<text text-anchor="start" x="114.18" y="-12.14" font-family="Arial" text-decoration="underline" font-size="10.00">código</text>
+</g>
+<!-- E2&#45;&gt;A3 -->
+<g id="edge3" class="edge">
+<title>E2-&gt;A3</title>
+<path fill="none" stroke="black" d="M170.69,-68.22C161.92,-56.62 149.19,-39.77 140.43,-28.18"></path>
+</g>
+<!-- A4 -->
+<g id="node7" class="node">
+<title>A4</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="230.57" cy="-14.14" rx="47.15" ry="14.29"></ellipse>
+<text text-anchor="middle" x="230.57" y="-11.14" font-family="Arial" font-size="10.00">fecha_viaje</text>
+</g>
+<!-- E2&#45;&gt;A4 -->
+<g id="edge4" class="edge">
+<title>E2-&gt;A4</title>
+<path fill="none" stroke="black" d="M190.45,-68.22C199.21,-56.62 211.95,-39.77 220.71,-28.18"></path>
+</g>
+<!-- E3 -->
+<g id="node3" class="node">
+<title>E3</title>
+<polygon fill="#abddee" stroke="DarkSlateGray" points="326.97,-160.43 232.17,-160.43 232.17,-140.43 326.97,-140.43 326.97,-160.43"></polygon>
+<polygon fill="none" stroke="DarkSlateGray" points="330.97,-164.43 228.17,-164.43 228.17,-136.43 330.97,-136.43 330.97,-164.43"></polygon>
+<text text-anchor="middle" x="279.57" y="-147.43" font-family="Arial" font-size="10.00">DELEGACIONES</text>
+</g>
+<!-- E3&#45;&gt;R2 -->
+<g id="edge8" class="edge">
+<title>E3-&gt;R2</title>
+<path fill="none" stroke="black" d="M279.57,-136.36C279.57,-126.12 279.57,-111.78 279.57,-100.59"></path>
+</g>
+<!-- A1 -->
+<g id="node4" class="node">
+<title>A1</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="135.57" cy="-218.57" rx="27" ry="14.29"></ellipse>
+<text text-anchor="start" x="130.29" y="-216.57" font-family="Arial" text-decoration="underline" font-size="10.00">cp</text>
+</g>
+<!-- A1&#45;&gt;E1 -->
+<g id="edge1" class="edge">
+<title>A1-&gt;E1</title>
+<path fill="none" stroke="black" d="M143.28,-204.82C151.09,-191.9 162.98,-172.24 169.94,-160.73"></path>
+</g>
+<!-- A2 -->
+<g id="node5" class="node">
+<title>A2</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="215.57" cy="-218.57" rx="35.06" ry="14.29"></ellipse>
+<text text-anchor="middle" x="215.57" y="-215.57" font-family="Arial" font-size="10.00">nombre</text>
+</g>
+<!-- A2&#45;&gt;E1 -->
+<g id="edge2" class="edge">
+<title>A2-&gt;E1</title>
+<path fill="none" stroke="black" d="M207.67,-204.5C199.83,-191.55 188.04,-172.04 181.14,-160.64"></path>
+</g>
+<!-- A5 -->
+<g id="node8" class="node">
+<title>A5</title>
+<ellipse fill="LightYellow" stroke="DarkSlateGray" cx="65.57" cy="-150.43" rx="56.52" ry="14.29"></ellipse>
+<text text-anchor="middle" x="65.57" y="-147.43" font-family="Arial" font-size="10.00">hora_de_paso</text>
+</g>
+<!-- A5&#45;&gt;R1 -->
+<g id="edge9" class="edge">
+<title>A5-&gt;R1</title>
+<path fill="none" stroke="black" d="M65.57,-136.04C65.57,-125.77 65.57,-111.53 65.57,-100.43"></path>
+</g>
+<!-- R1&#45;&gt;E2 -->
+<g id="edge5" class="edge">
+<title>R1-&gt;E2</title>
+<path fill="none" stroke="black" d="M131.15,-82.28C137.2,-82.28 143.25,-82.28 149.3,-82.28"></path>
+</g>
+<!-- R3 -->
+<g id="node11" class="node">
+<title>R3</title>
+<polygon fill="#faddaa" stroke="DarkSlateGray" points="332.57,-236.57 268.25,-218.57 332.57,-200.57 396.88,-218.57 332.57,-236.57"></polygon>
+<text text-anchor="middle" x="332.57" y="-215.57" font-family="Arial" font-size="10.00">ORGANIZAR</text>
+</g>
+</g>
+</svg>
+</p></div> <!-- fin ejercicio -->
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
