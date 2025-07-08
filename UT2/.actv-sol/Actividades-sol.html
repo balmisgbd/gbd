@@ -405,6 +405,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
             <p>✅ Solución Ejercicio 13</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-solución-ejercicio-14" class="md-toc-link">
+            <p>✅ Solución Ejercicio 14</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#white_check_mark-solución-ejercicio-15" class="md-toc-link">
             <p>✅ Solución Ejercicio 15</p>
 
@@ -992,6 +996,31 @@ CF: dormitorio → MODELOS_DORMITORIO</p>
 </div>
 <h3 id="white_check_mark-solución-ejercicio-13">✅ Solución Ejercicio 13 </h3>
 <p><img src="./.img/ej13.svg" alt="StarTrek" style="display:block;margin:0 auto;width:100%;max-width:600px;"></p>
+<div class="box_bg_lightgreen">
+<h4 id="key-modelo-lógico-relacional-4">🔑 Modelo lógico-relacional </h4>
+<p>ACTORES(<u>nombreCompleto</u>, nacionalidad, fec_nac)</p>
+<p>PERSONAJES(<u>nombre</u>, raza, graduacionMilitar, actor, capMilitar)<br>
+CF: actor → ACTORES<br>
+CF: capMilitar → PERSONAJES</p>
+<p>PELICULAS(<u>idpelicula</u>, titulo, director, anyo_lanzamiento, progatonista)<br>
+CF: progatonista → PERSONAJES</p>
+<p>CAPITULOS(<u>titulo</u>, temporada, orden_rodaje, fec_emision)</p>
+<p>PLANETAS(<u>codigo</u>, nombre, galaxia)</p>
+<p>NAVES(<u>codigo</u>, nombre, tripulantes)</p>
+<p>APARECER(<u>personaje</u>, <u>pelicula</u>)<br>
+CF: personaje → PERSONAJES<br>
+CF: pelicula → PELICULAS</p>
+<p>PARTICIPAR(<u>capitulo</u>, <u>personaje</u>)<br>
+CF: capitulo → CAPITULOS<br>
+CF: personaje → PERSONAJES</p>
+<p>VISITAR(<u>capitulo</u>, <u>planeta</u>, <u>nave</u>, problema)<br>
+CF: capitulo → CAPITULOS<br>
+CF: planeta → PLANETAS<br>
+CF: nave → NAVES</p>
+</div> <!-- fin propuesta de solución -->
+<h3 id="white_check_mark-solución-ejercicio-14">✅ Solución Ejercicio 14 </h3>
+<p><img src="./.img/ej14.svg" alt="universidad con generalización" style="display:block;margin:0 auto;width:100%;max-width:600px;"></p>
+<div class="box_bg_lightgreen">
 <h3 id="white_check_mark-solución-ejercicio-15">✅ Solución Ejercicio 15 </h3>
 <h4 id="opción-a-1">Opción A </h4>
 <p><img src="./.img/ej15_a.svg" alt="empresa naviera" style="display:block;margin:0 auto;width:100%;max-width:600px;"></p>
@@ -1011,7 +1040,7 @@ CF: dormitorio → MODELOS_DORMITORIO</p>
 <h3 id="white_check_mark-solución-ejercicio-19">✅ Solución Ejercicio 19 </h3>
 <p><img src="./.img/ej19.svg" alt="los animales hacen dieta" style="display:block;margin:0 auto;width:100%;max-width:600px;"></p>
 <div class="box_bg_lightgreen">
-<h4 id="key-modelo-lógico-relacional-4">🔑 Modelo lógico-relacional </h4>
+<h4 id="key-modelo-lógico-relacional-5">🔑 Modelo lógico-relacional </h4>
 <p>ESPECIES(<u>codigo</u>, descripcion)</p>
 <p>ANIMALES(<u>codigo</u>, utilidad, cproductos, especie, dieta)<br>
 CF: especie → ESPECIES<br>
@@ -1037,7 +1066,7 @@ CF: dieta_hecha → HISTORICO_DIETA</p>
 <h3 id="white_check_mark-solución-ejercicio-20">✅ Solución Ejercicio 20 </h3>
 <p><img src="./.img/ej20.svg" alt="empresa de mercancías" style="display:block;margin:0 auto;width:100%;max-width:600px;"></p>
 <div class="box_bg_lightgreen">
-<h4 id="key-modelo-lógico-relacional-5">🔑 Modelo lógico-relacional </h4>
+<h4 id="key-modelo-lógico-relacional-6">🔑 Modelo lógico-relacional </h4>
 <p>PERSONAL(<u>codigo</u>, nombre, telefono, anyo_nac)</p>
 <p>ADMINISTRATIVOS(<u>personal</u>, nivel_estudios)<br>
 CF: personal → PERSONAL</p>
@@ -1067,8 +1096,9 @@ CF: conductor → CONDUCTORES</p>
 <p>CAMIONES (<u>codigo</u>, matricula, marca, tara)</p>
 </div> <!-- fin propuesta de solución -->
 <h3 id="white_check_mark-solución-ejercicio-21">✅ Solución Ejercicio 21 </h3>
+<p><img src="./.img/ej21.svg" alt="viajes" style="display:block;margin:0 auto;width:100%;max-width:600px;"></p>
 <div class="box_bg_lightgreen">
-<h4 id="key-modelo-lógico-relacional-6">🔑 Modelo lógico-relacional </h4>
+<h4 id="key-modelo-lógico-relacional-7">🔑 Modelo lógico-relacional </h4>
 <p>CIUDADES(<u>cp</u>, nombre)</p>
 <p>DELEGACIONES(<u>nombre</u>, telefono, ciudad, delegacion_depende)<br>
 CF: delegacion_depende → DELEGACIONES<br>
@@ -1079,7 +1109,7 @@ CF: delegacion → DELEGACIONES</p>
 CF: delegacion, viaje → VIAJES<br>
 CF: ciudad → CIUDADES</p>
 </div> <!-- fin propuesta de solución -->
-
+</div>
       </div>
       
       
