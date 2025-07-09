@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Apuntes</title>
+      <title>Bases de datos - UD3. Diseño Físico y Edición de Datos</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -204,6 +204,120 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
       <div class="crossnote markdown-preview  ">
       
 <h1 id="diseño-físico-y-edición-de-datos">Diseño Físico y Edición de Datos </h1>
+<p><a href="./ud3.pdf">Descargar estos apuntes</a></p>
+<h2 id="índice">Índice </h2>
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#diseño-físico-y-edición-de-datos" class="md-toc-link"><p>Diseño Físico y Edición de Datos</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#del-diseño-lógico-al-diseño-físico" class="md-toc-link">
+            <p>Del diseño lógico al diseño físico</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#crear-base-de-datos" class="md-toc-link">
+            <p>Crear Base de Datos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#tablas-y-campos" class="md-toc-link">
+            <p>Tablas y campos</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#añadir-y-editar-registros" class="md-toc-link"><p>Añadir y editar registros</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#insert" class="md-toc-link">
+            <p>INSERT</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#update" class="md-toc-link">
+            <p>UPDATE</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#delete" class="md-toc-link">
+            <p>DELETE</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#índices" class="md-toc-link">
+            <p>Índices</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#restricciones" class="md-toc-link"><p>Restricciones</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#restricción-de-campo-clave" class="md-toc-link">
+            <p>Restricción de campo clave</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#restricción-de-campo-obligatorio" class="md-toc-link">
+            <p>Restricción de campo obligatorio</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#restricción-de-campo-con-valores-únicos" class="md-toc-link">
+            <p>Restricción de campo con valores únicos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#restricción-de-campo-por-clave-ajena" class="md-toc-link">
+            <p>Restricción de campo por clave ajena</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#restricción-por-borrado-o-actualización-de-una-clave-ajena" class="md-toc-link">
+            <p>Restricción por borrado o actualización de una clave ajena</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#otras-restricciones-y-valores-por-defecto" class="md-toc-link">
+            <p>Otras restricciones y valores por defecto</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#restricciones-avanzadas" class="md-toc-link">
+            <p>Restricciones avanzadas</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#tablas-a-partir-de-consultas" class="md-toc-link">
+            <p>Tablas a partir de consultas</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#vistas" class="md-toc-link"><p>Vistas</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vistas-para-aplicar-restricciones" class="md-toc-link">
+            <p>Vistas para aplicar restricciones</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vistas-para-aplicar-transformaciones-o-mostrar-campos-calculados" class="md-toc-link">
+            <p>Vistas para aplicar transformaciones o mostrar campos calculados</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vistas-con-phpmyadmin" class="md-toc-link">
+            <p>Vistas con phpMyAdmin</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    
+</div>
 <h2 id="del-diseño-lógico-al-diseño-físico">Del diseño lógico al diseño físico </h2>
 <div class="definicion">
 <p>El <strong>diseño físico</strong> es el proceso de producir la descripción de la implementación de la base de datos en memoria secundaria; estructuras de almacenamiento y métodos de acceso que garanticen un acceso eficiente a los datos.</p>
@@ -259,7 +373,7 @@ Utilizaremos:</p>
 <p>Para poder conectar con <strong><code>mysql.exe</code></strong> abriremos una ventana de comandos (CMD) y nos desplazaremos hasta la carpeta donde tenemos la herramienta. Para conectar debemos indicar que conectamos con el usuario root que no tiene contraseña:</p>
 <div class="caso_estudio">
 <p>C:&gt; <strong>cd \xampp\mysql\bin</strong><br>
-C:\xampp\mysql\bin&gt; <strong>mysql -u root</strong></p>
+C:\xampp\mysql\bin&gt; <strong>.\mysql.exe -u root</strong></p>
 </div> <!-- fin caso de estudio -->
 <hr>
 <p>Para conectar con la Aplicación web phpMyAdmin abriremos un navegador e introduciremos la URL: <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a></p>
@@ -327,7 +441,7 @@ Se definen en el diccionario de datos El valor de un campo vendrá dado por una 
 <li>Si es enumerado, los valores que puede tener (por ejemplo, SI y NO)</li>
 </ul>
 <p>Antes de comenzar necesitaremos conocer algunos tipos de datos de MySQL. Los más utilizados se muestran en la siguiente tabla:</p>
-<p align="center" style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="176px" preserveAspectRatio="none" style="width:330px;height:176px;background:#FFFFFF;" version="1.1" viewBox="0 0 330 176" width="330px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="154.7529" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="308.05" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.12" x="21" y="33.8281">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="148.273" x="24.12" y="33.8281">Tipos de datos en MySQL</text><rect fill="#FADDAA" height="16.3441" style="stroke:none;stroke-width:0.5;" width="288.05" x="21" y="39.3441"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.12" x="21" y="52.1722">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="75.3245" x="24.12" y="52.1722">Tipo de Dato</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.12" x="99.4446" y="52.1722">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.12" x="181.2971" y="52.1722">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44.6403" x="184.4172" y="52.1722">Valores</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.12" x="229.0575" y="52.1722">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.9404" x="24.12" y="68.5163">VARCHAR</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="121.5129" x="184.4172" y="68.5163">Cadena de caracteres</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="19.8601" x="24.12" y="84.8604">INT</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="87.3606" x="184.4172" y="84.8604">Número entero</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51.9244" x="24.12" y="101.2045">DECIMAL</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="112.1768" x="184.4172" y="101.2045">Números decimales</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="29.7722" x="24.12" y="117.5487">DATE</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32.9042" x="184.4172" y="117.5487">Fecha</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="154.0571" x="24.12" y="133.8928">DATETIME o TIMESTAMP  </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="71.6285" x="184.4172" y="133.8928">Fecha y hora</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="35.4483" x="24.12" y="150.2369">ENUM</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="112.8248" x="184.4172" y="150.2369">Conjunto de valores</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="39.3441" y2="39.3441"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="55.6882" y2="55.6882"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="72.0323" y2="72.0323"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="88.3765" y2="88.3765"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="104.7206" y2="104.7206"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="121.0647" y2="121.0647"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="137.4088" y2="137.4088"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="309.05" y1="153.7529" y2="153.7529"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="39.3441" y2="153.7529"></line><line style="stroke:#000000;stroke-width:0.5;" x1="181.2971" x2="181.2971" y1="39.3441" y2="153.7529"></line><line style="stroke:#000000;stroke-width:0.5;" x1="309.05" x2="309.05" y1="39.3441" y2="153.7529"></line><!--SRC=[HOz12eCm44NtdcAWknoXBOLWb0f6MatTXnZGegPeMX1S57ghRdkJdgGP5RkQoRmNviyM217LpVHGQ2YaTOrkWG_PEIR4ssz2oXYbXt7Hq6BE8WHmbClQTBh7bpT2JbF_I5D7V5deLgAiP2ULrKwQb2WH3YUVTwCxupPPB0XOu4USnd-8WLJLo7hvoQW870srAkKw414Fm02MJ51-Wk_pjKe3bAQRtI2vS8nbskkzjTCLZpawZ3ll1m00]--></g></svg></p><p>Para las cadenas de caracteres y los números se puede indicar entre paréntesis cuántos caracteres o dígitos utilizaremos. Además, para el tipo de datos DECIMAL se puede indicar cuántos decimales tomamos. Por ejemplo: VARCHAR(5) es una cadena de carácteres de 5 letras, INT(4) un entero de 4 dígitos y DECIMAL(5,2) es un real de 5 dígitos de los cuales 2 son decimales.</p>
+<p align="center" style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="166px" preserveAspectRatio="none" style="width:332px;height:166px;background:#FFFFFF;" version="1.1" viewBox="0 0 332 166" width="332px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="144.75" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="310.7539" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="33.457">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="146.6836" x="24.334" y="33.457">Tipos de datos en MySQL</text><rect fill="#FADDAA" height="15.0938" style="stroke:none;stroke-width:0.5;" width="290.7539" x="21" y="38.0938"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="72.6621" x="24.334" y="50.5508">Tipo de Dato</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="96.9961" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="187.0137" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="43.3594" x="190.3477" y="50.5508">Valores</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="233.707" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58.6758" x="24.334" y="65.6445">VARCHAR</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="118.0723" x="190.3477" y="65.6445">Cadena de caracteres</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="19.3301" x="24.334" y="80.7383">INT</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80.0391" x="190.3477" y="80.7383">Número entero</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3438" x="24.334" y="95.832">DECIMAL</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="106.0371" x="190.3477" y="95.832">Números decimales</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32.0039" x="24.334" y="110.9258">DATE</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="33.3516" x="190.3477" y="110.9258">Fecha</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="159.3457" x="24.334" y="126.0195">DATETIME o TIMESTAMP  </text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="70.0371" x="190.3477" y="126.0195">Fecha y hora</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="35.332" x="24.334" y="141.1133">ENUM</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="106.7344" x="190.3477" y="141.1133">Conjunto de valores</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="38.0938" y2="38.0938"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="53.1875" y2="53.1875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="68.2813" y2="68.2813"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="98.4688" y2="98.4688"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="113.5625" y2="113.5625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="128.6563" y2="128.6563"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="311.7539" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="38.0938" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="187.0137" x2="187.0137" y1="38.0938" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="311.7539" x2="311.7539" y1="38.0938" y2="143.75"></line><!--SRC=[HOz12eCm44NtdcAWknoXBOLWb0f6MatTXnZGegPeMX1S57ghRdkJdgGP5RkQoRmNviyM217LpVHGQ2YaTOrkWG_PEIR4ssz2oXYbXt7Hq6BE8WHmbClQTBh7bpT2JbF_I5D7V5deLgAiP2ULrKwQb2WH3YUVTwCxupPPB0XOu4USnd-8WLJLo7hvoQW870srAkKw414Fm02MJ51-Wk_pjKe3bAQRtI2vS8nbskkzjTCLZpawZ3ll1m00]--></g></svg></p><p>Para las cadenas de caracteres y los números se puede indicar entre paréntesis cuántos caracteres o dígitos utilizaremos. Además, para el tipo de datos DECIMAL se puede indicar cuántos decimales tomamos. Por ejemplo: VARCHAR(5) es una cadena de carácteres de 5 letras, INT(4) un entero de 4 dígitos y DECIMAL(5,2) es un real de 5 dígitos de los cuales 2 son decimales.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Referencias</strong></p>
 <p><a href="https://dev.mysql.com/doc/refman/8.0/en/data-types.html">Tipos de datos en MySQL – Documentación oficial</a></p>
