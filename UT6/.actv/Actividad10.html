@@ -520,25 +520,51 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'Lakers'</span><span class="token punctuation">,</span> <span class="token variable">@media</span> <span class="token keyword keyword-AS">AS</span> MediaPuntos<span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
+PROBAR A PARTIR DE AQUI!!!!
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-6">✅ Ejercicio 6 </h4>
-<p>Crea un procedimiento que calcule el aumento de puntos por partido de un jugador aplicando una mejora de rendimiento del 10%. El procedimiento se denomina mejora_puntos y recibe como parámetro los puntos por partido, devolviendo en el mismo parámetro el valor incrementado en un 10%.</p>
+<p>Crea un procedimiento que calcule una predicción  de puntos por partido de un jugador tras una mejora de rendimiento.<br>
+El procedimiento se denomina prediccion_puntos y recibe como parámetro la media de Puntos_por_partido de un jugador, devolviendo en el mismo parámetro la predicción de puntos tras aplicar un incremento del 10% (se devuelve la media de Puntos_por_partido incrementada en un 10%).</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> proyeccion_puntos<span class="token punctuation">;</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> proyeccion_puntos<span class="token punctuation">(</span><span class="token keyword keyword-INOUT">INOUT</span> puntos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token comment">--- Aplicamos el incremento del 10%</span>
+    <span class="token keyword keyword-SET">SET</span> puntos :<span class="token operator">=</span> puntos <span class="token operator">*</span> <span class="token number">1.10</span><span class="token punctuation">;</span>
+
+    <span class="token comment">--- CAPTURA DE ERROR</span>
+    <span class="token comment">--- Si el valor es NULL, lanzamos error</span>
+    <span class="token keyword keyword-IF">IF</span> puntos <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
+        SIGNAL SQLSTATE <span class="token string">'45000'</span> 
+        <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'El valor de puntos es NULL'</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+
+<span class="token comment">--- Llamada</span>
+<span class="token keyword keyword-SET">SET</span> <span class="token variable">@puntos</span> :<span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-CALL">CALL</span> proyeccion_puntos<span class="token punctuation">(</span><span class="token variable">@puntos</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">@puntos</span> <span class="token keyword keyword-AS">AS</span> PuntosProyectados<span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-7">✅ Ejercicio 7 </h4>
-<p>Calcular la comisión de un vendedor</p>
-<p>Crea un procedimiento denominado 'ComisiónVendedor', que calcule la comisión de un vendedor dado su número de empleado (EMP_NO). La comisión se calcula como un porcentaje del salario del empleado, según la siguiente tabla:</p>
+<p>Calcular el bonus de un jugador</p>
+<p>Crea un procedimiento denominado <code>bonus_jugador</code>, que devuelva el bonus de un jugador dado su identificador de jugador (<em>codigo</em>) y una temporada (<em>temporada</em>).<br>
+El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> según la siguiente tabla:</p>
 <ul>
-<li>Si el salario del empleado es menor que 150000, la comisión es del 5% de su sueldo.</li>
-<li>Si el salario del empleado está entre 150000 y 200000, la comisión es del 10% de su sueldo.</li>
-<li>Si el salario del empleado es mayor que 300000, la comisión es del 2% de su sueldo.</li>
+<li>Si los puntos por partido son menores que 10, el bonus es del 5%.</li>
+<li>Si los puntos por partido están entre 10 y 20, el bonus es del 10%.</li>
+<li>Si los puntos por partido son mayores que 30, el bonus es del 2%.</li>
 </ul>
-<p>El procedimiento debe mostrar por pantalla el nombre del empleado, su salario y la comisión calculada. No se realiza ningún cambio en la base de datos.</p>
-<p>Si el codigo del empleado no corresponde a un vendedor, se mostrará el mensaje 'No es un vendedor'.</p>
+<p>El procedimiento debe mostrar por pantalla el nombre del jugador, la temporada,  sus puntos por partido y el bonus calculado. No se realiza ningún cambio en la base de datos.</p>
+<p>Si el código del jugador no existe o no tiene estadísticas en la temporada indicada, se mostrará el mensaje <em>Jugador no encontrado o sin estadísticas</em>.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
