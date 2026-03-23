@@ -505,10 +505,12 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
    <span class="token keyword keyword-FROM">FROM</span> estadisticas e<span class="token punctuation">,</span> jugadores j
    <span class="token keyword keyword-WHERE">WHERE</span> e<span class="token punctuation">.</span>jugador <span class="token operator">=</span> j<span class="token punctuation">.</span>codigo  <span class="token operator">AND</span> j<span class="token punctuation">.</span>Nombre_equipo <span class="token operator">=</span> equipo<span class="token punctuation">;</span>
 
-   <span class="token comment">--- Si el equipo no existe o no existe ningún jugador con estadísticas, la función AVG devolverá NULL. Se devuelve un error en ese caso.</span>
+   <span class="token comment">--- Si el equipo no existe o no existe ningún jugador con estadísticas, la función AVG devolverá NULL. </span>
+   <span class="token comment">--- CAPTURA DEL ERROR</span>
    <span class="token keyword keyword-IF">IF</span> media <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Equipo no encontrado o sin jugadores con estadísticas'</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+    <span class="token comment">--- Si media es NULL, lanzamos un error (SIGNAL) de tipo usuario (45000) con un texto (SET MESSAGE_TEXT).</span>
+    SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Equipo no encontrado o sin jugadores con estadísticas'</span><span class="token punctuation">;</span>
+   <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 
@@ -520,7 +522,11 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-6">✅ Ejercicio 6 </h4>
-<p>Crea un procedimiento que obtenga el importe con IVA (+21%) de una factura. El procedimiento se denomina importe_bruto y recibe como parámetro el importe neto de una factura y devuelve en el mismo parámetro el importe con IVA.</p>
+<p>Crea un procedimiento que calcule el aumento de puntos por partido de un jugador aplicando una mejora de rendimiento del 10%. El procedimiento se denomina mejora_puntos y recibe como parámetro los puntos por partido, devolviendo en el mismo parámetro el valor incrementado en un 10%.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-7">✅ Ejercicio 7 </h4>
@@ -533,6 +539,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </ul>
 <p>El procedimiento debe mostrar por pantalla el nombre del empleado, su salario y la comisión calculada. No se realiza ningún cambio en la base de datos.</p>
 <p>Si el codigo del empleado no corresponde a un vendedor, se mostrará el mensaje 'No es un vendedor'.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-8">✅ Ejercicio 8 </h4>
@@ -544,6 +554,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li>Actualizar el salario del empleado en la tabla EMP.</li>
 <li>Mostrar por pantalla el nombre del empleado y su nuevo salario.</li>
 </ul>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-9">✅ Ejercicio 9 </h4>
@@ -555,16 +569,28 @@ El procedimiento debe realizar las siguientes acciones:</p>
 <li>Actualizar el campo TOTAL de la tabla COMANDA con el valor calculado.</li>
 <li>Mostrar por pantalla el número de comanda y su total.</li>
 </ul>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-10">✅ Ejercicio 10 </h4>
 <p>Mostrar los empleados de un departamento</p>
 <p>Crea un procedimiento que muestre por pantalla los empleados de un departamento dado su nombre (DNOM). El procedimiento debe mostrar el nombre, oficio y salario de cada empleado.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-11">✅ Ejercicio 11 </h4>
 <p>Contar productos por descripción</p>
 <p>Crea un procedimiento que cuente la cantidad de productos vendidos dado una descripción. El procedimiento debe controlar si la descripción introducida es nula o vacía.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <h3 id="funciones">Funciones </h3>
 <h4 id="funciones-integradas-en-el-sgbd">Funciones integradas en el SGBD </h4>
@@ -574,23 +600,43 @@ El procedimiento debe realizar las siguientes acciones:</p>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-12">✅ Ejercicio 12 </h5>
 <p>Crea un procedimiento que devuelva el promedio del salario de los empleados que trabajan en un departamento redondeado a dos decimales (ROUND). El procedimiento recibe como parámetro el número de departamento</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-13">✅ Ejercicio 13 </h5>
 <p>Crea un procedimiento que devuelva el factorial de un número entero. El procedimiento recibe como parámetro el número entero y el resultado se devuelve en un parámetro de salida. Si el número es negativo se devolvera -1.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-14">✅ Ejercicio 14 </h5>
 <p>Crea un procedimiento que dado el código de un cliente muestre un código compuesto por las tres primeras letras del nombre (NOM) un guión y el código de cliente (CLIENT_COD). En el caso del cliente 104 y nombre EVERY MOUNTAIN, el código generado sería EVE-104. Funciones CONCAT y LEFT</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-15">✅ Ejercicio 15 </h5>
 <p>Crea un procedimiento, que reciba como argumento una fecha en formato yyyy-mm-dd y devuelva en otro parámetro la fecha en formado 'día de la semana, dia de mes, mes, año con cuatro dígitos (ejemplo: lunes, 12 de enero de 2025). Función<br>
 DATE_FORMAT</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-16">✅ Ejercicio 16 </h5>
 <p>Crea un procedimiento que dado el código de un producto (PROD_NUM) devuelva el precio de venta máximo, mínimo y medio (tabla DETALL). El procedimiento recibe como parámetro el código de producto y devuelve los valores en tres parámetros de salida. Funciones MAX , MIN y AVG .</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <h4 id="funciones-propias">Funciones propias </h4>
 <div class="admonition note">
