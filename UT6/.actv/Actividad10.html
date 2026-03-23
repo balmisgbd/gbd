@@ -576,7 +576,7 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
     <span class="token keyword keyword-DECLARE">DECLARE</span> bonus <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
     <span class="token comment">-- Obtener nombre del jugador y sus puntos por partido en la temporada indicada</span>
-    <span class="token keyword keyword-SELECT">SELECT</span> j<span class="token punctuation">.</span>Nombre nombre_jugador<span class="token punctuation">,</span> e<span class="token punctuation">.</span>Puntos_por_partido puntos
+    <span class="token keyword keyword-SELECT">SELECT</span> j<span class="token punctuation">.</span>Nombre<span class="token punctuation">,</span> e<span class="token punctuation">.</span>Puntos_por_partido  <span class="token keyword keyword-INTO">INTO</span> nombre_jugador<span class="token punctuation">,</span> puntos
     <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> estadisticas e
     <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> e<span class="token punctuation">.</span>jugador
       <span class="token operator">AND</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> cod_jugador
@@ -603,6 +603,7 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
 
 <span class="token comment">-- Llamada</span>
 <span class="token keyword keyword-CALL">CALL</span> bonus_jugador<span class="token punctuation">(</span><span class="token number">106</span><span class="token punctuation">,</span> <span class="token string">'99/00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-CALL">CALL</span> bonus_jugador<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'00/01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
