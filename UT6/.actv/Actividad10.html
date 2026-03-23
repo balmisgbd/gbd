@@ -257,7 +257,16 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#white_check_mark-ejercicio-8" class="md-toc-link">
             <p>✅ Ejercicio 8</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#actualizar-peso-de-un-jugador" class="md-toc-link"><p>Actualizar peso de un jugador</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#white_check_mark-ejercicio-9" class="md-toc-link">
             <p>✅ Ejercicio 9</p>
 
@@ -608,14 +617,17 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-8">✅ Ejercicio 8 </h4>
-<p>Actualizar el salario de un empleado</p>
-<p>Crea un procedimiento que actualice el salario de un empleado dado su número de empleado (EMP_NO) y un porcentaje de aumento. El procedimiento debe realizar las siguientes acciones::</p>
+<p>Actualizar el peso de un jugador</p>
+<h3 id="actualizar-peso-de-un-jugador">Actualizar peso de un jugador </h3>
+<p>Crea un procedimiento que actualice el <code>Peso</code> de un jugador dado su identificador (<em>codigo</em>) y un porcentaje de incremento.</p>
+<p>El procedimiento debe realizar las siguientes acciones:</p>
 <ul>
-<li>Si el porcentaje de aumento es negativo, mostrar un mensaje de error y no realizar ninguna actualización.</li>
-<li>Si el nuevo salario es superior a 500000, mostrar un mensaje de advertencia indicando que el salario es muy alto.</li>
-<li>Actualizar el salario del empleado en la tabla EMP.</li>
-<li>Mostrar por pantalla el nombre del empleado y su nuevo salario.</li>
+<li>Si el porcentaje de incremento es negativo, mostrar un mensaje de error y no realizar ninguna actualización.</li>
+<li>Si el nuevo peso es superior a 150, mostrar un mensaje de advertencia indicando que el peso es muy alto.</li>
+<li>Si el nuevo peso es superior a 150, Actualizar el <code>Peso</code> del jugador en la tabla <code>jugadores</code>.</li>
+<li>Mostrar por pantalla el nombre del jugador, su nuevo peso y el nombre de su equipo.</li>
 </ul>
+<p>Si el jugador no existe, se mostrará el mensaje <em>Jugador no encontrado</em>.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
