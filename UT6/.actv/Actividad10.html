@@ -532,14 +532,13 @@ El procedimiento se denomina prediccion_puntos y recibe como parámetro la media
 
 <span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> proyeccion_puntos<span class="token punctuation">(</span><span class="token keyword keyword-INOUT">INOUT</span> puntos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword keyword-BEGIN">BEGIN</span>
-    <span class="token comment">--- Aplicamos el incremento del 10%</span>
+    <span class="token comment">-- Aplicamos el incremento del 10%</span>
     <span class="token keyword keyword-SET">SET</span> puntos :<span class="token operator">=</span> puntos <span class="token operator">*</span> <span class="token number">1.10</span><span class="token punctuation">;</span>
 
-    <span class="token comment">--- CAPTURA DE ERROR</span>
-    <span class="token comment">--- Si el valor es NULL, lanzamos error</span>
+    <span class="token comment">-- CAPTURA DE ERROR</span>
+    <span class="token comment">-- Si el valor es NULL, lanzamos error</span>
     <span class="token keyword keyword-IF">IF</span> puntos <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'45000'</span> 
-        <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'El valor de puntos es NULL'</span><span class="token punctuation">;</span>
+        SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'El valor de puntos es NULL'</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
 
 <span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
@@ -547,7 +546,7 @@ El procedimiento se denomina prediccion_puntos y recibe como parámetro la media
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 
 
-<span class="token comment">--- Llamada</span>
+<span class="token comment">-- Llamada</span>
 <span class="token keyword keyword-SET">SET</span> <span class="token variable">@puntos</span> :<span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-CALL">CALL</span> proyeccion_puntos<span class="token punctuation">(</span><span class="token variable">@puntos</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">@puntos</span> <span class="token keyword keyword-AS">AS</span> PuntosProyectados<span class="token punctuation">;</span>
@@ -576,19 +575,19 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
     <span class="token keyword keyword-DECLARE">DECLARE</span> puntos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-DECLARE">DECLARE</span> bonus <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    <span class="token comment">--- Obtener nombre del jugador y sus puntos por partido en la temporada indicada</span>
+    <span class="token comment">-- Obtener nombre del jugador y sus puntos por partido en la temporada indicada</span>
     <span class="token keyword keyword-SELECT">SELECT</span> j<span class="token punctuation">.</span>Nombre nombre_jugador<span class="token punctuation">,</span> e<span class="token punctuation">.</span>Puntos_por_partido puntos
     <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> estadisticas e
     <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> e<span class="token punctuation">.</span>jugador
       <span class="token operator">AND</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> cod_jugador
       <span class="token operator">AND</span> e<span class="token punctuation">.</span>temporada <span class="token operator">=</span> <span class="token keyword keyword-temp">temp</span><span class="token punctuation">;</span>
 
-    <span class="token comment">--- Captura del error</span>
+    <span class="token comment">-- Captura del error</span>
     <span class="token keyword keyword-IF">IF</span> puntos <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
         SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Jugador no encontrado o sin estadísticas en esa temporada'</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
 
-    <span class="token comment">--- Calcular bonus según los puntos por partido</span>
+    <span class="token comment">-- Calcular bonus según los puntos por partido</span>
     <span class="token keyword keyword-IF">IF</span> puntos <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token keyword keyword-THEN">THEN</span>
         <span class="token keyword keyword-SET">SET</span> bonus :<span class="token operator">=</span> <span class="token number">0.05</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-ELSEIF">ELSEIF</span> puntos <span class="token operator">&gt;=</span> <span class="token number">10</span> <span class="token operator">AND</span> puntos <span class="token operator">&lt;=</span> <span class="token number">20</span> <span class="token keyword keyword-THEN">THEN</span>
@@ -597,12 +596,12 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
         <span class="token keyword keyword-SET">SET</span> bonus :<span class="token operator">=</span> <span class="token number">0.2</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
 
-    <span class="token comment">--- Mostrar resultado</span>
+    <span class="token comment">-- Mostrar resultado</span>
     <span class="token keyword keyword-SELECT">SELECT</span> nombre_jugador <span class="token keyword keyword-AS">AS</span> Nombre<span class="token punctuation">,</span> <span class="token keyword keyword-temp">temp</span> <span class="token keyword keyword-AS">AS</span> temporada<span class="token punctuation">,</span> puntos <span class="token keyword keyword-AS">AS</span> Puntos_por_partido<span class="token punctuation">,</span> bonus <span class="token keyword keyword-AS">AS</span> Bonus<span class="token punctuation">;</span>
 <span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 
-<span class="token comment">--- Llamada</span>
+<span class="token comment">-- Llamada</span>
 <span class="token keyword keyword-CALL">CALL</span> bonus_jugador<span class="token punctuation">(</span><span class="token number">106</span><span class="token punctuation">,</span> <span class="token string">'99/00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
