@@ -269,6 +269,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#white_check_mark-ejercicio-11" class="md-toc-link">
             <p>✅ Ejercicio 11</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-12" class="md-toc-link">
+            <p>✅ Ejercicio 12</p>
+
           </a></div>
         </div>
       </details>
@@ -285,10 +289,6 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#white_check_mark-ejercicio-12" class="md-toc-link">
-            <p>✅ Ejercicio 12</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#white_check_mark-ejercicio-13" class="md-toc-link">
             <p>✅ Ejercicio 13</p>
 
@@ -304,17 +304,46 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#white_check_mark-ejercicio-16" class="md-toc-link">
             <p>✅ Ejercicio 16</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-17" class="md-toc-link">
+            <p>✅ Ejercicio 17</p>
+
           </a></div>
         </div>
       </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#funciones-propias" class="md-toc-link">
-            <p>Funciones propias</p>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#funciones-propias" class="md-toc-link"><p>Funciones propias</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-18" class="md-toc-link">
+            <p>✅ Ejercicio 18</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-19" class="md-toc-link">
+            <p>✅ Ejercicio 19</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-20" class="md-toc-link">
+            <p>✅ Ejercicio 20</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-21" class="md-toc-link">
+            <p>✅ Ejercicio 21</p>
 
           </a></div>
         </div>
       </details>
     
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#control-de-errores" class="md-toc-link">
+            <p>Control de errores</p>
+
+          </a></div>
         </div>
       </details>
     
@@ -380,7 +409,6 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
-<div class="ejercicio">
 <h3 id="procedimientos">Procedimientos </h3>
 <div class="admonition note">
 <p class="admonition-title"> Resumen procedimientos</p>
@@ -520,7 +548,6 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'Lakers'</span><span class="token punctuation">,</span> <span class="token variable">@media</span> <span class="token keyword keyword-AS">AS</span> MediaPuntos<span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
-PROBAR A PARTIR DE AQUI!!!!
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-6">✅ Ejercicio 6 </h4>
 <p>Crea un procedimiento que calcule una predicción  de puntos por partido de un jugador tras una mejora de rendimiento.<br>
@@ -606,6 +633,8 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
 <span class="token keyword keyword-CALL">CALL</span> bonus_jugador<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'00/01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
+
+PROBAR A PARTIR DE AQUI!!!!
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-8">✅ Ejercicio 8 </h4>
 <p>Actualizar el peso de un jugador</p>
@@ -620,18 +649,64 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
 <p>Si el jugador no existe, se mostrará el mensaje <em>Jugador no encontrado</em>.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> actualizar_peso<span class="token punctuation">;</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> actualizar_peso<span class="token punctuation">(</span><span class="token operator">IN</span> cod_jugador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> <span class="token operator">IN</span> porcentaje <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> nombre_jugador <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> peso_actual <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> nuevo_peso <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> nombre_equipo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">-- Obtener datos </span>
+    <span class="token keyword keyword-SELECT">SELECT</span> Nombre<span class="token punctuation">,</span> Peso<span class="token punctuation">,</span> Nombre_equipo <span class="token keyword keyword-INTO">INTO</span> nombre_jugador<span class="token punctuation">,</span> peso_actual<span class="token punctuation">,</span> nombre_equipo
+    <span class="token keyword keyword-FROM">FROM</span> jugadores
+    <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
+
+    <span class="token comment">--- Control de errores</span>
+    <span class="token keyword keyword-IF">IF</span> nombre_jugador <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
+        SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Jugador no encontrado'</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-IF">IF</span> porcentaje <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token keyword keyword-THEN">THEN</span>
+        SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Porcentaje negativo no permitido'</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+
+    <span class="token comment">--- Calcular nuevo peso</span>
+    <span class="token keyword keyword-SET">SET</span> nuevo_peso :<span class="token operator">=</span> peso_actual <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> porcentaje <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">--- Control nuevo peso alto</span>
+    <span class="token keyword keyword-IF">IF</span> nuevo_peso <span class="token operator">&gt;</span> <span class="token number">150</span> <span class="token keyword keyword-THEN">THEN</span>
+        SIGNAL SQLSTATE <span class="token string">'01000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Peso muy alto'</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+
+    <span class="token comment">--- Actualización</span>
+    <span class="token keyword keyword-IF">IF</span> nuevo_peso <span class="token operator">&lt;=</span> <span class="token number">150</span> <span class="token keyword keyword-THEN">THEN</span>
+        <span class="token keyword keyword-UPDATE">UPDATE</span> jugadores
+        <span class="token keyword keyword-SET">SET</span> Peso <span class="token operator">=</span> nuevo_peso
+        <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+
+    <span class="token comment">--- Mostrar resultado</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> j<span class="token punctuation">.</span>Nombre <span class="token keyword keyword-AS">AS</span> Nombre<span class="token punctuation">,</span> j<span class="token punctuation">.</span>Peso <span class="token keyword keyword-AS">AS</span> Peso<span class="token punctuation">,</span> e<span class="token punctuation">.</span>Nombre <span class="token keyword keyword-AS">AS</span> Equipo
+    <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> equipos e
+    <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>Nombre_equipo <span class="token operator">=</span> e<span class="token punctuation">.</span>Nombre
+      <span class="token operator">AND</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-9">✅ Ejercicio 9 </h4>
-<p>Calcular el total de una comanda</p>
-<p>Crea un procedimiento que calcule el total de una comanda dado su número (COM_NUM).<br>
-El procedimiento debe realizar las siguientes acciones:</p>
+<p>Actualizar el equipo de un jugador</p>
+<p>Crea un procedimiento que actualice el equipo de un jugador dado su identificador (<code>jugadores.id_jugador</code>) y el nombre del nuevo equipo (<code>equipos.nombre_equipo</code>).</p>
+<p>El procedimiento debe realizar las siguientes acciones:</p>
 <ul>
-<li>Sumar el importe (IMPORT) de todos los detalles de la comanda (tabla DETALL).</li>
-<li>Actualizar el campo TOTAL de la tabla COMANDA con el valor calculado.</li>
-<li>Mostrar por pantalla el número de comanda y su total.</li>
+<li>Comprobar si existe el jugador y el equipo.</li>
+<li>Actualizar el campo <code>equipos.nombre_equipo</code> del jugador con el nombre del nuevo equipo indicado.</li>
 </ul>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
@@ -640,8 +715,13 @@ El procedimiento debe realizar las siguientes acciones:</p>
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-10">✅ Ejercicio 10 </h4>
-<p>Mostrar los empleados de un departamento</p>
-<p>Crea un procedimiento que muestre por pantalla los empleados de un departamento dado su nombre (DNOM). El procedimiento debe mostrar el nombre, oficio y salario de cada empleado.</p>
+<p>Mostrar los jugadores de un equipo.</p>
+<p>Crea un procedimiento que muestre por pantalla los jugadores de un equipo dado su nombre (<code>equipos.nombre_equipo</code>), posición (<code>jugadores.posicion</code>) y un peso mínimo (<code>jugadores.peso</code>).</p>
+<p>El procedimiento debe realizar las siguientes acciones:</p>
+<ul>
+<li>Mostrar el nombre de los jugadores del equipo cuyo peso mínimo sea superior al indicado, ordenando el resultado por peso de mayor a menor y, en caso de empate, por nombre en orden ascendente.</li>
+<li>Si no existe el equipo o la posición o el peso mínimo es inferior a 0, mostrar un mensaje indicando el error y finalizar el proceso.</li>
+</ul>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
@@ -649,8 +729,32 @@ El procedimiento debe realizar las siguientes acciones:</p>
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-11">✅ Ejercicio 11 </h4>
-<p>Contar productos por descripción</p>
-<p>Crea un procedimiento que cuente la cantidad de productos vendidos dado una descripción. El procedimiento debe controlar si la descripción introducida es nula o vacía.</p>
+<p>Contar jugadores por posición</p>
+<p>Crea un procedimiento que muestre el número de jugadores que hay en cada posición (<code>jugadores.posicion</code>).</p>
+<p>El procedimiento debe realizar las siguientes acciones:</p>
+<ul>
+<li>Mostrar cada posición y el número total de jugadores que tiene.</li>
+<li>Agrupar los resultados por la posición.</li>
+<li>Ordenar el resultado por número de jugadores de mayor a menor.</li>
+<li>En caso de empate, ordenar alfabéticamente por la posición.</li>
+</ul>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div>
+<div class="ejercicio">
+<h4 id="white_check_mark-ejercicio-12">✅ Ejercicio 12 </h4>
+<p>Peso medio de jugadores por equipo</p>
+<p>Crea un procedimiento que muestre el peso medio de los jugadores de cada equipo (<code>equipos.nombre_equipo</code>).</p>
+<p>El procedimiento debe realizar las siguientes acciones:</p>
+<ul>
+<li>Calcular el peso medio de los jugadores para cada equipo.</li>
+<li>Mostrar el nombre del equipo y su peso medio.</li>
+<li>Agrupar los resultados por equipo.</li>
+<li>Mostrar solo los equipos cuyo peso medio sea mayor que un valor indicado (<code>peso_medio_min</code>).</li>
+<li>Ordenar el resultado por peso medio de mayor a menor.</li>
+</ul>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
@@ -662,16 +766,10 @@ El procedimiento debe realizar las siguientes acciones:</p>
 <p class="admonition-title"> Funciones integradas</p>
 <p style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="267px" preserveAspectRatio="none" style="width:403px;height:267px;background:#FFFFFF;" version="1.1" viewBox="0 0 403 267" width="403px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="245.375" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="381.9297" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="4.4453" x="21" y="37.6094">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="181.3984" x="25.4453" y="37.6094">Funciones matemáticas</text><rect fill="#FADDAA" height="20.125" style="stroke:none;stroke-width:0.5;" width="361.9297" x="21" y="43.125"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="56.9219" x="25.4453" y="59.7344">Función</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="83.5859" x="125" y="59.7344">Descripción</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="50.6719" x="25.4453" y="79.8594">ABS(x)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="141.4219" x="125" y="79.8594">Valor absoluto de x.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="73.7734" x="25.4453" y="99.9844">FLOOR(x)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="180.5391" x="125" y="99.9844">Parte entera inferior de x.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="68.4297" x="25.4453" y="120.1094">MOD(x,y)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="176.9688" x="125" y="120.1094">Resto de la división x / y.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="69.3203" x="25.4453" y="140.2344">POW(x,y)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="98.7266" x="125" y="140.2344">x elevado a y.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="63.1016" x="25.4453" y="160.3594">SQRT(x)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="143.1953" x="125" y="160.3594">Raíz cuadrada de x.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="55.9922" x="25.4453" y="180.4844">RAND()</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="207.2188" x="125" y="180.4844">Número aleatorio entre 0 y 1.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="90.6641" x="25.4453" y="200.6094">ROUND(x,d)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="210.7969" x="125" y="200.6094">Redondea x con d decimales.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="77.3203" x="25.4453" y="220.7344">ROUND(x)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="253.4844" x="125" y="220.7344">Redondea x al entero más cercano.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="57.7734" x="25.4453" y="240.8594">SIGN(x)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="194.3125" x="125" y="240.8594">1 si x&gt;0, -1 si x&lt;0, 0 si x=0.</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="43.125" y2="43.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="63.25" y2="63.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="103.5" y2="103.5"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="123.625" y2="123.625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="163.875" y2="163.875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="184" y2="184"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="204.125" y2="204.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="224.25" y2="224.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="382.9297" y1="244.375" y2="244.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="43.125" y2="244.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="120.5547" x2="120.5547" y1="43.125" y2="244.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="382.9297" x2="382.9297" y1="43.125" y2="244.375"></line><!--SRC=[NP1BJiCm48RtESL8B4X3WHGa5Zmg1Q8W96XAIc4zjQUIHM9NTbAbLHT8d8G3i6B7DZVX93XrAnwxiURx_N-sUHPoXXeBu3J5AYyJ9SkHM1BqJZnlzygkM4aQX9mB8oOvmNZlA0oFmVzwUUrufn04IIMPK98C55XIqRoLWg490kzy9udYE8hwArWppOU45SHac1QppT5RGNGvykkEtJnYhZJWnAYyAfKLWlfWJIItQPevPeYw921fdT1AJKaBc_b1xzBOhxkB5it8k5jo12vQ_RQnXaDOE7QOFctP6YYdEN85kDsExhC7rvbXyxu4LY7NoF5NMHODOhyb1irdGTg6Sy9IMQNMK1E4i83UXat7WrQDEpMk92UqlKn9uFPE9WgRDd_WVoZcxk4Ax2SROAGPIhMnlRaUk40FZ82w7tPXtutdTWpNqqLeuRDl]--></g></svg></p><p style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="368px" preserveAspectRatio="none" style="width:616px;height:368px;background:#FFFFFF;" version="1.1" viewBox="0 0 616 368" width="616px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="346" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="594.4766" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="4.4453" x="21" y="37.6094">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="171.6094" x="25.4453" y="37.6094">Funciones de cadenas</text><rect fill="#FADDAA" height="20.125" style="stroke:none;stroke-width:0.5;" width="574.4766" x="21" y="43.125"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="77.3672" x="25.4453" y="59.7344">Función  </text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="99.5859" x="234.3672" y="59.7344">Descripción </text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="134.2344" x="25.4453" y="79.8594">CONCAT(c1,c2,...)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="193.8984" x="234.3672" y="79.8594">Concatena varias cadenas.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="73.7813" x="25.4453" y="99.9844">UPPER(c)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="319.25" x="234.3672" y="99.9844">Convierte la cadena a mayúsculas (UCASE).</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="77.3281" x="25.4453" y="120.1094">LOWER(c)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="312.1484" x="234.3672" y="120.1094">Convierte la cadena a minúsculas (LCASE).</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="70.2188" x="25.4453" y="140.2344">LEFT(c,k)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="254.3125" x="234.3672" y="140.2344">Devuelve los k primeros caracteres.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="80.875" x="25.4453" y="160.3594">RIGHT(c,k)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="242.7578" x="234.3672" y="160.3594">Devuelve los k últimos caracteres.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="132.4453" x="25.4453" y="180.4844">SUBSTRING(c,k,l)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="307.7734" x="234.3672" y="180.4844">Subcadena desde posición k con longitud l.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="200.0313" x="25.4453" y="200.6094">SUBSTRING_INDEX(c,pt,k)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="349.5781" x="234.3672" y="200.6094">Parte de la cadena según aparición del patrón pt.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="88" x="25.4453" y="220.7344">INSTR(c,c2)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="356.6641" x="234.3672" y="220.7344">Posición donde aparece c2 en c (0 si no aparece).</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="83.5547" x="25.4453" y="240.8594">LENGTH(c)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="258.8125" x="234.3672" y="240.8594">Número de caracteres de la cadena.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="57.7578" x="25.4453" y="260.9844">TRIM(c)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="228.5469" x="234.3672" y="260.9844">Elimina espacios al inicio y final.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="95.1172" x="25.4453" y="281.1094">REPEAT(c,k)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="183.2188" x="234.3672" y="281.1094">Repite la cadena k veces.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="132.4688" x="25.4453" y="301.2344">REPLACE(c,cb,cr)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="233.0234" x="234.3672" y="301.2344">Sustituye cb por cr en la cadena.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="95.125" x="25.4453" y="321.3594">REVERSE(c)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="130.75" x="234.3672" y="321.3594">Invierte la cadena.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="116.4531" x="25.4453" y="341.4844">STRCMP(c1,c2)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="191.2031" x="234.3672" y="341.4844">Compara cadenas (-1,0,1).</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="43.125" y2="43.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="63.25" y2="63.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="103.5" y2="103.5"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="123.625" y2="123.625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="163.875" y2="163.875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="184" y2="184"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="204.125" y2="204.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="224.25" y2="224.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="244.375" y2="244.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="264.5" y2="264.5"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="284.625" y2="284.625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="304.75" y2="304.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="324.875" y2="324.875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="595.4766" y1="345" y2="345"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="43.125" y2="345"></line><line style="stroke:#000000;stroke-width:0.5;" x1="229.9219" x2="229.9219" y1="43.125" y2="345"></line><line style="stroke:#000000;stroke-width:0.5;" x1="595.4766" x2="595.4766" y1="43.125" y2="345"></line><!--SRC=[XPF1ZjCm54Nt-OediI3jXAej4ei18ONKxKJgPAga1NR8TJmZgwuJsKwaeYwG-2HstVPF-1AUwxJC321saVtErNtNDsOZL4qrtKB9xsaZxRHIjX1VEOpU1C7B1A-OvHg4QeKHQybXTJKU3bz3-FFRzrvm3Vt-j55CL8eRb016IwwewVU3To-cyMGIn-_tS9eu_b20p1uct30jwjE9EmZsaDnbIRmCsIXYusWm6FG0poh5g4KnQAaMr9ob1-28rM91yf1rWwtWsdAGj1i22bkwEnuCQoIIuIg92zBpvFpkqtz8eNwJyySacQB7QEFG2MyRBbiaAmCRgBNOSbqvapumtldCqzdDlw3ZGLgn_GjKh3uKoppDPWwCf4EBPjqPBBd1dElA29_f1bYbK54z2DkK89z9V4cp2VcCGhNr9XRKBLm-tjdmX-D10SKYTA8bbr1JgzrtRRracg4Y2h7nIUPYeAmKgZcOCop06BW21k4GZ01LdIyk6MQpvOsFFpiUN6Y-DkS4dZZp3EvnwmaY1RuE1MvgYfqpG2Ks4trKi8DxlEcspyc2n9VOSrwB9s-yWHOTcSliF4w8MsmTCUt3DXR3tA6lDIQjWMctr3DREVb8ye9uP-aVJUhUOPadjmlVR5-vhVlTpcM6yDKe6aOZbyxRNm00]--></g></svg></p><p style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="488px" preserveAspectRatio="none" style="width:441px;height:488px;background:#FFFFFF;" version="1.1" viewBox="0 0 441 488" width="441px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="466.75" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="419.25" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="4.4453" x="21" y="37.6094">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="158.2656" x="25.4453" y="37.6094">Funciones de fechas</text><rect fill="#FADDAA" height="20.125" style="stroke:none;stroke-width:0.5;" width="399.25" x="21" y="43.125"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="72.9219" x="25.4453" y="59.7344">Función </text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="99.5859" x="185.4609" y="59.7344">Descripción </text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="87.9922" x="25.4453" y="79.8594">CURDATE()</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="96.0547" x="185.4609" y="79.8594">Fecha actual.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="83.5391" x="25.4453" y="99.9844">CURTIME()</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="86.2656" x="185.4609" y="99.9844">Hora actual.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="49.7578" x="25.4453" y="120.1094">NOW()</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="144.9688" x="185.4609" y="120.1094">Fecha y hora actual.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="104.8984" x="25.4453" y="140.2344">ADDDATE(f,d)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="176.9922" x="185.4609" y="140.2344">Suma d días a la fecha f.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="99.5469" x="25.4453" y="160.3594">ADDTIME(t,s)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="210.7813" x="185.4609" y="160.3594">Suma s segundos al tiempo t.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="120.0078" x="25.4453" y="180.4844">DATEDIFF(f1,f2)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="126.2813" x="185.4609" y="180.4844">Días entre f1 y f2.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="115.5547" x="25.4453" y="200.6094">TIMEDIFF(t1,t2)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="225.8828" x="185.4609" y="200.6094">Diferencia entre tiempos t1 y t2.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="48" x="25.4453" y="220.7344">DAY(f)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="181.4297" x="185.4609" y="220.7344">Día del mes de la fecha f.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="73.7578" x="25.4453" y="240.8594">MONTH(f)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="126.2891" x="185.4609" y="240.8594">Mes de la fecha f.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="58.6719" x="25.4453" y="260.9844">YEAR(f)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="124.5313" x="185.4609" y="260.9844">Año de la fecha f.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="117.3359" x="25.4453" y="281.1094">DAYOFWEEK(f)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="224.5703" x="185.4609" y="281.1094">Día de la semana (1=domingo).</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="94.2266" x="25.4453" y="301.2344">DAYNAME(f)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="214.3438" x="185.4609" y="301.2344">Nombre del día de la semana.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="62.2109" x="25.4453" y="321.3594">HOUR(t)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="126.2813" x="185.4609" y="321.3594">Hora del tiempo t.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="76.4297" x="25.4453" y="341.4844">MINUTE(t)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="147.625" x="185.4609" y="341.4844">Minutos del tiempo t.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="83.5547" x="25.4453" y="361.6094">SECOND(t)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="163.6641" x="185.4609" y="361.6094">Segundos del tiempo t.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="129.7891" x="25.4453" y="381.7344">SEC_TO_TIME(s)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="212.5703" x="185.4609" y="381.7344">Convierte segundos a tiempo.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="126.2344" x="25.4453" y="401.8594">TIME_TO_SEC(t)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="212.5703" x="185.4609" y="401.8594">Convierte tiempo a segundos.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="133.3359" x="25.4453" y="421.9844">MAKETIME(h,m,s)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="187.6406" x="185.4609" y="421.9844">Crea un tiempo con h,m,s.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="151.125" x="25.4453" y="442.1094">STR_TO_DATE(cf,ff)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="168.9844" x="185.4609" y="442.1094">Convierte texto a fecha.</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="147.5547" x="25.4453" y="462.2344">DATE_FORMAT(f,ff)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="230.3438" x="185.4609" y="462.2344">Formatea una fecha como texto.</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="43.125" y2="43.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="63.25" y2="63.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="103.5" y2="103.5"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="123.625" y2="123.625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="163.875" y2="163.875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="184" y2="184"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="204.125" y2="204.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="224.25" y2="224.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="244.375" y2="244.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="264.5" y2="264.5"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="284.625" y2="284.625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="304.75" y2="304.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="324.875" y2="324.875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="345" y2="345"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="365.125" y2="365.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="385.25" y2="385.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="405.375" y2="405.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="425.5" y2="425.5"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="445.625" y2="445.625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="420.25" y1="465.75" y2="465.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="43.125" y2="465.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="181.0156" x2="181.0156" y1="43.125" y2="465.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="420.25" x2="420.25" y1="43.125" y2="465.75"></line><!--SRC=[RPBDQjj058NtUeeBNLHsHObSwA9_8FI3JP04iap8oaoacNYeD6Cqez8MBmfvdYvA7y5laYV9_4XoRBpL_SuvL_UC-4xP7dMeXHeJr3SouKokwMyC_aV7UHkgKILn1vJze88-D1WsxnOtDn_0VVxpD7C-mNoUzAoYd66XB83WQeV4VEvyUPC4KHG4tmvWWED_fXG7YB2eEhgVFZW723T559InEmF5QZsep1urxs6ObglKJfUyEnzc-TqhsI_ONG9g1-DDl5fpwxv5K4Dz_8i486YGNHZ8H9iiwOc95Y3mOyzghWGDI8hRFGTfUMqThPB49Rv75beI6MVCPATkuQkDoCAYsjUWqlUaHId17LQdGGDllGL8hPEBCUBU9QEpkd03hRtqvUvfdfLBYwRNYViuA2mG7F_nQuGAovExEBuzYzIOm2rY25p_QyrRoXxvR59aWRgOuJFUFgZ_q4lMbrABB_DDuSgfIasUNpHTPHjLbq5Iodh9nHLg7OTv5bbgFRPp5TkM-TPKQWeDkNh6k9FuLQU3vjIIbYYbTJyf1ciqIOU5WzlO1EoyrhwQiCC8UZOAAix0p8QToa87c4TP4O-GYnJyK-eGKylfaMsJl4Y3qXq52UzQ94tEM675MsxbIlRv1G00]--></g></svg></p><p style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="207px" preserveAspectRatio="none" style="width:553px;height:207px;background:#FFFFFF;" version="1.1" viewBox="0 0 553 207" width="553px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="185" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="531.2656" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="4.4453" x="21" y="37.6094">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="278.2813" x="25.4453" y="37.6094">Funciones para mostrar información</text><rect fill="#FADDAA" height="20.125" style="stroke:none;stroke-width:0.5;" width="511.2656" x="21" y="43.125"></rect><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="72.9219" x="25.4453" y="59.7344">Función </text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="99.5859" x="181.9063" y="59.7344">Descripción </text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="82.6719" x="25.4453" y="79.8594">VERSION()</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="134.2813" x="181.9063" y="79.8594">Versión de MySQL</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="96.0156" x="25.4453" y="99.9844">DATABASE()</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="102.2969" x="181.9063" y="99.9844">Base de datos</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="142.2266" x="25.4453" y="120.1094">CURRENT_USER()</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="55.1328" x="181.9063" y="120.1094">Usuario</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="147.5703" x="25.4453" y="140.2344">CONVERT(parm, tp)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="174.3047" x="181.9063" y="140.2344">Convierte parm al tipo tp</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="88.9063" x="25.4453" y="160.3594">ISNULL(var)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="263.2344" x="181.9063" y="160.3594">1 si var es NULL, 0 en caso contrario</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="141.3516" x="25.4453" y="180.4844">IFNULL(parm, msg)</text><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacing" textLength="345.9141" x="181.9063" y="180.4844">Si parm es NULL retorna msg si no retorna parm</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="43.125" y2="43.125"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="63.25" y2="63.25"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="103.5" y2="103.5"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="123.625" y2="123.625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="163.875" y2="163.875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="532.2656" y1="184" y2="184"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="43.125" y2="184"></line><line style="stroke:#000000;stroke-width:0.5;" x1="177.4609" x2="177.4609" y1="43.125" y2="184"></line><line style="stroke:#000000;stroke-width:0.5;" x1="532.2656" x2="532.2656" y1="43.125" y2="184"></line><!--SRC=[FP3DIiGm58NtVOe3BkpKMNGKNAW8dVv0OUnWqxgLsCb8i4rAaWueNGW-ae_Wc_Wa9XcPNJZVEVVS6_t6nKWL7R1ZUphrff324Fx1iBeEWlFKeium1IuENFENdg6zk8pZAuI_dr-Bu0PHL4oYur8m3JS8WzH6KPVOIpNGZlzyYoWAxiwA9CkIv7w63rZLJfYHCTqfFfw4OCPJNfDoMuKBs3TJsY6x7XxUoUC6pf4bJR9EIEujQwgPmpjgfFOuRUiwhvhdbkIrjxHweehB8znMjg09xRB34cPqF9NsFAOCSoSCe3qC7wM5Fb6IgjrimWDLphk2vh1ls8ETlaGC9j1HBT7PprEdfhBmkMFHe5zTcl1ZnNyOYXcf17NOpHNof7ZRVFi7]--></g></svg></p></div>
 <div class="ejercicio">
-<h5 id="white_check_mark-ejercicio-12">✅ Ejercicio 12 </h5>
-<p>Crea un procedimiento que devuelva el promedio del salario de los empleados que trabajan en un departamento redondeado a dos decimales (ROUND). El procedimiento recibe como parámetro el número de departamento</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
-</div>
-<div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-13">✅ Ejercicio 13 </h5>
-<p>Crea un procedimiento que devuelva el factorial de un número entero. El procedimiento recibe como parámetro el número entero y el resultado se devuelve en un parámetro de salida. Si el número es negativo se devolvera -1.</p>
+<p>Peso medio de los jugadores de un equipo</p>
+<p>Crea un procedimiento que devuelva el peso medio (<em>AVG</em>) de los jugadores de un equipo (<code>jugadores.peso</code>) redondeado a dos decimales (<em>ROUND</em>).</p>
+<p>El procedimiento recibe como parámetro el nombre del equipo (<code>equipos.nombre_equipo</code>).</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
@@ -679,7 +777,7 @@ El procedimiento debe realizar las siguientes acciones:</p>
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-14">✅ Ejercicio 14 </h5>
-<p>Crea un procedimiento que dado el código de un cliente muestre un código compuesto por las tres primeras letras del nombre (NOM) un guión y el código de cliente (CLIENT_COD). En el caso del cliente 104 y nombre EVERY MOUNTAIN, el código generado sería EVE-104. Funciones CONCAT y LEFT</p>
+<p>Crea un procedimiento que devuelva el factorial de un número entero. El procedimiento recibe como parámetro el número entero y el resultado se devuelve en un parámetro de salida. Si el número es negativo se devolvera -1.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
@@ -687,8 +785,10 @@ El procedimiento debe realizar las siguientes acciones:</p>
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-15">✅ Ejercicio 15 </h5>
-<p>Crea un procedimiento, que reciba como argumento una fecha en formato yyyy-mm-dd y devuelva en otro parámetro la fecha en formado 'día de la semana, dia de mes, mes, año con cuatro dígitos (ejemplo: lunes, 12 de enero de 2025). Función<br>
-DATE_FORMAT</p>
+<p>Generar código de jugador</p>
+<p>Crea un procedimiento que dado el identificador de un jugador (<code>jugadores.id_jugador</code>) muestre un código compuesto por las tres primeras letras de su nombre (<code>jugadores.nombre</code>), un guión y su identificador.</p>
+<p>En el caso de un jugador 23, el código generado sería MIC-23.</p>
+<p>Funciones: <em>CONCAT</em> y <em>LEFT</em>.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
@@ -696,7 +796,19 @@ DATE_FORMAT</p>
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-16">✅ Ejercicio 16 </h5>
-<p>Crea un procedimiento que dado el código de un producto (PROD_NUM) devuelva el precio de venta máximo, mínimo y medio (tabla DETALL). El procedimiento recibe como parámetro el código de producto y devuelve los valores en tres parámetros de salida. Funciones MAX , MIN y AVG .</p>
+<p>Crea un procedimiento, que reciba como argumento una fecha en formato yyyy-mm-dd y devuelva en otro parámetro la fecha en formado 'día de la semana, dia de mes, mes, año con cuatro dígitos (ejemplo: lunes, 12 de enero de 2025).</p>
+<p>Función: <em>DATE_FORMAT</em></p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div>
+<div class="ejercicio">
+<h5 id="white_check_mark-ejercicio-17">✅ Ejercicio 17 </h5>
+<p>Estadísticas de un jugador</p>
+<p>Crea un procedimiento que dado el identificador de un jugador (<code>jugadores.id_jugador</code>) devuelva los puntos máximos, mínimos y medios (<code>estadisticas.puntos</code>).</p>
+<p>El procedimiento recibe como parámetro el identificador del jugador y devuelve los valores en tres parámetros de salida.</p>
+<p>Funciones: <em>MAX</em> , <em>MIN</em> y <em>AVG</em>.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
@@ -722,22 +834,54 @@ DATE_FORMAT</p>
 </code></pre><p>Eliminar funciones</p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>    <span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> nombre<span class="token punctuation">;</span>
 </code></pre></div>
-<p>Ejercicio 1. Crea una función que devuelva el nombre del departamento dado un<br>
-código de departamento. LLama a la función desde un SELECT que muestre el nombre<br>
-del empleado y el nombre del departamento, ordenado por departamento.<br>
-Ejercicio 2. Verificar si un producto existe. Crea una función que verifique si un<br>
-producto existe en la base de datos, dado su número de producto (PROD_NUM). La<br>
-función debe devolver un valor booleano (1 si existe, 0 si no existe).<br>
-Ejercicio 3. Crea una función queque cuente el número de pedidos realizados por un<br>
-cliente, dado su código de cliente (CLIENT_COD). La función debe devolver un valor<br>
-numérico que represente el número de pedidos del cliente. Ejecuta la función desde<br>
-un select que muestre el nombre del cliente, el número de pedidos y el total de ventas.<br>
-Ejercicio 4. Calcular la antiguedad de un empleado. Crea una función que calcule la<br>
-antigüedad de un empleado en años, dado su número de empleado (EMP_NO). La<br>
-función debe devolver un valor numérico que represente la cantidad de años<br>
-transcurridos desde la fecha de alta (DATA_ALTA) del empleado. Utiliza YEAR() y CURDATE(). Ejecuta la función desde un select que muestre el nombre del empleado,<br>
-la fecha de alta y la antigüedad en años. Utiliza</p>
+<div class="ejercicio">
+<h5 id="white_check_mark-ejercicio-18">✅ Ejercicio 18 </h5>
+<p>Nombre del equipo</p>
+<p>Crea una función que, dado un jugador (<code>jugadores.id_jugador</code>) devuelva el nombre de su equipo</p>
+<p>Llama a la función desde un SELECT que muestre el nombre del jugador y el nombre del equipo, ordenado por equipo.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div>  
+<div class="ejercicio">
+<h5 id="white_check_mark-ejercicio-19">✅ Ejercicio 19 </h5>
+<p>Verificar si un jugador existe</p>
+<p>Crea una función que verifique si un jugador existe en la base de datos, dado su identificador (<code>jugadores.id_jugador</code>).<br>
+La función debe devolver un valor booleano (1 si existe, 0 si no existe).</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
 </div>
+<div class="ejercicio">
+<h5 id="white_check_mark-ejercicio-20">✅ Ejercicio 20 </h5>
+<p>Estadísticas de un jugador</p>
+<p>Crea una función que reciba un código de jugador (<code>jugadores.id_jugador</code>) y devuelva el número de registros de estadísticas que tiene un jugador, dado su identificador.</p>
+<p>Ejecuta la función desde un SELECT que muestre el nombre del jugador, el número de estadísticas y el total de puntos.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div>
+<div class="ejercicio">
+<h5 id="white_check_mark-ejercicio-21">✅ Ejercicio 21 </h5>
+<p>Calcular la antigüedad de un jugador.</p>
+<p>Crea una función que calcule la antigüedad de un jugador en años, dado su identificador (<code>jugadores.id_jugador</code>).</p>
+<p>La función debe devolver un valor numérico que represente la cantidad de años transcurridos desde la fecha de ingreso (<code>jugadores.fecha_ingreso</code>) del jugador.</p>
+<p>Utiliza <em>YEAR()</em> y <em>CURDATE()</em>.</p>
+<p>Ejecuta la función desde un SELECT que muestre el nombre del jugador, la fecha de ingreso y la antigüedad en años.</p>
+<div class="caso_estudio">
+<p>💡 <em><strong>Solución</strong></em></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+</code></pre></div> <!-- fin caso de estudio -->
+</div>
+<h3 id="control-de-errores">Control de errores </h3>
+<div class="admonition note">
+<p class="admonition-title"> Funciones integradas</p>
+<p>prueba</p>
+</div>
+
       </div>
       
       
