@@ -366,48 +366,14 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-1">✅ Ejercicio 1 </h4>
 <p>Crea un script que asigne a una variable el valor 10 y a otra el valor 20. Muestra el resultado de la suma de ambas variables.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Asignar valores</span>
-<span class="token keyword keyword-SET">SET</span> <span class="token variable">@var1</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-SET">SET</span> <span class="token variable">@var2</span> <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- Mostrar suma</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">@var1</span> <span class="token keyword keyword-AS">AS</span> variable1<span class="token punctuation">,</span> <span class="token variable">@var2</span> <span class="token keyword keyword-AS">AS</span> variable2<span class="token punctuation">,</span> <span class="token variable">@var1</span> <span class="token operator">+</span> <span class="token variable">@var2</span> <span class="token keyword keyword-AS">AS</span> suma<span class="token punctuation">;</span>
-
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-2">✅ Ejercicio 2 </h4>
 <p>Crea un script que obtenga el número total de jugadores de la tabla jugadores y lo almacene en una variable.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Se obtiene el total de jugadores</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> <span class="token variable">@numJugadores</span> <span class="token keyword keyword-FROM">FROM</span> jugadores<span class="token punctuation">;</span>
-
-<span class="token comment">-- Se muestra el resultado</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">@numJugadores</span> <span class="token keyword keyword-AS">AS</span> TotalJugadores<span class="token punctuation">;</span>
-
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-3">✅ Ejercicio 3 </h4>
 <p>Crea un script que obtenga el número de filas de cada tabla de la base de datos nba y visualice el resultado en una tabla con dos columnas: nombre de la tabla y número de filas.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Se obtiene el número de filas de cada tabla.</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> <span class="token variable">@numEquipos</span> <span class="token keyword keyword-FROM">FROM</span> equipos<span class="token punctuation">;</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> <span class="token variable">@numJugadores</span> <span class="token keyword keyword-FROM">FROM</span> jugadores<span class="token punctuation">;</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> <span class="token variable">@numEstadisticas</span> <span class="token keyword keyword-FROM">FROM</span> estadisticas<span class="token punctuation">;</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> <span class="token variable">@numPartidos</span> <span class="token keyword keyword-FROM">FROM</span> partidos<span class="token punctuation">;</span>
-
-<span class="token comment">-- Se muestra el resultado</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'equipos'</span> <span class="token keyword keyword-AS">AS</span> NombreTabla<span class="token punctuation">,</span> <span class="token variable">@numEquipos</span> <span class="token keyword keyword-AS">AS</span> NumFilas
-<span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'jugadores'</span><span class="token punctuation">,</span> <span class="token variable">@numJugadores</span>
-<span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'estadisticas'</span><span class="token punctuation">,</span> <span class="token variable">@numEstadisticas</span>
-<span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'partidos'</span><span class="token punctuation">,</span> <span class="token variable">@numPartidos</span><span class="token punctuation">;</span>
-
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <h3 id="control-de-errores">Control de errores </h3>
 <div class="admonition note">
@@ -512,113 +478,16 @@ GET DIAGNOSTICS<span class="token punctuation">;</span>
     <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> <span class="token number">106</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
-</code></pre><div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
-<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> datos_jugador <span class="token comment">//</span>
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> datos_jugador<span class="token punctuation">(</span>cod_jugador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span>
-<span class="token keyword keyword-BEGIN">BEGIN</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> num_temporadas <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> total_puntos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>es<span class="token punctuation">.</span>temporada<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>es<span class="token punctuation">.</span>Puntos_por_partido<span class="token punctuation">)</span>
-    <span class="token keyword keyword-INTO">INTO</span> num_temporadas<span class="token punctuation">,</span> total_puntos
-    <span class="token keyword keyword-FROM">FROM</span> estadisticas es
-    <span class="token keyword keyword-WHERE">WHERE</span> es<span class="token punctuation">.</span>jugador <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
-
-    <span class="token keyword keyword-SELECT">SELECT</span> j<span class="token punctuation">.</span>codigo<span class="token punctuation">,</span> j<span class="token punctuation">.</span>Nombre<span class="token punctuation">,</span> num_temporadas<span class="token punctuation">,</span> total_puntos
-    <span class="token keyword keyword-FROM">FROM</span> jugadores j
-    <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
-<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
-
-<span class="token comment">--- Llamada</span>
-<span class="token keyword keyword-CALL">CALL</span> datos_jugador<span class="token punctuation">(</span><span class="token number">106</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div> <!-- fin caso de estudio -->
-</div>
+</code></pre></div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-5">✅ Ejercicio 5 </h4>
 <p>Crea un procedimiento denominado <code>media_puntos_equipo</code>, que reciba como parámetro el nombre de un equipo y devuelva en una variable la media de puntos por partido de los jugadores de ese equipo.</p>
 <p>Muestra un mensaje de error si no se puede calcular la media.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> media_puntos_equipo<span class="token punctuation">;</span>
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> media_puntos_equipo<span class="token punctuation">(</span><span class="token operator">IN</span> equipo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword keyword-OUT">OUT</span> media <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword keyword-BEGIN">BEGIN</span>
-   <span class="token comment">--- Control de errores</span>
-   <span class="token keyword keyword-DECLARE">DECLARE</span> errcode <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token keyword keyword-DECLARE">DECLARE</span> errmsg <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-   <span class="token keyword keyword-DECLARE">DECLARE</span> <span class="token keyword keyword-EXIT">EXIT</span> <span class="token keyword keyword-HANDLER">HANDLER</span> <span class="token keyword keyword-FOR">FOR</span> SQLEXCEPTION
-    <span class="token keyword keyword-BEGIN">BEGIN</span>
-        GET DIAGNOSTICS CONDITION <span class="token number">1</span>
-            errcode <span class="token operator">=</span> RETURNED_SQLSTATE<span class="token punctuation">,</span>
-            errmsg <span class="token operator">=</span> MESSAGE_TEXT<span class="token punctuation">;</span>
-        <span class="token keyword keyword-SELECT">SELECT</span> errcode <span class="token keyword keyword-AS">AS</span> codigo_error<span class="token punctuation">,</span> errmsg <span class="token keyword keyword-AS">AS</span> mensaje_error<span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span><span class="token punctuation">;</span>
-
-   <span class="token comment">--- Se calcula la media de puntos del equipo</span>
-   <span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>Puntos_por_partido<span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> media
-   <span class="token keyword keyword-FROM">FROM</span> estadisticas e<span class="token punctuation">,</span> jugadores j
-   <span class="token keyword keyword-WHERE">WHERE</span> e<span class="token punctuation">.</span>jugador <span class="token operator">=</span> j<span class="token punctuation">.</span>codigo  <span class="token operator">AND</span> j<span class="token punctuation">.</span>Nombre_equipo <span class="token operator">=</span> equipo<span class="token punctuation">;</span>
-
-   <span class="token comment">--- Si el equipo no existe o no tiene estadísticas, la función AVG devolverá NULL. </span>
-   <span class="token comment">--- CAPTURA DEL ERROR</span>
-   <span class="token keyword keyword-IF">IF</span> media <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'45000'</span>
-        <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Media no calculada'</span><span class="token punctuation">;</span>
-   <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
-
-<span class="token comment">--- Llamada</span>
-<span class="token keyword keyword-SET">SET</span> <span class="token variable">@media</span> :<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-CALL">CALL</span> media_puntos_equipo<span class="token punctuation">(</span><span class="token string">'Lakers'</span><span class="token punctuation">,</span> <span class="token variable">@media</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'Lakers'</span><span class="token punctuation">,</span> <span class="token variable">@media</span> <span class="token keyword keyword-AS">AS</span> MediaPuntos<span class="token punctuation">;</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-6">✅ Ejercicio 6 </h4>
 <p>Crea un procedimiento que calcule una predicción  de puntos por partido de un jugador tras una mejora de rendimiento.<br>
 El procedimiento se denomina prediccion_puntos y recibe como parámetro la media de Puntos_por_partido de un jugador, devolviendo en el mismo parámetro la predicción de puntos tras aplicar un incremento del 10% (se devuelve la media de Puntos_por_partido incrementada en un 10%). Realiza un control de errores.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> proyeccion_puntos<span class="token punctuation">;</span>
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
-
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> proyeccion_puntos<span class="token punctuation">(</span><span class="token keyword keyword-INOUT">INOUT</span> puntos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword keyword-BEGIN">BEGIN</span>
-    <span class="token comment">-- Control de errores</span>
-
-    <span class="token keyword keyword-DECLARE">DECLARE</span> errcode <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> errmsg <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword keyword-DECLARE">DECLARE</span> <span class="token keyword keyword-EXIT">EXIT</span> <span class="token keyword keyword-HANDLER">HANDLER</span> <span class="token keyword keyword-FOR">FOR</span> SQLEXCEPTION
-    <span class="token keyword keyword-BEGIN">BEGIN</span>
-        GET DIAGNOSTICS CONDITION <span class="token number">1</span>
-            errcode <span class="token operator">=</span> RETURNED_SQLSTATE<span class="token punctuation">,</span>
-            errmsg <span class="token operator">=</span> MESSAGE_TEXT<span class="token punctuation">;</span>
-        <span class="token keyword keyword-SELECT">SELECT</span> errcode <span class="token keyword keyword-AS">AS</span> codigo_error<span class="token punctuation">,</span> errmsg <span class="token keyword keyword-AS">AS</span> mensaje_error<span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span><span class="token punctuation">;</span>
-    
-    <span class="token keyword keyword-IF">IF</span> puntos <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'45000'</span>
-        <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'El valor de puntos es NULL'</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-
-    <span class="token comment">-- Aplicamos el incremento del 10%</span>
-    <span class="token keyword keyword-SET">SET</span> puntos :<span class="token operator">=</span> puntos <span class="token operator">*</span> <span class="token number">1.10</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
-
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
-
-
-<span class="token comment">-- Llamada</span>
-<span class="token keyword keyword-SET">SET</span> <span class="token variable">@puntos</span> :<span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-CALL">CALL</span> proyeccion_puntos<span class="token punctuation">(</span><span class="token variable">@puntos</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">@puntos</span> <span class="token keyword keyword-AS">AS</span> PuntosProyectados<span class="token punctuation">;</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-7">✅ Ejercicio 7 </h4>
@@ -632,50 +501,7 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
 </ul>
 <p>El procedimiento debe mostrar por pantalla el nombre del jugador, la temporada,  sus puntos por partido y el bonus que ha obtenido. No se realiza ningún cambio en la base de datos.</p>
 <p>Si el código del jugador no existe o no tiene estadísticas en la temporada indicada, se mostrará el mensaje <em>Jugador no encontrado o sin estadísticas</em>.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> bonus_jugador<span class="token punctuation">;</span>
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
-
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> bonus_jugador<span class="token punctuation">(</span><span class="token operator">IN</span> cod_jugador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> <span class="token operator">IN</span> <span class="token keyword keyword-temp">temp</span> <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword keyword-BEGIN">BEGIN</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> nombre_jugador <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> puntos <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> bonus <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-    <span class="token comment">-- Obtener nombre del jugador y sus puntos por partido en la temporada indicada</span>
-    <span class="token keyword keyword-SELECT">SELECT</span> j<span class="token punctuation">.</span>Nombre<span class="token punctuation">,</span> e<span class="token punctuation">.</span>Puntos_por_partido  <span class="token keyword keyword-INTO">INTO</span> nombre_jugador<span class="token punctuation">,</span> puntos
-    <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> estadisticas e
-    <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> e<span class="token punctuation">.</span>jugador
-      <span class="token operator">AND</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> cod_jugador
-      <span class="token operator">AND</span> e<span class="token punctuation">.</span>temporada <span class="token operator">=</span> <span class="token keyword keyword-temp">temp</span><span class="token punctuation">;</span>
-
-    <span class="token comment">-- Captura del error</span>
-    <span class="token keyword keyword-IF">IF</span> puntos <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Jugador no encontrado o sin estadísticas en esa temporada'</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-
-    <span class="token comment">-- Calcular bonus según los puntos por partido</span>
-    <span class="token keyword keyword-IF">IF</span> puntos <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token keyword keyword-THEN">THEN</span>
-        <span class="token keyword keyword-SET">SET</span> bonus :<span class="token operator">=</span> <span class="token number">0.05</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-ELSEIF">ELSEIF</span> puntos <span class="token operator">&gt;=</span> <span class="token number">10</span> <span class="token operator">AND</span> puntos <span class="token operator">&lt;=</span> <span class="token number">20</span> <span class="token keyword keyword-THEN">THEN</span>
-        <span class="token keyword keyword-SET">SET</span> bonus :<span class="token operator">=</span> <span class="token number">0.1</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-ELSEIF">ELSEIF</span> puntos <span class="token operator">&gt;</span> <span class="token number">30</span> <span class="token keyword keyword-THEN">THEN</span>
-        <span class="token keyword keyword-SET">SET</span> bonus :<span class="token operator">=</span> <span class="token number">0.2</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-
-    <span class="token comment">-- Mostrar resultado</span>
-    <span class="token keyword keyword-SELECT">SELECT</span> nombre_jugador <span class="token keyword keyword-AS">AS</span> Nombre<span class="token punctuation">,</span> <span class="token keyword keyword-temp">temp</span> <span class="token keyword keyword-AS">AS</span> temporada<span class="token punctuation">,</span> puntos <span class="token keyword keyword-AS">AS</span> Puntos_por_partido<span class="token punctuation">,</span> bonus <span class="token keyword keyword-AS">AS</span> Bonus<span class="token punctuation">;</span>
-<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
-
-<span class="token comment">-- Llamada</span>
-<span class="token keyword keyword-CALL">CALL</span> bonus_jugador<span class="token punctuation">(</span><span class="token number">106</span><span class="token punctuation">,</span> <span class="token string">'99/00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-CALL">CALL</span> bonus_jugador<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'00/01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
-
-PROBAR A PARTIR DE AQUI!!!!
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-8">✅ Ejercicio 8 </h4>
 <p>Actualizar el peso de un jugador</p>
@@ -688,57 +514,6 @@ PROBAR A PARTIR DE AQUI!!!!
 <li>Mostrar por pantalla el nombre del jugador, su nuevo peso y el nombre de su equipo.</li>
 </ul>
 <p>Si el jugador no existe, se mostrará el mensaje <em>Jugador no encontrado</em>.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> actualizar_peso<span class="token punctuation">;</span>
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
-
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> actualizar_peso<span class="token punctuation">(</span><span class="token operator">IN</span> cod_jugador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> <span class="token operator">IN</span> porcentaje <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword keyword-BEGIN">BEGIN</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> nombre_jugador <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> peso_actual <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> nuevo_peso <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-DECLARE">DECLARE</span> nombre_equipo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">-- Obtener datos </span>
-    <span class="token keyword keyword-SELECT">SELECT</span> Nombre<span class="token punctuation">,</span> Peso<span class="token punctuation">,</span> Nombre_equipo <span class="token keyword keyword-INTO">INTO</span> nombre_jugador<span class="token punctuation">,</span> peso_actual<span class="token punctuation">,</span> nombre_equipo
-    <span class="token keyword keyword-FROM">FROM</span> jugadores
-    <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
-
-    <span class="token comment">--- Control de errores</span>
-    <span class="token keyword keyword-IF">IF</span> nombre_jugador <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Jugador no encontrado'</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-
-    <span class="token keyword keyword-IF">IF</span> porcentaje <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'45000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Porcentaje negativo no permitido'</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-
-    <span class="token comment">--- Calcular nuevo peso</span>
-    <span class="token keyword keyword-SET">SET</span> nuevo_peso :<span class="token operator">=</span> peso_actual <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> porcentaje <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment">--- Control nuevo peso alto</span>
-    <span class="token keyword keyword-IF">IF</span> nuevo_peso <span class="token operator">&gt;</span> <span class="token number">150</span> <span class="token keyword keyword-THEN">THEN</span>
-        SIGNAL SQLSTATE <span class="token string">'01000'</span> <span class="token keyword keyword-SET">SET</span> MESSAGE_TEXT <span class="token operator">=</span> <span class="token string">'Peso muy alto'</span><span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-
-    <span class="token comment">--- Actualización</span>
-    <span class="token keyword keyword-IF">IF</span> nuevo_peso <span class="token operator">&lt;=</span> <span class="token number">150</span> <span class="token keyword keyword-THEN">THEN</span>
-        <span class="token keyword keyword-UPDATE">UPDATE</span> jugadores
-        <span class="token keyword keyword-SET">SET</span> Peso <span class="token operator">=</span> nuevo_peso
-        <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
-    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
-
-    <span class="token comment">--- Mostrar resultado</span>
-    <span class="token keyword keyword-SELECT">SELECT</span> j<span class="token punctuation">.</span>Nombre <span class="token keyword keyword-AS">AS</span> Nombre<span class="token punctuation">,</span> j<span class="token punctuation">.</span>Peso <span class="token keyword keyword-AS">AS</span> Peso<span class="token punctuation">,</span> e<span class="token punctuation">.</span>Nombre <span class="token keyword keyword-AS">AS</span> Equipo
-    <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> equipos e
-    <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>Nombre_equipo <span class="token operator">=</span> e<span class="token punctuation">.</span>Nombre
-      <span class="token operator">AND</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> cod_jugador<span class="token punctuation">;</span>
-
-<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
-
-<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-9">✅ Ejercicio 9 </h4>
@@ -749,10 +524,6 @@ PROBAR A PARTIR DE AQUI!!!!
 <li>Comprobar si existe el jugador y el equipo.</li>
 <li>Actualizar el campo <code>equipos.nombre_equipo</code> del jugador con el nombre del nuevo equipo indicado.</li>
 </ul>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-10">✅ Ejercicio 10 </h4>
@@ -763,10 +534,6 @@ PROBAR A PARTIR DE AQUI!!!!
 <li>Mostrar el nombre de los jugadores del equipo cuyo peso mínimo sea superior al indicado, ordenando el resultado por peso de mayor a menor y, en caso de empate, por nombre en orden ascendente.</li>
 <li>Si no existe el equipo o la posición o el peso mínimo es inferior a 0, mostrar un mensaje indicando el error y finalizar el proceso.</li>
 </ul>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-11">✅ Ejercicio 11 </h4>
@@ -779,10 +546,6 @@ PROBAR A PARTIR DE AQUI!!!!
 <li>Ordenar el resultado por número de jugadores de mayor a menor.</li>
 <li>En caso de empate, ordenar alfabéticamente por la posición.</li>
 </ul>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-12">✅ Ejercicio 12 </h4>
@@ -796,10 +559,6 @@ PROBAR A PARTIR DE AQUI!!!!
 <li>Mostrar solo los equipos cuyo peso medio sea mayor que un valor indicado (<code>peso_medio_min</code>).</li>
 <li>Ordenar el resultado por peso medio de mayor a menor.</li>
 </ul>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <h3 id="funciones">Funciones </h3>
 <h4 id="funciones-integradas-en-el-sgbd">Funciones integradas en el SGBD </h4>
@@ -811,18 +570,10 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>Peso medio de los jugadores de un equipo</p>
 <p>Crea un procedimiento que devuelva el peso medio (<em>AVG</em>) de los jugadores de un equipo (<code>jugadores.peso</code>) redondeado a dos decimales (<em>ROUND</em>).</p>
 <p>El procedimiento recibe como parámetro el nombre del equipo (<code>equipos.nombre_equipo</code>).</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-14">✅ Ejercicio 14 </h5>
 <p>Crea un procedimiento que devuelva el factorial de un número entero. El procedimiento recibe como parámetro el número entero y el resultado se devuelve en un parámetro de salida. Si el número es negativo se devolvera -1.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-15">✅ Ejercicio 15 </h5>
@@ -830,19 +581,11 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>Crea un procedimiento que dado el identificador de un jugador (<code>jugadores.id_jugador</code>) muestre un código compuesto por las tres primeras letras de su nombre (<code>jugadores.nombre</code>), un guión y su identificador.</p>
 <p>En el caso de un jugador 23, el código generado sería MIC-23.</p>
 <p>Funciones: <em>CONCAT</em> y <em>LEFT</em>.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-16">✅ Ejercicio 16 </h5>
 <p>Crea un procedimiento, que reciba como argumento una fecha en formato yyyy-mm-dd y devuelva en otro parámetro la fecha en formado 'día de la semana, dia de mes, mes, año con cuatro dígitos (ejemplo: lunes, 12 de enero de 2025).</p>
 <p>Función: <em>DATE_FORMAT</em></p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-17">✅ Ejercicio 17 </h5>
@@ -850,10 +593,6 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>Crea un procedimiento que dado el identificador de un jugador (<code>jugadores.id_jugador</code>) devuelva los puntos máximos, mínimos y medios (<code>estadisticas.puntos</code>).</p>
 <p>El procedimiento recibe como parámetro el identificador del jugador y devuelve los valores en tres parámetros de salida.</p>
 <p>Funciones: <em>MAX</em> , <em>MIN</em> y <em>AVG</em>.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <h4 id="funciones-propias">Funciones propias </h4>
 <div class="admonition note">
@@ -880,30 +619,18 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>Nombre del equipo</p>
 <p>Crea una función que, dado un jugador (<code>jugadores.id_jugador</code>) devuelva el nombre de su equipo</p>
 <p>Llama a la función desde un SELECT que muestre el nombre del jugador y el nombre del equipo, ordenado por equipo.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>  
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-19">✅ Ejercicio 19 </h5>
 <p>Verificar si un jugador existe</p>
 <p>Crea una función que verifique si un jugador existe en la base de datos, dado su identificador (<code>jugadores.id_jugador</code>).<br>
 La función debe devolver un valor booleano (1 si existe, 0 si no existe).</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-20">✅ Ejercicio 20 </h5>
 <p>Estadísticas de un jugador</p>
 <p>Crea una función que reciba un código de jugador (<code>jugadores.id_jugador</code>) y devuelva el número de registros de estadísticas que tiene un jugador, dado su identificador.</p>
 <p>Ejecuta la función desde un SELECT que muestre el nombre del jugador, el número de estadísticas y el total de puntos.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
 <h5 id="white_check_mark-ejercicio-21">✅ Ejercicio 21 </h5>
@@ -912,10 +639,6 @@ La función debe devolver un valor booleano (1 si existe, 0 si no existe).</p>
 <p>La función debe devolver un valor numérico que represente la cantidad de años transcurridos desde la fecha de ingreso (<code>jugadores.fecha_ingreso</code>) del jugador.</p>
 <p>Utiliza <em>YEAR()</em> y <em>CURDATE()</em>.</p>
 <p>Ejecuta la función desde un SELECT que muestre el nombre del jugador, la fecha de ingreso y la antigüedad en años.</p>
-<div class="caso_estudio">
-<p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
-</code></pre></div> <!-- fin caso de estudio -->
 </div>
 
       </div>
