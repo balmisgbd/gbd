@@ -231,7 +231,11 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </a></div>
         </div>
       </details>
-    <details style="padding:0;;padding-left:24px;" open="">
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#control-de-errores" class="md-toc-link">
+            <p>Control de errores</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
         <summary class="md-toc-link-wrapper">
           <a href="#procedimientos" class="md-toc-link"><p>Procedimientos</p>
 </a>
@@ -339,11 +343,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     
         </div>
       </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#control-de-errores" class="md-toc-link">
-            <p>Control de errores</p>
-
-          </a></div>
+    
         </div>
       </details>
     
@@ -408,6 +408,23 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">'partidos'</span><span class="token punctuation">,</span> <span class="token variable">@numPartidos</span><span class="token punctuation">;</span>
 
 </code></pre></div> <!-- fin caso de estudio -->
+</div>
+<h3 id="control-de-errores">Control de errores </h3>
+<div class="admonition note">
+<p class="admonition-title"> Control de errores</p>
+<p>Sintaxis</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DECLARE">DECLARE</span> <span class="token keyword keyword-EXIT">EXIT</span> <span class="token keyword keyword-HANDLER">HANDLER</span> <span class="token keyword keyword-FOR">FOR</span> SQLEXCEPTION
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token punctuation">[</span>instrucciones<span class="token punctuation">]</span>
+<span class="token keyword keyword-END">END</span><span class="token punctuation">;</span>
+</code></pre><p>Comprobar errores</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token comment">-- Mostrar errores</span>
+<span class="token keyword keyword-SHOW">SHOW</span> <span class="token keyword keyword-WARNINGS">WARNINGS</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Almacenar el código y el mensaje </span>
+GET DIAGNOSTICS<span class="token punctuation">;</span>
+
+</code></pre><p><strong>Recuerda</strong> el <code>HANDLER</code> debe declararse antes de las instrucciones que pueden fallar.</p>
 </div>
 <h3 id="procedimientos">Procedimientos </h3>
 <div class="admonition note">
@@ -875,11 +892,6 @@ La función debe devolver un valor booleano (1 si existe, 0 si no existe).</p>
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
 </code></pre></div> <!-- fin caso de estudio -->
-</div>
-<h3 id="control-de-errores">Control de errores </h3>
-<div class="admonition note">
-<p class="admonition-title"> Funciones integradas</p>
-<p>prueba</p>
 </div>
 
       </div>
