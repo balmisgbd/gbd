@@ -914,7 +914,7 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>💡 <em><strong>Solución</strong></em></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> peso_medio_equipo<span class="token punctuation">;</span>
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> peso_medio_equipo<span class="token punctuation">(</span><span class="token operator">IN</span> nombre_equipo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword keyword-OUT">OUT</span> media <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> peso_medio_equipo<span class="token punctuation">(</span>nombre_equipo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword keyword-OUT">OUT</span> media <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword keyword-BEGIN">BEGIN</span>
     <span class="token keyword keyword-SELECT">SELECT</span> IFNULL<span class="token punctuation">(</span><span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token function">AVG</span><span class="token punctuation">(</span>Peso<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> media
     <span class="token keyword keyword-FROM">FROM</span> jugadores
@@ -935,20 +935,20 @@ PROBAR A PARTIR DE AQUI!!!!
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> factorial_numero<span class="token punctuation">;</span>
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
 
-<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> factorial<span class="token punctuation">(</span><span class="token operator">IN</span> numero <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> <span class="token keyword keyword-OUT">OUT</span> resultado <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> factorial<span class="token punctuation">(</span>numero <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span> <span class="token keyword keyword-OUT">OUT</span> resultado <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span>
 <span class="token keyword keyword-BEGIN">BEGIN</span>
     <span class="token keyword keyword-DECLARE">DECLARE</span> i <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-DECLARE">DECLARE</span> factorial <span class="token keyword keyword-INT">INT</span> <span class="token keyword keyword-DEFAULT">DEFAULT</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
     <span class="token comment">-- Caso número negativo</span>
     <span class="token keyword keyword-IF">IF</span> numero <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token keyword keyword-THEN">THEN</span>
-        <span class="token keyword keyword-SET">SET</span> factorial <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> resultado <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword keyword-ELSE">ELSE</span>
         <span class="token keyword keyword-WHILE">WHILE</span> i <span class="token operator">&lt;=</span> numero <span class="token keyword keyword-DO">DO</span>
             <span class="token keyword keyword-SET">SET</span> factorial <span class="token operator">=</span> factorial <span class="token operator">*</span> i<span class="token punctuation">;</span>
             <span class="token keyword keyword-SET">SET</span> i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-WHILE">WHILE</span><span class="token punctuation">;</span>
-        <span class="token keyword keyword-SET">SET</span> factorial<span class="token punctuation">;</span>
+        <span class="token keyword keyword-SET">SET</span> resultado <span class="token operator">=</span> factorial<span class="token punctuation">;</span>
     <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
@@ -966,7 +966,19 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>Funciones: <em>CONCAT</em> y <em>LEFT</em>.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> codigo_jugador<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> codigo_jugador<span class="token punctuation">(</span>id_jugador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> CONCAT<span class="token punctuation">(</span><span class="token keyword keyword-LEFT">LEFT</span><span class="token punctuation">(</span>Nombre<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span> codigo<span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> CodigoJugador
+    <span class="token keyword keyword-FROM">FROM</span> jugadores
+    <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> id_jugador<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada</span>
+<span class="token keyword keyword-CALL">CALL</span> codigo_jugador<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
@@ -975,7 +987,18 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>Función: <em>DATE_FORMAT</em></p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> formatear_fecha<span class="token punctuation">;</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> formatear_fecha<span class="token punctuation">(</span>fecha <span class="token keyword keyword-DATE">DATE</span><span class="token punctuation">,</span> <span class="token keyword keyword-OUT">OUT</span> fecha_formateada <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> DATE_FORMAT<span class="token punctuation">(</span>fecha<span class="token punctuation">,</span> <span class="token string">'%W, %d de %M de %Y'</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> fecha_formateada<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada</span>
+<span class="token keyword keyword-CALL">CALL</span> formatear_fecha<span class="token punctuation">(</span><span class="token string">'2025-01-12'</span><span class="token punctuation">,</span> <span class="token variable">@fecha</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">@fecha</span> <span class="token keyword keyword-AS">AS</span> FechaFormateada<span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
@@ -986,7 +1009,30 @@ PROBAR A PARTIR DE AQUI!!!!
 <p>Funciones: <em>MAX</em> , <em>MIN</em> y <em>AVG</em>.</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> estadisticas_jugador<span class="token punctuation">;</span>
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-PROCEDURE">PROCEDURE</span> estadisticas_jugador<span class="token punctuation">(</span>
+    <span class="token operator">IN</span> id_jugador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-OUT">OUT</span> puntos_max <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-OUT">OUT</span> puntos_min <span class="token keyword keyword-INT">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-OUT">OUT</span> puntos_medios <span class="token keyword keyword-DECIMAL">DECIMAL</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> 
+        <span class="token function">MAX</span><span class="token punctuation">(</span>Puntos<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">MIN</span><span class="token punctuation">(</span>Puntos<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token function">AVG</span><span class="token punctuation">(</span>Puntos<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-INTO">INTO</span> puntos_max<span class="token punctuation">,</span> puntos_min<span class="token punctuation">,</span> puntos_medios
+    <span class="token keyword keyword-FROM">FROM</span> estadisticas
+    <span class="token keyword keyword-WHERE">WHERE</span> jugador <span class="token operator">=</span> id_jugador<span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada</span>
+<span class="token keyword keyword-CALL">CALL</span> estadisticas_jugador<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">,</span> <span class="token variable">@max</span><span class="token punctuation">,</span> <span class="token variable">@min</span><span class="token punctuation">,</span> <span class="token variable">@media</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-SELECT">SELECT</span> <span class="token variable">@max</span> <span class="token keyword keyword-AS">AS</span> Maximo<span class="token punctuation">,</span> <span class="token variable">@min</span> <span class="token keyword keyword-AS">AS</span> Minimo<span class="token punctuation">,</span> <span class="token variable">@media</span> <span class="token keyword keyword-AS">AS</span> Media<span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <h4 id="funciones-propias">Funciones propias </h4>
