@@ -1067,7 +1067,7 @@ PROBAR A PARTIR DE AQUI!!!!
 <span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
 <span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
 
-<span class="token comment">-- Uso de la función</span>
+<span class="token comment">-- Llamada</span>
 <span class="token keyword keyword-SELECT">SELECT</span> Nombre<span class="token punctuation">,</span> nombre_equipo_jugador<span class="token punctuation">(</span>codigo<span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> Equipo
 <span class="token keyword keyword-FROM">FROM</span> jugadores
 <span class="token keyword keyword-ORDER">ORDER</span> <span class="token keyword keyword-BY">BY</span> Equipo<span class="token punctuation">;</span>
@@ -1080,7 +1080,28 @@ PROBAR A PARTIR DE AQUI!!!!
 La función debe devolver un valor booleano (1 si existe, 0 si no existe).</p>
 <div class="caso_estudio">
 <p>💡 <em><strong>Solución</strong></em></p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>Solución <span class="token keyword keyword-SQL">SQL</span>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> existe_jugador<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token comment">//</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> existe_jugador<span class="token punctuation">(</span>id_jugador <span class="token keyword keyword-INT">INT</span><span class="token punctuation">)</span> <span class="token keyword keyword-RETURNS">RETURNS</span> <span class="token keyword keyword-INT">INT</span>
+<span class="token keyword keyword-BEGIN">BEGIN</span>
+    <span class="token keyword keyword-DECLARE">DECLARE</span> existe <span class="token keyword keyword-INT">INT</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-SELECT">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword keyword-INTO">INTO</span> existe
+    <span class="token keyword keyword-FROM">FROM</span> jugadores
+    <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> id_jugador<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-IF">IF</span> existe <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token keyword keyword-THEN">THEN</span>
+        <span class="token keyword keyword-RETURN">RETURN</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-ELSE">ELSE</span>
+        <span class="token keyword keyword-RETURN">RETURN</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-END">END</span> <span class="token keyword keyword-IF">IF</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
+
+<span class="token keyword keyword-DELIMITER">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment">-- Llamada</span>
+<span class="token keyword keyword-SELECT">SELECT</span> existe_jugador<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
