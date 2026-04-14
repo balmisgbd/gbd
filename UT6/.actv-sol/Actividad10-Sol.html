@@ -309,8 +309,8 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
             <p>✅ Ejercicio 16</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#white_check_mark-ejercicio-17" class="md-toc-link">
-            <p>✅ Ejercicio 17</p>
+          <a href="#white_check_mark-ejercicio-17-" class="md-toc-link">
+            <p>✅ Ejercicio 17 ********</p>
 
           </a></div>
         </div>
@@ -322,8 +322,8 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#white_check_mark-ejercicio-18" class="md-toc-link">
-            <p>✅ Ejercicio 18</p>
+          <a href="#white_check_mark-ejercicio-18-" class="md-toc-link">
+            <p>✅ Ejercicio 18 *********</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#white_check_mark-ejercicio-19" class="md-toc-link">
@@ -743,7 +743,6 @@ El bonus se calcula como un porcentaje de sus <code>Puntos_por_partido</code> se
 
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
-PROBAR A PARTIR DE AQUI!!!!
 <div class="ejercicio">
 <h4 id="white_check_mark-ejercicio-9">✅ Ejercicio 9 </h4>
 <p>Actualizar el equipo de un jugador</p>
@@ -1002,7 +1001,7 @@ PROBAR A PARTIR DE AQUI!!!!
 </code></pre></div> <!-- fin caso de estudio -->
 </div>
 <div class="ejercicio">
-<h5 id="white_check_mark-ejercicio-17">✅ Ejercicio 17 </h5>
+<h5 id="white_check_mark-ejercicio-17-">✅ Ejercicio 17 ******** </h5>
 <p>Estadísticas de un jugador</p>
 <p>Crea un procedimiento que dado el identificador de un jugador (<code>jugadores.id_jugador</code>) devuelva los puntos máximos, mínimos y medios (<code>estadisticas.puntos</code>).</p>
 <p>El procedimiento recibe como parámetro el identificador del jugador y devuelve los valores en tres parámetros de salida.</p>
@@ -1046,7 +1045,7 @@ PROBAR A PARTIR DE AQUI!!!!
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code>    <span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-FUNCTION">FUNCTION</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> nombre<span class="token punctuation">;</span>
 </code></pre></div>
 <div class="ejercicio">
-<h5 id="white_check_mark-ejercicio-18">✅ Ejercicio 18 </h5>
+<h5 id="white_check_mark-ejercicio-18-">✅ Ejercicio 18 ********* </h5>
 <p>Nombre del equipo</p>
 <p>Crea una función que, dado un jugador (<code>jugadores.id_jugador</code>) devuelva el nombre de su equipo</p>
 <p>Llama a la función desde un SELECT que muestre el nombre del jugador y el nombre del equipo, ordenado por equipo.</p>
@@ -1059,9 +1058,9 @@ PROBAR A PARTIR DE AQUI!!!!
 <span class="token keyword keyword-BEGIN">BEGIN</span>
     <span class="token keyword keyword-DECLARE">DECLARE</span> nombre_equipo <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token keyword keyword-SELECT">SELECT</span> Nombre_equipo <span class="token keyword keyword-INTO">INTO</span> nombre_equipo
-    <span class="token keyword keyword-FROM">FROM</span> jugadores
-    <span class="token keyword keyword-WHERE">WHERE</span> codigo <span class="token operator">=</span> id_jugador<span class="token punctuation">;</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> e<span class="token punctuation">.</span>Nombre <span class="token keyword keyword-INTO">INTO</span> nombre_equipo
+    <span class="token keyword keyword-FROM">FROM</span> jugadores j<span class="token punctuation">,</span> equipos e
+    <span class="token keyword keyword-WHERE">WHERE</span> j<span class="token punctuation">.</span>Nombre_equipo <span class="token operator">=</span> e<span class="token punctuation">.</span>Nombre <span class="token operator">AND</span> j<span class="token punctuation">.</span>codigo <span class="token operator">=</span> id_jugador<span class="token punctuation">;</span>
 
     <span class="token keyword keyword-RETURN">RETURN</span> nombre_equipo<span class="token punctuation">;</span>
 <span class="token keyword keyword-END">END</span> <span class="token comment">//</span>
