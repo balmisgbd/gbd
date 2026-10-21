@@ -1,0 +1,94 @@
+DROP DATABASE IF EXISTS atletismo;
+CREATE DATABASE atletismo;
+USE atletismo;
+
+/*
+DROP TABLE IF EXISTS COMPETIR;
+DROP TABLE IF EXISTS PERTENECER;
+DROP TABLE IF EXISTS PRACTICAR;
+DROP TABLE IF EXISTS PARTICIPAR;
+DROP TABLE IF EXISTS FECHAS;
+DROP TABLE IF EXISTS ACTIVIDADES_DEPORTIVAS;
+DROP TABLE IF EXISTS COMPETICIONES;
+DROP TABLE IF EXISTS ATLETAS;
+DROP TABLE IF EXISTS CLUBS;
+*/
+
+CREATE TABLE CLUBS
+(
+    codigo INT(3) PRIMARY KEY,
+    nombre VARCHAR(256),
+    ciudad VARCHAR(128)
+);
+
+CREATE TABLE ATLETAS 
+( 
+	nif VARCHAR(9), 
+	nombre VARCHAR(80), 
+	apellidos VARCHAR(256), 
+	PRIMARY KEY (nif) 
+);
+
+CREATE TABLE COMPETICIONES 
+( 
+    codigo INT(5) PRIMARY KEY, 
+    descripcion VARCHAR(512), 
+    ciudad VARCHAR(120), 
+    fechaEvento DATE
+);
+
+CREATE TABLE ACTIVIDADES_DEPORTIVAS 
+( 
+    codigo VARCHAR(4) PRIMARY KEY, 
+    descripcion VARCHAR(512)
+);
+
+CREATE TABLE FECHAS 
+( 
+    fechaAlta DATE PRIMARY KEY
+);
+
+CREATE TABLE PARTICIPAR 
+( 
+    club INT(3), 
+    competicion INT(5),
+    PRIMARY KEY (club, competicion),
+    FOREIGN KEY (club) REFERENCES CLUBS(codigo),
+    FOREIGN KEY (competicion) REFERENCES COMPETICIONES(codigo)
+);
+
+CREATE TABLE PRACTICAR 
+( 
+    atleta VARCHAR(9), 
+    deporte VARCHAR(4),
+    plusmarca DOUBLE(8,2),
+    PRIMARY KEY (atleta, deporte),
+    FOREIGN KEY (atleta) REFERENCES ATLETAS(nif),
+    FOREIGN KEY (deporte) REFERENCES ACTIVIDADES_DEPORTIVAS(codigo)
+);
+
+CREATE TABLE PERTENECER 
+( 
+    atleta VARCHAR(9), 
+    fecha DATE,
+    club INT(3),
+    fechaBaja DATE,
+    PRIMARY KEY (atleta, fecha),
+    FOREIGN KEY (atleta) REFERENCES ATLETAS(nif),
+    FOREIGN KEY (fecha) REFERENCES FECHAS(fechaAlta),
+    FOREIGN KEY (club) REFERENCES CLUBS(codigo)
+);
+
+CREATE TABLE COMPETIR 
+( 
+    competicion INT(5), 
+    atleta VARCHAR(9),
+    deporte VARCHAR(4),
+    marca DECIMAL(8,2),
+    PRIMARY KEY (competicion, atleta, deporte),
+    FOREIGN KEY (competicion) REFERENCES COMPETICIONES(codigo),
+    FOREIGN KEY (atleta) REFERENCES ATLETAS(nif),
+    FOREIGN KEY (deporte) REFERENCES ACTIVIDADES_DEPORTIVAS(codigo)
+);
+
+
