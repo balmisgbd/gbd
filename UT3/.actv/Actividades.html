@@ -1,0 +1,722 @@
+<!DOCTYPE html><html><head>
+      <title>Bases de datos - UD3. Diseño Físico y Edición de Datos</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css);
+code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}@font-face{font-family:"Material Icons";font-style:normal;font-weight:400;src:local("Material Icons"),local("MaterialIcons-Regular"),url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAfIAAsAAAAADDAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW7kosY21hcAAAAYAAAADTAAACjtP6ytBnbHlmAAACVAAAAxgAAAQ4zRtvlGhlYWQAAAVsAAAALwAAADYRwZsnaGhlYQAABZwAAAAcAAAAJAeKAzxobXR4AAAFuAAAABIAAAA8OGQAAGxvY2EAAAXMAAAAIAAAACAG5AfwbWF4cAAABewAAAAfAAAAIAEfAERuYW1lAAAGDAAAAVcAAAKFkAhoC3Bvc3QAAAdkAAAAYgAAAK2vz7wkeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkPsQ4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVLy4xKzzX4chhrmK4QpQmBEkBwAZygyweJzFkr0NwjAQhZ+TEP6CRUfHBEwRUWaQTICyQbpMwRCskA5RUIONxG0RnnNpKAIV4qzPku/8c353ACYAYrIjCWCuMAh2ptf0/hiL3p/gyPUWa3osqlt0L1zu9r71z8dGrJRykFoauXQd932Lj5vhG+MjxGeYI8MKETObMpslf5EyP8tg+vHun5r539PvlvXzaVhRFVQDTPEWKVQR90KhnnC5Ek67vUKN4VuFasM/ldARj43CCkCsEjpJSoVVgRyU0GVSK6wUpFFCx8lFgX0BiXpRPQB4nE2TTWjcRhTH3xttpDhxN7uxPlp3u/FK7moRPixafRijNosxSw/LUsIwNcaEHPZggo/FmEKMCKWU4kNOOftQSlhE8alnH0Ix9BqWnHooPRrTQ0+mnu2bXTu2pPdGM9LM/6c3fwECTM4gBBMYQNqxzLrZAjqYSlqu2TAHZQA0/DQJH6FtzqGDnvbt4Ggwvzw/nL8EfH8kW0fsuRqhgWXZnY7M1picaUL7Du5BHeDzMIl83dAt016wH1qmvtSMo5R6YRJHTR//FXsff/nj/tc/5K9P5d+nP22+fFK5u7v3K39SW3y+OtDKO3L85vD09PD9z5X17a2N1g4tqk01RlqX7gyoEmnsWQtVr4rtZMmukEaFBZxzefkCn11cyKMLZgshRwgTYNoLNXCBz2ja7HvZG7hDpPSNfoo5vs0knK/9hb+rNpu+8kHPgk/Ao4kK3tWtTpSEtvkA9c+wE6UaUdwieNkaHg55tBEtRiEPw1s0+FtrtTcc9two2lhMknV7PZF/cs6+uUFTmpTGbEx7sQCPSLOttHS3GRltqp7SNzVSKzl6aWnZT/CX5k6/v9N3Hh8fHBwffJVjhrC6OgH5dkIt/tPsq+d/PD5Qz7G7efzq1THFjdZVPe/N6ulQ3JnDWSE5junsFsVIiFwL/htf1S5gJ3BfOcUxfHKLnzqpFpyfZ9cX+/5WB6a+Y0pHpzkNrYNVDwMsikK+y7WuLCRg/oFHkA8VT3rDg5ZnU6ktzzINymV0m74Xd5pfIGXyFeVEQSShkzqG7TBBa2OxVRKitLXv7h3uuftXnXq7lz2tZ/WnWa9dx9dCjDhHzmuVQATlmljr9dZErUydSo2Hbi/b1vXtrOeGCk2/8s3ZlO8+ueJT8BVlw5pGw2oYccdSiHHqx0RlabHqdNR9jAETl6PreJcPBnnfpTLnOQ8C3OV8AmQGzouV1iZdeb5SSIoVc8W8/kcDtksUH5FrU6/aqBqNWcMEzxG4DAQ14qRQhi9mWU0rzepKezbjfgCwQKxVYq5ajRgpRqy45CqwkJydcEkbTkvRz8P5/2ZpDTN4nGNgZGBgAOKb6v+/xvPbfGXgZmEAgeuB2kkI+v8bFgbmKiCXg4EJJAoAPyAKhQB4nGNgZGBg1vmvwxDDwgACQJKRARXwAwAzZQHQeJxjYQCCFAYGFgbSMQAcWACdAAAAAAAAAAwALgBgAIQAmADSAQgBIgE8AVABoAHeAfwCHHicY2BkYGDgZ7BgYGMAASYg5gJCBob/YD4DAA/hAWQAeJxlkbtuwkAURMc88gApQomUJoq0TdIQzEOpUDokKCNR0BuzBiO/tF6QSJcPyHflE9Klyyekz2CuG8cr7547M3d9JQO4xjccnJ57vid2cMHqxDWc40G4Tv1JuEF+Fm6ijRfhM+oz4Ra6eBVu4wZvvMFpXLIa40PYQQefwjVc4Uu4Tv1HuEH+FW7i1mkKn6Hj3Am3sHC6wm08Ou8tpSZGe1av1PKggjSxPd8zJtSGTuinyVGa6/Uu8kxZludCmzxMEzV0B6U004k25W35fj2yNlCBSWM1paujKFWZSbfat+7G2mzc7weiu34aczzFNYGBhgfLfcV6iQP3ACkSaj349AxXSN9IT0j16JepOb01doiKbNWt1ovippz6sVYYwsXgX2rGVFIkq7Pl2PNrI6qW6eOshj0xaSq9mpNEZIWs8LZUfOouNkVXxp/d5woqebeYIf4D2J1ywQB4nG3LOw6AIBAE0B384B+PAkgEa+QwNnYmHt+EpXSal5lkSBBnoP8oCFSo0aCFRIceA0ZMmLFAYSW88rmvtMUjG3RiQ9HvpfusM6zWNmtc5H/iPewha50tOt5PS/QBx2IeSwAA") format("woff")}.admonition{box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);position:relative;margin:1.5625em 0;padding:0 1.2rem;border-left:.4rem solid rgba(68,138,255,.8);border-radius:.2rem;background-color:rgba(255,255,255,.05);overflow:auto}.admonition>p{margin-top:.8rem}.admonition>.admonition-title{margin:0 -1.2rem;padding:.8rem 1.2rem .8rem 3.6rem;border-bottom:1px solid rgba(68,138,255,.2);background-color:rgba(68,138,255,.1);font-weight:700}.admonition>.admonition-title:before{position:absolute;left:1.2rem;font-size:1.5rem;color:rgba(68,138,255,.8);content:"\E3C9"}.admonition>.admonition-title:before{font-family:Material Icons;font-style:normal;font-variant:normal;font-weight:400;line-height:2rem;text-transform:none;white-space:nowrap;speak:none;word-wrap:normal;direction:ltr}.admonition.abstract,.admonition.summary,.admonition.tldr{border-left-color:rgba(0,176,255,.8)}.admonition.abstract>.admonition-title,.admonition.summary>.admonition-title,.admonition.tldr>.admonition-title{background-color:rgba(0,176,255,.1);border-bottom-color:rgba(0,176,255,.2)}.admonition.abstract>.admonition-title:before,.admonition.summary>.admonition-title:before,.admonition.tldr>.admonition-title:before{color:#00b0ff;content:"\E8D2"}.admonition.hint,.admonition.tip{border-left-color:rgba(0,191,165,.8)}.admonition.hint>.admonition-title,.admonition.tip>.admonition-title{background-color:rgba(0,191,165,.1);border-bottom-color:rgba(0,191,165,.2)}.admonition.hint>.admonition-title:before,.admonition.tip>.admonition-title:before{color:#00bfa5;content:"\E80E"}.admonition.info,.admonition.todo{border-left-color:rgba(0,184,212,.8)}.admonition.info>.admonition-title,.admonition.todo>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.info>.admonition-title:before,.admonition.todo>.admonition-title:before{color:#00b8d4;content:"\E88E"}.admonition.check,.admonition.done,.admonition.success{border-left-color:rgba(0,200,83,.8)}.admonition.check>.admonition-title,.admonition.done>.admonition-title,.admonition.success>.admonition-title{background-color:rgba(0,200,83,.1);border-bottom-color:rgba(0,200,83,.2)}.admonition.check>.admonition-title:before,.admonition.done>.admonition-title:before,.admonition.success>.admonition-title:before{color:#00c853;content:"\E876"}.admonition.faq,.admonition.help,.admonition.question{border-left-color:rgba(100,221,23,.8)}.admonition.faq>.admonition-title,.admonition.help>.admonition-title,.admonition.question>.admonition-title{background-color:rgba(100,221,23,.1);border-bottom-color:rgba(100,221,23,.2)}.admonition.faq>.admonition-title:before,.admonition.help>.admonition-title:before,.admonition.question>.admonition-title:before{color:#64dd17;content:"\E887"}.admonition.attention,.admonition.caution,.admonition.warning{border-left-color:rgba(255,145,0,.8)}.admonition.attention>.admonition-title,.admonition.caution>.admonition-title,.admonition.warning>.admonition-title{background-color:rgba(255,145,0,.1);border-bottom-color:rgba(255,145,0,.2)}.admonition.attention>.admonition-title:before{color:#ff9100;content:"\E417"}.admonition.caution>.admonition-title:before,.admonition.warning>.admonition-title:before{color:#ff9100;content:"\E002"}.admonition.fail,.admonition.failure,.admonition.missing{border-left-color:rgba(255,82,82,.8)}.admonition.fail>.admonition-title,.admonition.failure>.admonition-title,.admonition.missing>.admonition-title{background-color:rgba(255,82,82,.1);border-bottom-color:rgba(255,82,82,.2)}.admonition.fail>.admonition-title:before,.admonition.failure>.admonition-title:before,.admonition.missing>.admonition-title:before{color:#ff5252;content:"\E14C"}.admonition.bug,.admonition.danger,.admonition.error{border-left-color:rgba(255,23,68,.8)}.admonition.bug>.admonition-title,.admonition.danger>.admonition-title,.admonition.error>.admonition-title{background-color:rgba(255,23,68,.1);border-bottom-color:rgba(255,23,68,.2)}.admonition.danger>.admonition-title:before{color:#ff1744;content:"\E3E7"}.admonition.error>.admonition-title:before{color:#ff1744;content:"\E14C"}.admonition.bug>.admonition-title:before{color:#ff1744;content:"\E868"}.admonition.example,.admonition.snippet{border-left-color:rgba(0,184,212,.8)}.admonition.example>.admonition-title,.admonition.snippet>.admonition-title{background-color:rgba(0,184,212,.1);border-bottom-color:rgba(0,184,212,.2)}.admonition.example>.admonition-title:before,.admonition.snippet>.admonition-title:before{color:#00b8d4;content:"\E242"}.admonition.cite,.admonition.quote{border-left-color:rgba(158,158,158,.8)}.admonition.cite>.admonition-title,.admonition.quote>.admonition-title{background-color:rgba(158,158,158,.1);border-bottom-color:rgba(158,158,158,.2)}.admonition.cite>.admonition-title:before,.admonition.quote>.admonition-title:before{color:#9e9e9e;content:"\E244"}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v28/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview .definicion {
+  background-color: #e0c2cd;
+  border: 2px solid #969696;
+  padding: 15px;
+  padding-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .caso_estudio {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .ejercicio {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .box_bg_lightgrey {
+  background-color: #f5f5f5;
+  border: 2px solid #969696;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .box_bg_lightgreen {
+  background-color: #f5faf5;
+  border: 2px solid #969b96;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 0 rgba(78, 120, 158, 0.1);
+}
+.markdown-preview.markdown-preview .contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 30px auto;
+}
+.markdown-preview.markdown-preview .fondo {
+  background: url(https://balmisdigigs.github.io/digitalizacion.github.io/imagenes/fondos/quote.png);
+  background-size: cover;
+  width: 75%;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+.markdown-preview.markdown-preview .cita {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  color: white;
+  padding: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+}
+.markdown-preview.markdown-preview .abre_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-left: 30px;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, -15%);
+}
+.markdown-preview.markdown-preview .cierra_comilla {
+  font-family: "Catamaran";
+  font-weight: 600;
+  color: white;
+  padding-right: 30px;
+  right: 0%;
+  position: absolute;
+  font-size: 6rem;
+  transform: translate(0%, 55%);
+}
+.markdown-preview.markdown-preview .autor {
+  font-family: Arial;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+  position: absolute;
+  top: 83%;
+  font-size: 1rem;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: center;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+.markdown-preview.markdown-preview .galeria_imagenes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .galeria_imagenes {
+    flex-direction: row;
+  }
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="bases-de-datos---ud3-ejercicios-diseño-físico-y-edición-de-datos">Bases de datos - UD3. Ejercicios. Diseño Físico y Edición de Datos </h1>
+<p><a href="./Actividades-sol.pdf">Descargar estos ejercicios</a></p>
+<h2 id="índice">Índice </h2>
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#creación-de-tablas" class="md-toc-link"><p>Creación de tablas</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-1" class="md-toc-link">
+            <p>✅ Ejercicio 1</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-2" class="md-toc-link">
+            <p>✅ Ejercicio 2</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-3" class="md-toc-link">
+            <p>✅ Ejercicio 3</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-4" class="md-toc-link">
+            <p>✅ Ejercicio 4</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-5" class="md-toc-link">
+            <p>✅ Ejercicio 5</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-6" class="md-toc-link">
+            <p>✅ Ejercicio 6</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-7" class="md-toc-link">
+            <p>✅ Ejercicio 7</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#edición-de-datos" class="md-toc-link"><p>Edición de datos</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-8" class="md-toc-link">
+            <p>✅ Ejercicio 8</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-9" class="md-toc-link">
+            <p>✅ Ejercicio 9</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-10" class="md-toc-link">
+            <p>✅ Ejercicio 10</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-11" class="md-toc-link">
+            <p>✅ Ejercicio 11</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-12" class="md-toc-link">
+            <p>✅ Ejercicio 12</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-13" class="md-toc-link">
+            <p>✅ Ejercicio 13</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-14" class="md-toc-link">
+            <p>✅ Ejercicio 14</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-15" class="md-toc-link">
+            <p>✅ Ejercicio 15</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-16" class="md-toc-link">
+            <p>✅ Ejercicio 16</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-17" class="md-toc-link">
+            <p>✅ Ejercicio 17</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#ejercicios-finales" class="md-toc-link"><p>Ejercicios finales</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-" class="md-toc-link">
+            <p>✅ Ejercicio 18</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#white_check_mark-ejercicio-xxxx" class="md-toc-link">
+            <p>✅ Ejercicio 19</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 id="creación-de-tablas">Creación de tablas </h2>
+<p>Se valorará además de que la solución de los ejercicios sea correcta, las tabulaciones, los comentarios en el código, nombres de elementos (tablas y campos) en minúscula y<br>
+la claridad del código en general.</p>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-1">✅ Ejercicio 1 </h3>
+<h4 id="alumnos">Alumnos </h4>
+<p>A partir del esquema conceptual (modelo entidad-relación) siguiente</p>
+<p><img src="./.img/ej1.svg" alt="alumnos" style="display:block;margin:0 auto;width:75%;max-width:400px;"></p>
+<p>Se obtiene el siguiente esquema lógico (modelo relacional):</p>
+<div class="definicion">
+ALUMNOS (<u>numero_matricula <entero 6=""></entero></u>, nombre <caracter 15="">,
+fecha_nacimieno <fecha>, direccion <caracter 30="">,
+localidad <caracter 50="">)
+</caracter></caracter></fecha></caracter></div> <!-- fin definición -->
+<p>Escribe la instrucción en SQL para crear la tabla ALUMNOS teniendo en cuenta las siguientes restricciones:</p>
+<ul>
+<li>Restricciones del esquema ER:
+<ul>
+<li>Clave primaria: numero_matricula</li>
+</ul>
+</li>
+<li>Restricciones del diccionario de datos:
+<ul>
+<li>El atributo nombre no puede tomar valores nulos</li>
+</ul>
+</li>
+</ul>
+<!-- fin caso de estudio -->
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-2">✅ Ejercicio 2 </h3>
+<h4 id="alumnos-1">Alumnos </h4>
+<p>Intenta crear de nuevo la tabla “ALUMNOS” de la actividad anterior. ¿Qué ocurre?</p>
+</div> <!-- fin ejercicio -->
+
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-3">✅ Ejercicio 3 </h3>
+<h4 id="pisos-y-zonas">Pisos y zonas </h4>
+<p>A partir del esquema conceptual (modelo entidad-relación) siguiente</p>
+<p><img src="./.img/ej3.svg" alt="pisos y zonas" style="display:block;margin:0 auto;width:75%;max-width:400px;"></p>
+<p>Escribe las instrucciones en SQL para crear las tablas obtenidas en el esquema lógico (del modelo relacional).</p>
+<p>Primero crearemos la tabla ZONAS, ya que PISOS hace referencia a dicha tabla.</p>
+<p>Recuerda que otra opción sería:</p>
+<ul>
+<li>Crear primero la tabla PISOS sin clave ajena</li>
+<li>Crear la tabla ZONAS</li>
+<li>Añadir la restricción de clave ajena a la tabla PISOS.</li>
+</ul>
+<div class="definicion">
+<p>ZONAS (<u>cod_zona &lt;entero 2&gt;</u>, nombre_zona &lt;caracter 20&gt;, mas_datos &lt;caracter 50&gt;)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: cod_zona
+<ul>
+<li>Observa que la clave primaria está formada por el atributo cod_zona, y que aunque no lo especifiquemos como NOT NULL automáticamente al formar parte de la clave el SGBD coloca NOT NULL en este atributo.</li>
+<li>Como la clave primaria está formada por una única columna podemos poner la restricción a continuación de la definición de dicha columna o al final de la tabla. En este caso la pondremos junto a la definición de la columna.</li>
+</ul>
+</li>
+</ul>
+<div class="definicion">
+<p>PISOS (<u>calle &lt;caracter 30&gt;, numero &lt;entero 3&gt;, piso &lt;entero 2&gt;, puerta &lt;caracter 1&gt;</u>, codigo_postal &lt;entero 5&gt;, metros &lt;entero 5&gt;, comentarios &lt;caracter 60&gt;, <b>cod_zona* &lt;entero 2&gt;</b>, dni_propietario<br>
+&lt;caracter 9&gt;)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: calle, numero, piso, puerta.
+<ul>
+<li>Observa que la clave primaria está formada por los atributos calle, número, piso y puerta y que aunque no los especifiquemos como NOT NULL automáticamente al formar parte de la clave coloca NOT NULL en esos atributos.</li>
+<li>Recuerda que como la clave primaria está formada por un grupo de columnas hemos de definirla al final de la tabla.</li>
+</ul>
+</li>
+<li>Clave ajena: cod_zona → ZONAS. Ponle de nombre fk_pisos_zonas</li>
+<li>De momento no incluimos las restricciones por ON DELETE o por ON UPDATE. ES decir, de momento no se especifica qué debe hacer la base de datos automáticamente cuando se elimine o actualice un registro relacionado en una clave foránea.</li>
+</ul>
+</div> <!-- fin ejercicio -->
+ <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-4">✅ Ejercicio 4 </h3>
+<p>Partiendo del esquema lógico, crea la tabla de <strong>proveedores</strong> de nuestra comunidad autónoma. La estructura de la tabla es la siguiente:<br>
+<strong>proveedores</strong>(<strong><code>cod_prov</code></strong>, <strong><code>localidad</code></strong>, <strong><code>nombre</code></strong>, <strong><code>provincia</code></strong>)<br>
+El diccionario de datos (sólo con restricciones de valor) es:</p>
+<p align="center" style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="181px" preserveAspectRatio="none" style="width:408px;height:181px;background:#FFFFFF;" version="1.1" viewBox="0 0 408 181" width="408px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="159.8438" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="386.5684" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="33.457">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="106.7051" x="24.334" y="33.457">Tabla proveedores</text><rect fill="#FADDAA" height="15.0938" style="stroke:none;stroke-width:0.5;" width="366.5684" x="21" y="38.0938"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44.666" x="24.334" y="50.5508">CAMPO</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="69" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="77.0332" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="28.002" x="80.3672" y="50.5508">TIPO</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="108.3691" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="145.7402" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="62.6602" x="149.0742" y="50.5508">LONGITUD</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="211.7344" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="215.0684" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="114.668" x="218.4023" y="50.5508">CARACTERÍSTICAS</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="333.0703" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49.3652" x="24.334" y="65.6445">cod_prov</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.0352" x="80.3672" y="65.6445">Cadena</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="149.0742" y="65.6445">3</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78.6855" x="218.4023" y="65.6445">Clave Primaria</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43.3535" x="218.4023" y="80.7383">No Nulo</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="47.3672" x="24.334" y="95.832">localidad</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.0352" x="80.3672" y="95.832">Cadena</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="20.0215" x="149.0742" y="95.832">100</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24.6797" x="218.4023" y="95.832">Nulo</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40.6875" x="24.334" y="110.9258">nombre</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.0352" x="80.3672" y="110.9258">Cadena</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="20.0215" x="149.0742" y="110.9258">100</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="41.3613" x="218.4023" y="110.9258">No nulo</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="30.6797" x="218.4023" y="126.0195">Único</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="90.709" x="218.4023" y="141.1133">Clave Alternativa</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48.0234" x="24.334" y="156.207">provincia</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62.0391" x="80.3672" y="156.207">Enumerado</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="145.7402" y="156.207">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="165.832" x="218.4023" y="156.207">'Alicante', 'Valencia', 'Castellón'</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="387.5684" y1="38.0938" y2="38.0938"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="387.5684" y1="53.1875" y2="53.1875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="387.5684" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="387.5684" y1="98.4688" y2="98.4688"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="387.5684" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="387.5684" y1="158.8438" y2="158.8438"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="38.0938" y2="158.8438"></line><line style="stroke:#000000;stroke-width:0.5;" x1="77.0332" x2="77.0332" y1="38.0938" y2="158.8438"></line><line style="stroke:#000000;stroke-width:0.5;" x1="145.7402" x2="145.7402" y1="38.0938" y2="158.8438"></line><line style="stroke:#000000;stroke-width:0.5;" x1="215.0684" x2="215.0684" y1="38.0938" y2="158.8438"></line><line style="stroke:#000000;stroke-width:0.5;" x1="387.5684" x2="387.5684" y1="38.0938" y2="158.8438"></line><!--SRC=[ROx1IWCn48Rl-nG13ml1GwKt5I5agopejhJHao3JP0w1sKb9jtlQL_05V0qVOL_CJ1Nn887mJVZ-VtAjj7Qm9r27d4R4a38UjQvkB-vDqnXpDnN1cgVDMcibxDfVV5nt3wrxRdv6QxR6kjLsVj-vrfgTF5UJyYcyINTnB0HaAB2KWM14jScnXnpXbLMNL7UY91bA7YW627z3Luj5kKKvztBgznd_4PBYufJ2-OEZ5_XUPMZ0p3344Su5ygd8FafqnQSUCuHINKvjA7hW0UjBLRy0eLZ25eu34isVNAlffle2]--></g></svg></p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-5">✅ Ejercicio 5 </h3>
+<p>En XAMPP-MySQL mediante la utilidad <strong><code>mysql.exe</code></strong> ejecuta las instrucciones anteriores.</p>
+<p>Entra a <strong>phpMyAdmin</strong> y comprueba con el asistente visual la estructura de la tabla y crea otra llamada <strong>proveedores2</strong> con la misma información con la herramienta gráfica.<br>
+Pulsando en la pestaña <em>Insertar</em>, añade registros a la tabla <strong>proveedores2</strong>.</p>
+<p>Comprueba con el botón <em>Examinar</em> los datos introducidos. Comprobarás que aparece un botón <em>Editar</em> y otro <em>Borrar</em> que afecta a cada registro.</p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-6">✅ Ejercicio 6 </h3>
+<h4 id="personas-y-provincias">Personas y provincias </h4>
+<p>Del esquema conceptual (del modelo entidad-relación) siguiente:</p>
+<p><img src="./.img/ej6.svg" alt="personas y provincias" style="display:block;margin:0 auto;width:75%;max-width:400px;"></p>
+<p>Escribe las instrucciones en SQL para crear las tablas obtenidas en el esquema lógico (del modelo relacional).</p>
+<p>La tabla PERSONAS contiene datos sobre las personas de una comunidad, mientras que la tabla PROVINCIAS contiene el código y el nombre de cada provincia, se relacionan por el atributo codprovin.</p>
+<p>En primer lugar crearemos la tabla PROVINCIAS y, después la tabla PERSONAS, ya que PERSONAS referencia a PROVINCIAS. Si creamos primero la tabla PERSONAS y la tabla PROVINCIAS no está creada, MySQL emitirá un mensaje de error.</p>
+<p>Recuerda que otra opción sería:</p>
+<ul>
+<li>Crear primero la tabla PERSONAS sin clave ajena</li>
+<li>Crear la tabla PROVINCIAS</li>
+<li>Añadir la restricción de clave ajena a la tabla PERSONAS</li>
+</ul>
+<p>Cuando crees las tablas, hazlo sin asignar nombre a las restricciones de clave primaria ni tampoco a las de clave ajena.</p>
+<div class="definicion">
+<p>PROVINCIAS (<u>cod_provincia &lt;entero 2&gt;</u>, nom_provincia &lt;caracter 25&gt;)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: cod_provincia</li>
+</ul>
+<div class="definicion">
+<p>PERSONAS (<u>dni &lt;entero 8&gt;</u>, nombre &lt;caracter 15&gt;, direccion &lt;caracter 25&gt;, poblacion &lt;caracter 20&gt;, <b>cod_provin* &lt;entero 2&gt;</b>)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: DNI.</li>
+<li>Clave ajena: cod_provin → PROVINCIAS.
+<ul>
+<li>Como la clave ajena está formada por un único atributo se puede definir tanto a continuación de la definición de la columna cod_provin como al final de la definición de la tabla. En este caso, lo haremos a continuación de la definición de la columna y no especificaremos ninguna política ante borrados para asegurar la integridad referencial.</li>
+<li>De momento no incluimos las restricciones por ON DELETE o por ON UPDATE</li>
+</ul>
+</li>
+</ul>
+
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-7">✅ Ejercicio 7 </h3>
+<h4 id="tiendas-y-empleados">Tiendas y empleados </h4>
+<p>Del esquema conceptual (del modelo entidad-relación) siguiente:</p>
+<p><img src="./.img/ej7.svg" alt="tiendas y empleados" style="display:block;margin:0 auto;width:75%;max-width:400px;"></p>
+<p>Escribe las instrucciones en SQL para crear las tablas obtenidas en el esquema lógico (del modelo relacional).</p>
+<p>Primero crearemos la tabla TIENDAS, ya que EMPLEADOS hace referencia a dicha tabla.</p>
+<div class="definicion">
+<p>TIENDAS (<u>codigo &lt;entero 2&gt;</u>, nombre &lt;caracter 25&gt;)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: codigo</li>
+</ul>
+<div class="definicion">
+<p>EMPLEADOS (<u>nombre &lt;caracter 25&gt;</u>, edad &lt;entero 3&gt;, <b>cod_tienda* &lt;entero 2&gt;</b>)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: nombre</li>
+<li>Clave ajena: cod_tienda → TIENDAS</li>
+</ul>
+<p>Restricciones del diccionario de datos:</p>
+<ul>
+<li>Al borrar la fila asociada a una tienda deseamos que se eliminen automáticamente las filas con claves ajenas que la referencien, es decir, que se eliminen todos los empleados de esa tienda.</li>
+<li><span style="color:red"> Verificación de condiciones: edad comprendida entre 18 y 65.</span></li>
+</ul>
+
+<p>Otra opción sería:</p>
+<ul>
+<li>Crear primero la tabla EMPLEADOS sin clave ajena</li>
+<li>Crear la tabla TIENDAS</li>
+<li>Añadir la restricción de clave ajena a la tabla EMPLEADOS.</li>
+</ul>
+
+</div> <!-- fin ejercicio -->
+<h2 id="edición-de-datos">Edición de datos </h2>
+<p>Para probar las soluciones crearemos bases de datos con phpMyAdmin en XAMPP.</p>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-8">✅ Ejercicio 8 </h3>
+<h4 id="personas-y-provincias-1">Personas y provincias </h4>
+<p>Anteriormente hemos creado las tablas PROVINCIAS y PERSONAS.</p>
+<p><img src="./.img/ej6.svg" alt="personas y provincias" style="display:block;margin:0 auto;width:75%;max-width:400px;"></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> PROVINCIAS <span class="token punctuation">(</span>
+    cod_provincia <span class="token keyword keyword-INT">INT</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword keyword-PRIMARY">PRIMARY</span> <span class="token keyword keyword-KEY">KEY</span><span class="token punctuation">,</span>
+    nom_provincia <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> PERSONAS <span class="token punctuation">(</span>
+    dni <span class="token keyword keyword-INT">INT</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token keyword keyword-PRIMARY">PRIMARY</span> <span class="token keyword keyword-KEY">KEY</span><span class="token punctuation">,</span>
+    nombre <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    direccion <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    poblacion <span class="token keyword keyword-VARCHAR">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    cod_provin <span class="token keyword keyword-INT">INT</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword keyword-FOREIGN">FOREIGN</span> <span class="token keyword keyword-KEY">KEY</span> <span class="token punctuation">(</span>cod_provin<span class="token punctuation">)</span> <span class="token keyword keyword-REFERENCES">REFERENCES</span> PROVINCIAS<span class="token punctuation">(</span>cod_provincia<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>Ahora vamos a insertar las filas que aparecen a continuación en las tablas. Para ello, vamos a utilizar la orden INSERT de la siguiente forma:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> nombre_Tabla <span class="token punctuation">[</span><span class="token punctuation">(</span>columna <span class="token punctuation">[</span><span class="token punctuation">,</span> columna<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span>valor <span class="token punctuation">[</span><span class="token punctuation">,</span> valor<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>Por ejemplo, para insertar la primera fila de la tabla PROVINCIAS escribiríamos la siguiente sentencia:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> PROVINCIAS <span class="token punctuation">(</span>cod_provincia<span class="token punctuation">,</span> nom_provincia<span class="token punctuation">)</span>
+<span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'Alicante'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p align="center" style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="151px" preserveAspectRatio="none" style="width:222px;height:151px;background:#FFFFFF;" version="1.1" viewBox="0 0 222 151" width="222px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="129.6563" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="200.0469" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="33.457">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="74.6777" x="24.334" y="33.457">PROVINCIAS</text><rect fill="#FADDAA" height="15.0938" style="stroke:none;stroke-width:0.5;" width="180.0469" x="21" y="38.0938"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="81.3574" x="24.334" y="50.5508">cod_provincia</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="105.6914" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="109.0254" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="85.3535" x="112.3594" y="50.5508">nom_provincia</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="197.7129" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="24.334" y="65.6445">1</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.6914" x="112.3594" y="65.6445">Alicante</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="24.334" y="80.7383">2</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.0313" x="112.3594" y="80.7383">Valencia</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="24.334" y="95.832">3</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50.0273" x="112.3594" y="95.832">Castellón</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="13.3477" x="24.334" y="110.9258">43</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="54.0352" x="112.3594" y="110.9258">Barcelona</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="13.3477" x="24.334" y="126.0195">55</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40.6875" x="112.3594" y="126.0195">Huesca</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="201.0469" y1="38.0938" y2="38.0938"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="201.0469" y1="53.1875" y2="53.1875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="201.0469" y1="68.2813" y2="68.2813"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="201.0469" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="201.0469" y1="98.4688" y2="98.4688"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="201.0469" y1="113.5625" y2="113.5625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="201.0469" y1="128.6563" y2="128.6563"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="38.0938" y2="128.6563"></line><line style="stroke:#000000;stroke-width:0.5;" x1="109.0254" x2="109.0254" y1="38.0938" y2="128.6563"></line><line style="stroke:#000000;stroke-width:0.5;" x1="201.0469" x2="201.0469" y1="38.0938" y2="128.6563"></line><!--SRC=[irBGqWe8yW_pz7FsT0pMqkAoKNPpT75nTBIh0SeavwV45nJbbsNc9MScQcafWCJoydDHnRXg50o1CeuvcSc9UIMfO04Ze41OOaugI0rOm1Weu9nON9AQatDuSnvOo0GavfHOb9oQavy7KMLg2XJoA4qjJWRohRa0]--></g></svg></p><p align="center" style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="196px" preserveAspectRatio="none" style="width:460px;height:196px;background:#FFFFFF;" version="1.1" viewBox="0 0 460 196" width="460px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="174.9375" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="438.8809" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="33.457">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="67.3477" x="24.334" y="33.457">PERSONAS</text><rect fill="#FADDAA" height="15.0938" style="stroke:none;stroke-width:0.5;" width="418.8809" x="21" y="38.0938"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="17.9941" x="24.334" y="50.5508">dni</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="42.3281" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="81.0586" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="44.0039" x="84.3926" y="50.5508">nombre</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="128.3965" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="137.0918" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="53.3496" x="140.4258" y="50.5508">direccion</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="193.7754" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="305.2031" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="56.666" x="308.5371" y="50.5508">poblacion</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="365.2031" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="368.5371" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="64.6758" x="371.8711" y="50.5508">cod_provin</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="436.5469" y="50.5508">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="65.6445">56783412</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28.0254" x="84.3926" y="65.6445">Pepe</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="132.0645" x="140.4258" y="65.6445">Avenida de las Américas</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50.0273" x="308.5371" y="65.6445">Castellón</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="371.8711" y="65.6445">3</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="80.7383">34556784</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.6836" x="84.3926" y="80.7383">Ramón</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="114.0762" x="140.4258" y="80.7383">Calle Poeta Quintana</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.6914" x="308.5371" y="80.7383">Alicante</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="371.8711" y="80.7383">1</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="95.832">12334523</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="28.6758" x="84.3926" y="95.832">Silvia</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="108.7148" x="140.4258" y="95.832">Calle Pintor Aparicio</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.6914" x="308.5371" y="95.832">Alicante</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="371.8711" y="95.832">1</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="110.9258">98564321</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="26.0215" x="84.3926" y="110.9258">Juan</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="119.4199" x="140.4258" y="110.9258">Avenida de la Libertad</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46.0313" x="308.5371" y="110.9258">Valencia</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="371.8711" y="110.9258">2</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="126.0195">90765678</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.0215" x="84.3926" y="126.0195">Bartolo</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="99.3809" x="140.4258" y="126.0195">Calle Rosa Chacel</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.6914" x="308.5371" y="126.0195">Alicante</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="371.8711" y="126.0195">1</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="141.1133">45676565</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32.0215" x="84.3926" y="141.1133">Isabel</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82.0488" x="140.4258" y="141.1133">Calle Paraguay</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="54.0352" x="308.5371" y="141.1133">Barcelona</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="13.3477" x="371.8711" y="141.1133">43</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="156.207">23454322</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="26.0215" x="84.3926" y="156.207">Juan</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="161.4434" x="140.4258" y="156.207">Avenida de Alfonso X el Sabio</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42.6914" x="308.5371" y="156.207">Alicante</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="6.6738" x="371.8711" y="156.207">1</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3906" x="24.334" y="171.3008">67424563</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49.3652" x="84.3926" y="171.3008">Bernardo</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="76.0313" x="140.4258" y="171.3008">Plaza Imperial</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40.6875" x="308.5371" y="171.3008">Huesca</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="13.3477" x="371.8711" y="171.3008">55</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="38.0938" y2="38.0938"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="53.1875" y2="53.1875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="68.2813" y2="68.2813"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="98.4688" y2="98.4688"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="113.5625" y2="113.5625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="128.6563" y2="128.6563"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="158.8438" y2="158.8438"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="439.8809" y1="173.9375" y2="173.9375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="38.0938" y2="173.9375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="81.0586" x2="81.0586" y1="38.0938" y2="173.9375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="137.0918" x2="137.0918" y1="38.0938" y2="173.9375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="305.2031" x2="305.2031" y1="38.0938" y2="173.9375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="368.5371" x2="368.5371" y1="38.0938" y2="173.9375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="439.8809" x2="439.8809" y1="38.0938" y2="173.9375"></line><!--SRC=[RL1BJiCm4Dtt52EnouewdvQFaDmMH162q4Y87Pea0rXoxCX9Ae5w8TOSeHTZd5I0K5RsU-Ft6Pz24AINc-p-JcP1C3a_kfAhbPGNE-PBeu80_CtOAdTq0ALoL1JAcWEkRQxn3ovi-LmxkrKzCTb1dCpcOJGLF4sf9Zxabemg4Ke2ZGt8Ql_fLC6t7IonQKdh_PTX4FRwC8gzHSJ41gjXiaIj2L9BBS93fqoB1hsnPXlJ-enfhvsAaEM2ZI1JUglmLyiYwq3MoD7AZebFvd4IXO81t7He_XU7MvMJQx7amIDgCaLlBmRjyIpnhPbOe6kjjZ_96ziWBD-m83sM6h6CfJ4JwmRp_j6XCZfyxV1zy6IvxPUEXcyIl2Yt5QDjfNwnfh7m1EoNOJw-S3AB1CVxtrgGC-XA_opL-86mhcfo2dsRwuwQmYV7NF9iyWq0]--></g></svg></p>
+<p>Ahora insertaremos en la tabla PERSONAS una fila dando al campo <strong>cod_provin</strong> un valor que no exista en provincias. Por ejemplo, prueba a insertar una persona que pertenezca a la provincia de Teruel de código 35. Explica qué ocurre.</p>
+
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-9">✅ Ejercicio 9 </h3>
+<h4 id="personas-y-provincias-2">Personas y provincias </h4>
+<p>En este ejercicio partimos de la situación en que las tablas PROVINCIAS y PERSONAS tienen datos, ya que los hemos insertado en el ejercicio anterior.</p>
+<p>Vamos a borrar todas las filas de la tabla PROVINCIAS. Recuerda que para ello podemos utilizar la orden DELETE.<br>
+Observa que se produce un error. ¿Por qué?</p>
+
+<p>Para solucionarlo, borra la tabla PERSONAS con la orden DROP y vuelve a crearla con la restricción adecuada (ON DELETE y ON UPDATE) para que se mantenga la integridad referencial.</p>
+
+<p>Ahora, vuelve a insertar las filas en la tabla PERSONAS.<br>
+Borra una fila de la tabla PROVINCIAS ¿Qué ocurre en la tabla PERSONAS?</p>
+
+<p>Ahora intenta insertar una fila en la tabla PROVINCIAS cuyo código de provincia (clave primaria) ya existe. ¿Qué ocurre?. Observa el nombre que MySQL le da a la restricción que ha sido violada.</p>
+
+<p>A continuación, intenta insertar una fila en la tabla PERSONAS cuyo código de provincia (clave ajena) no existe en la tabla PROVINCIAS. ¿Qué ocurre?. Observa el nombre que MySQL le da a la restricción que ha sido violada.</p>
+
+</div>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-10">✅ Ejercicio 10 </h3>
+<h4 id="personas-y-provincias-3">Personas y provincias </h4>
+<p>En esta actividad vas a borrar las tablas PERSONAS y PROVINCIAS; y vas a crearlas de nuevo dando nombre a las restricciones de clave ajena.</p>
+
+<p>A continuación inserta algunas filas en la tabla PROVINCIAS para hacer que se viole la restricción de clave primaria. Para ello, deberás insertar un código de provincia<br>
+existente. ¿Qué instrucción has ejecutado? ¿Qué error devuelve?</p>
+
+Ahora inserta una fila en la tabla PERSONAS cuyo código de provincia no exista en la tabla PROVINCIAS. Observa que se produce un error en la restricción de clave ajena que habrás nombrado previamente al crear la tabla. ¿Qué instrucción has
+ejecutado? ¿Qué error devuelve? ¿Cómo has llamado a la restricción?
+
+</div> <!-- fin ejercicio -->
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-11">✅ Ejercicio 11 </h3>
+<h4 id="ejemplo-1">Ejemplo 1 </h4>
+<p>Crea la siguiente tabla en una base de datos nueva.</p>
+<div class="definicion">
+<p>EJEMPLO1 (<u>nif &lt;caracter 10&gt;</u>, nombre &lt;caracter 30&gt;, edad &lt;entero 2&gt;)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: nif</li>
+</ul>
+<p>Restricciones del diccionario de datos:</p>
+<ul>
+<li>El atributo nombre no pueda tomar valores nulos.</li>
+</ul>
+
+<p>Inserta una fila en la tabla EJEMPLO1 de forma que el campo nombre no tome ningún valor. ¿Qué instrucción has ejecutado? ¿Qué ocurre?.</p>
+
+</div>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-12">✅ Ejercicio 12 </h3>
+<h4 id="ejemplo-2">Ejemplo 2 </h4>
+<p>Crea la siguiente tabla en una base de datos nueva.</p>
+<div class="definicion">
+<p>EJEMPLO2 (<u>nif &lt;caracter 10&gt;</u>, nombre &lt;caracter 30&gt;, fecha_modificacion <datetime>)</datetime></p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: nif</li>
+</ul>
+<p>Restricciones del diccionario de datos:</p>
+<ul>
+<li>El atributo nombre no pueda tomar valores nulos.</li>
+<li>El atributo fecha tome por defecto la fecha del sistema que viene dado por la variable CURRENT_TIMESTAMP.</li>
+</ul>
+
+Ahora inserta una fila en la tabla dando valores a todas las columnas, salvo a la columna fecha:
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> ejemplo2 <span class="token punctuation">(</span>nif<span class="token punctuation">,</span> nombre<span class="token punctuation">)</span> <span class="token keyword keyword-VALUES">VALUES</span> <span class="token punctuation">(</span><span class="token string">'21777888'</span><span class="token punctuation">,</span> <span class="token string">'JUANA GÓMEZ'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>Al visualizar el contenido de la tabla, en la columna fecha se almacenará la fecha del sistema, ya que no se dio valor. Consulta los valores de la tabla e indica el valor que<br>
+ha tomado el campo fecha.</p>
+
+</div>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-13">✅ Ejercicio 13 </h3>
+<h4 id="ejemplo-3">Ejemplo 3 </h4>
+<p>Crea la siguiente tabla en una base de datos nueva.</p>
+<div class="definicion">
+<p>EJEMPLO3 (<u>nif &lt;caracter 10&gt;</u>, nombre &lt;caracter 30&gt;, edad &lt;entero 3&gt;, curso &lt;caracter 4&gt;)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: nif</li>
+</ul>
+<p>Restricciones del diccionario de datos:</p>
+<ul>
+<li>El atributo nombre no pueda tomar valores nulos.</li>
+<li>El atributo nombre debes estar en mayúsculas.</li>
+<li>La edad ha de estar comprendida entre 5 y 20 años.</li>
+<li>El atributo curso sólo puede tomar los valores '1ESO','2ESO','3ESO','4ESO','1BAC','2BAC'.</li>
+</ul>
+<p>Recuerda que con CONSTRAINT se le puede dar nombre a las restricciones</p>
+
+<p>Prueba ahora a realizar inserciones en la tabla que hagan fallar las restricciones</p>
+
+</div>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-14">✅ Ejercicio 14 </h3>
+<h4 id="ejemplo-4">Ejemplo 4 </h4>
+<p>Crea la siguiente tabla en una base de datos nueva.</p>
+<div class="definicion">
+<p>EJEMPLO4 (<u>nif &lt;caracter 10&gt;</u>, nombre &lt;caracter 30&gt;, edad &lt;entero 3&gt;)</p>
+</div> <!-- fin definición -->
+<p>Restricciones del esquema ER:</p>
+<ul>
+<li>Clave primaria: nif</li>
+</ul>
+<p>Restricciones del diccionario de datos:</p>
+<ul>
+<li>El atributo nombre no pueda tomar valores repetidos.</li>
+</ul>
+
+<p>Inserta filas en la tabla haciendo fallar la restricción de nombre repetido. ¿Qué instrucción has ejecutado? ¿Qué error aparece?</p>
+
+</div>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-15">✅ Ejercicio 15 </h3>
+<h4 id="fabricantes-y-artículos">Fabricantes y artículos </h4>
+<p>Crea las siguientes tablas con las restricciones definidas.</p>
+<p align="center" style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="106px" preserveAspectRatio="none" style="width:202px;height:106px;background:#FFFFFF;" version="1.1" viewBox="0 0 202 106" width="202px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="84.375" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="180.0781" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="33.457">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="120.6738" x="24.334" y="33.457">Tabla FABRICANTES</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78.7207" x="24.334" y="50.5508">cod_fabricante</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52.0254" x="109.7227" y="50.5508">entero (3)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="40.6875" x="24.334" y="65.6445">nombre</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.0215" x="109.7227" y="65.6445">carácter (15)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="22.0137" x="24.334" y="80.7383">pais</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.0215" x="109.7227" y="80.7383">carácter (15)</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="181.0781" y1="38.0938" y2="38.0938"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="181.0781" y1="53.1875" y2="53.1875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="181.0781" y1="68.2813" y2="68.2813"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="181.0781" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="38.0938" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="106.3887" x2="106.3887" y1="38.0938" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="181.0781" x2="181.0781" y1="38.0938" y2="83.375"></line><!--SRC=[irBGqWf9JCf9L71pT0hoT7Rq2t4DrjBYgb58pa-9JqjCAifCJimhILMeKKW5KaNv2Xh6cWerGFcy_Doa8f1uScBHuON9G3a53KDJY5n1OcOn5Xbh0000]--></g></svg></p><p align="center" style="zoom:1" class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" data-diagram-type="ACTIVITY" height="166px" preserveAspectRatio="none" style="width:203px;height:166px;background:#FFFFFF;" version="1.1" viewBox="0 0 203 166" width="203px" zoomAndPan="magnify"><defs></defs><g><rect fill="#F1F1F1" height="144.75" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="181.4141" x="11" y="11"></rect><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="3.334" x="21" y="33.457">&nbsp;</text><text fill="#000000" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="104.6719" x="24.334" y="33.457">Tabla ARTICULOS</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="38.6836" x="24.334" y="50.5508">articulo</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.0215" x="109.7227" y="50.5508">carácter (20)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78.7207" x="24.334" y="65.6445">cod_fabricante</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52.0254" x="109.7227" y="65.6445">entero (3)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="26.0215" x="24.334" y="80.7383">peso</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52.0254" x="109.7227" y="80.7383">entero (3)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49.3652" x="24.334" y="95.832">categoria</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.0215" x="109.7227" y="95.832">carácter (10)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.7129" x="24.334" y="110.9258">precio_venta</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69.3574" x="109.7227" y="110.9258">decimal (6,2)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68.0391" x="24.334" y="126.0195">precio_costo</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69.3574" x="109.7227" y="126.0195">decimal (6,2)</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="59.3613" x="24.334" y="141.1133">existencias</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52.0254" x="109.7227" y="141.1133">entero (5)</text><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="38.0938" y2="38.0938"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="53.1875" y2="53.1875"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="68.2813" y2="68.2813"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="83.375" y2="83.375"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="98.4688" y2="98.4688"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="113.5625" y2="113.5625"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="128.6563" y2="128.6563"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="182.4141" y1="143.75" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="21" x2="21" y1="38.0938" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="106.3887" x2="106.3887" y1="38.0938" y2="143.75"></line><line style="stroke:#000000;stroke-width:0.5;" x1="182.4141" x2="182.4141" y1="38.0938" y2="143.75"></line><!--SRC=[ROsn2i9038Ptdo9ZFHoqeeDEqaaG1ArpITCe1sTJSgSutCluBBwO9pfOT0h9z-N_5s1CYRL3MEtATN7ORFV632AW1aiN9n21K1zt2goGvUCXn4H9ckg8jLh2Dd1oE0qLoAPlth6NtojXu9EenNxev1FQAPELwfg-NaQJjZCwoEQZl2UG-21_1RvP7xWbY_whVPRWyWa0]--></g></svg></p><p>Restricciones para la tabla FABRICANTES:</p>
+<ul>
+<li>La clave primaria es cod_fabricante</li>
+<li>Las columnas nombre y pais han de almacenarse en mayúscula.</li>
+</ul>
+<p>Restricciones para la tabla ARTICULOS:</p>
+<ul>
+<li>la clave primaria está formada por las columnas: articulo y cod_fabricante.</li>
+<li>cod_fabricante es clave ajena que referencia a la tabla FABRICANTES.</li>
+<li>precio_venta, precio_costo y peso han de ser &gt;0</li>
+<li>categoria debe tomar los valores 'Primera', 'Segunda' o 'Tercera'.</li>
+</ul>
+
+</div>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-16">✅ Ejercicio 16 </h3>
+<h4 id="ejemplo-5">Ejemplo 5 </h4>
+<p>Ahora vamos a crear la tabla EJEMPLO5 a partir de los datos recuperados en una consulta sobre otra tabla, en este caso realizaremos una consulta sobre la tabla EJEMPLO que hemos creado en el <a href="#ejercicio-8">Ejercicio 8</a>:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-USE">USE</span> bd_ejercicios<span class="token punctuation">;</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> EJEMPLO5 <span class="token keyword keyword-AS">AS</span> <span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> personas<span class="token punctuation">;</span>
+
+</code></pre><p>La tabla se crea con los mismos nombres de columnas e idéntico contenido de filas que la tabla PERSONAS.</p>
+</div>
+<div class="ejercicio">
+<h3 id="white_check_mark-ejercicio-17">✅ Ejercicio 17 </h3>
+<p>Recuerda que en la actividad <a href="#personas-y-provincias">Ejercicio 6</a> creamos la tabla PROVINCIAS y la tabla PERSONAS. Recuerda que la tabla PROVINCIAS tiene definida como clave primaria la columna cod_provincia, y la tabla PERSONAS, tiene definida una clave<br>
+ajena cod_provin referenciando a la tabla PROVINCIAS.</p>
+<p>Al no haber indicado ninguna política de borrado, si intentamos borrar los registros de la tabla PROVINCIAS que tienen registros referenciados en la tabla PERSONAS.</p>
+<p>¿Qué ocurre? ¿Cómo puedes solucionar esta situación, de manera que al borrar estos registros no muestre este mensaje?</p>
+</div>
+<hr>
+<h2 id="ejercicios-finales">Ejercicios finales </h2>
+<div class="ejercicio" style="background-color:#f5faf5;border:2px solid #969b96;padding-left:15px;padding-right:15px;margin-top:15px;margin-bottom:15px;border-radius:5px;box-shadow:0 0 7px 0 rgba(78,120,158,0.1);">
+<h3 id="white_check_mark-ejercicio-">✅ Ejercicio 18 </h3>
+<h4 id="atletismo">Atletismo </h4>
+<p>Haz un script de creación de la base de datos ATLETISMO (atletismo.sql) a partir del modelo lógico-relacional.<br>
+Los tipos de datos de los distintos campos serán los que consideres convenientes, siempre que la solución adoptada sea coherente.</p>
+<p>CLUBS(<u>codigo</u>, nombre, ciudad)</p>
+<p>ATLETAS(<u>nif</u>, nombre, apellidos)</p>
+<p>COMPETICIONES(<u>codigo</u>, descripcion, ciudad, fechaEvento)</p>
+<p>ACTIVIDADES_DEPORTIVAS(<u>codigo</u>, descripcion)</p>
+<p>FECHAS(<u>fechaAlta</u>)</p>
+<p>PARTICIPAR(<u>club, competicion</u>)<br>
+CF: club → CLUBS<br>
+CF: competicion → COMPETICIONES</p>
+<p>PRACTICAR(<u>atleta, deporte</u>, plusmarca)<br>
+CF: atleta → ATLETAS<br>
+CF: deporte → ACTIVIDADES_DEPORTIVAS</p>
+<p>PERTENECER(<u>atleta, fecha</u>, club, fechaBaja)<br>
+CF: atleta → ATLETAS<br>
+CF: fecha → FECHAS<br>
+CF: club → CLUBS</p>
+<p>COMPETIR(<u>competicion, atleta, deporte</u>, marca)<br>
+CF: competicion → COMPETICIONES<br>
+CF: atleta → ATLETAS<br>
+CF: deporte → ACTIVIDADES_DEPORTIVAS</p>
+<p><a href="./.sol/PT1.atletismo.sql">atletismo.sql</a></p>
+</div> <!-- fin ejercicio -->
+<div class="ejercicio" style="background-color:#f5faf5;border:2px solid #969b96;padding-left:15px;padding-right:15px;margin-top:15px;margin-bottom:15px;border-radius:5px;box-shadow:0 0 7px 0 rgba(78,120,158,0.1);">
+<h3 id="white_check_mark-ejercicio-xxxx">✅ Ejercicio 19 </h3>
+<h4 id="startrek">StarTrek </h4>
+<p>Haz un script de creación de la base de datos STARTREK (startrek.sql) a partir del modelo lógico-relacional.<br>
+Los tipos de datos de los distintos campos serán los que consideres convenientes, siempre que la solución adoptada sea coherente.</p>
+<p>ACTORES(<u>idActor</u>, nombre, nacionalidad, fechaNacimiento)</p>
+<p>PERSONAJES(<u>nombre</u>, raza, graduacionMilitar, actor, capMilitar)<br>
+CF: actor → ACTORES<br>
+CF: capMilitar → PERSONAJES</p>
+<p>PELÍCULAS(<u>titulo</u>, director, añoLanzamiento, protagonista)<br>
+CF: protagonista → PERSONAJES</p>
+<p>CAPÍTULOS(<u>titulo, temporada</u>, ordenRodaje, fechaEmision1)</p>
+<p>PLANETAS(<u>codigo</u>, nombre, galaxia)</p>
+<p>NAVES(<u>codigo</u>, nombre, tripulacion)</p>
+<p>APARECER(<u>personaje, pelicula</u>)<br>
+CF: personaje → PERSONAJES<br>
+CF: pelicula → PELÍCULAS</p>
+<p>PARTICIPAR(<u>capitulo, personaje</u>)<br>
+CF: capitulo → CAPÍTULOS<br>
+CF: personaje → PERSONAJES</p>
+<p>VISITAR(<u>capitulo, planeta, nave</u>, problema)<br>
+CF: capitulo → CAPÍTULOS<br>
+CF: planeta → PLANETAS<br>
+CF: nave → NAVES</p>
+<p><a href="./.sol/PT2.startrek.sql">startrek.sql</a></p>
+</div> <!-- fin ejercicio -->
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
